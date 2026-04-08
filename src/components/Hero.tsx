@@ -44,44 +44,54 @@ const Hero = () => {
 
           {/* Right: Carousel */}
           <div className="lg:col-span-6">
-            <div className="relative rounded-xl overflow-hidden">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 z-10 bg-foreground text-background px-5 py-2 text-xs font-sans font-semibold tracking-wider">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
+              {/* Fresh Updates pill */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 bg-foreground/95 text-background px-5 py-1.5 text-[10px] font-sans font-semibold tracking-[0.15em] uppercase rounded-b-lg">
                 Fresh Updates
               </div>
+
               <div className="relative h-80 md:h-[360px] lg:h-[400px]">
                 {slides.map((slide, i) => (
                   <div
                     key={i}
-                    className={`absolute inset-0 transition-opacity duration-700 ${
-                      i === current ? "opacity-100" : "opacity-0"
+                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                      i === current ? "opacity-100" : "opacity-0 pointer-events-none"
                     }`}
                   >
                     <img
                       src={slide.image}
                       alt={slide.tag}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-[3500ms] ease-out group-hover:scale-105"
+                      style={{ transform: i === current ? 'scale(1.0)' : undefined }}
                       loading={i === 0 ? undefined : "lazy"}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <span className="inline-block bg-primary/80 text-primary-foreground text-[11px] px-3 py-1 rounded font-sans tracking-wider mb-2">
+                    {/* Gradient overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+
+                    {/* Bottom content */}
+                    <div className="absolute bottom-0 left-0 right-0 p-6 pb-10">
+                      <span className="inline-block bg-primary/90 text-primary-foreground text-[10px] px-3 py-1 rounded-md font-sans font-semibold tracking-wider uppercase mb-3">
                         {slide.tag}
                       </span>
-                      <p className="text-sm text-foreground font-sans leading-relaxed">
-                        {slide.text}{" "}
-                        <span className="text-df-gold cursor-pointer hover:underline">Know more</span>
+                      <p className="text-[15px] text-foreground font-sans leading-relaxed max-w-md">
+                        {slide.text}
                       </p>
+                      <span className="inline-block mt-2 text-sm text-df-gold cursor-pointer hover:underline font-medium">
+                        Know more →
+                      </span>
                     </div>
                   </div>
                 ))}
               </div>
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+
+              {/* Dot indicators */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-20">
                 {slides.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setCurrent(i)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      i === current ? "bg-foreground w-5" : "bg-foreground/40"
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      i === current ? "bg-foreground w-6" : "bg-foreground/40 w-2"
                     }`}
                   />
                 ))}
