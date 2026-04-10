@@ -1,5 +1,5 @@
 import SectionWrapper from "@/components/SectionWrapper";
-import founderImg from "@/assets/founder.jpg";
+import founderImg from "@/assets/ashwin-portrait.png";
 
 const About = () => {
   return (

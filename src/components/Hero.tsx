@@ -1,105 +1,188 @@
-import { useState, useEffect } from "react";
-import { ArrowRight } from "lucide-react";
-import carousel1 from "@/assets/carousel-1.jpg";
-import carousel2 from "@/assets/carousel-2.jpg";
-import carousel3 from "@/assets/carousel-3.jpg";
-import carousel4 from "@/assets/carousel-4.jpg";
-import carousel5 from "@/assets/carousel-5.jpg";
+import { useEffect, useState } from "react";
 
-const slides = [
-  { image: carousel1, tag: "ENTERPRISE CONSULTING", text: "Enabling enterprises to transform and grow through strategic technology and business consulting." },
-  { image: carousel2, tag: "AI & DIGITAL", text: "Designing ideas into powerful digital experiences that drive innovation." },
-  { image: carousel3, tag: "MARKET INSIGHTS", text: "Understanding AI capabilities and maturity for enterprises." },
-  { image: carousel4, tag: "CREATIVE DESIGN", text: "Driving enterprise growth through strategy, creativity, and digital impact." },
-  { image: carousel5, tag: "RESEARCH", text: "Bridging technology and business to accelerate enterprise transformation." },
+// IMAGES
+import heroImage from "@/assets/Enterprise Consulting.jpg";
+import img1 from "@/assets/fresh-updates img1.jpg";
+import img2 from "@/assets/fresh-updates img2.jpg";
+import img3 from "@/assets/fresh-updates img 3.jpg";
+import img4 from "@/assets/fresh-updates img 4.jpg";
+import img5 from "@/assets/fresh-updates img 5.jpg";
+
+import marketingImg from "@/assets/Enterprise Marketing.jpg";
+import aismImg from "@/assets/prosight-aism.jpg";
+
+const freshUpdates = [
+  { label: "ENTERPRISE CONSULTING", title: "Enabling enterprises to transform and grow through strategic technology and business consulting.", image: img1 },
+  { label: "PROSIGHT AISM", title: "Empowering organizations with AI Service Management for scalable and responsible AI adoption.", image: img2 },
+  { label: "Enterprise Marketing", title: "Driving enterprise growth through data-driven marketing strategies and digital innovation.", image: img3 },
+  { label: "Why Digital Fabric®", title: "Helping enterprises scale digital transformation through integrated technology and business expertise.", image: img4 },
+  { label: "The TI Framework", title: "A structured framework aligning technology initiatives with enterprise growth, resiliency, and agility.", image: img5 },
 ];
+
+const Arrow = () => (
+  <span className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[#0b527b] text-white">
+    <svg
+      viewBox="0 0 24 24"
+      className="h-[19px] w-[19px]"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M7 17 17 7" />
+      <path d="M9 7h8v8" />
+    </svg>
+  </span>
+);
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 3500);
+      setCurrent((prev) => (prev + 1) % freshUpdates.length);
+    }, 3200);
     return () => clearInterval(timer);
   }, []);
 
+  const currentItem = freshUpdates[current];
+
   return (
-    <section className="min-h-[85vh] flex items-center pt-24 pb-16">
-      <div className="max-w-7xl mx-auto px-6 md:px-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 items-center">
-          {/* Left: Heading */}
-          <div className="lg:col-span-5">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-serif text-foreground leading-[1.1] italic font-normal tracking-tight">
-              What's your next brilliant move?
-            </h1>
-          </div>
+    <section className="bg-[#092f47] pt-24 pb-4">
+      <div className="max-w-[1500px] mx-auto px-6">
 
-          {/* Center: Arrow Button */}
-          <div className="lg:col-span-1 flex justify-center items-center">
-            <button className="w-[72px] h-[72px] rounded-full border-2 border-primary flex items-center justify-center hover:bg-primary/20 hover:scale-110 transition-all duration-300 group">
-              <ArrowRight className="text-foreground group-hover:translate-x-1 transition-transform" size={26} />
-            </button>
-          </div>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
 
-          {/* Right: Carousel */}
-          <div className="lg:col-span-6">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl group cursor-pointer">
-              {/* Fresh Updates pill */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 bg-foreground/95 text-background px-5 py-1.5 text-[10px] font-sans font-semibold tracking-[0.15em] uppercase rounded-b-lg">
-                Fresh Updates
-              </div>
+          {/* LEFT CARD */}
+          <div
+            className="group relative overflow-hidden border border-white/10 transition duration-700 ease-out hover:-translate-y-[10px] hover:scale-[1.012]"
+            style={{ minHeight: "clamp(430px,34vw,560px)" }}
+          >
+            <img
+              src={heroImage}
+              className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.09] group-hover:brightness-[1.02] group-hover:contrast-[1.04] group-hover:saturate-[1.08]"
+            />
 
-              <div className="relative h-80 md:h-[360px] lg:h-[400px]">
-                {slides.map((slide, i) => (
-                  <div
-                    key={i}
-                    className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                      i === current ? "opacity-100" : "opacity-0 pointer-events-none"
-                    }`}
-                  >
-                    <img
-                      src={slide.image}
-                      alt={slide.tag}
-                      className="w-full h-full object-cover transition-transform duration-[3500ms] ease-out group-hover:scale-105"
-                      style={{ transform: i === current ? 'scale(1.0)' : undefined }}
-                      loading={i === 0 ? undefined : "lazy"}
-                    />
-                    {/* Gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-xl border border-white/30 p-8">
 
-                    {/* Bottom content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 pb-10">
-                      <span className="inline-block bg-primary/90 text-primary-foreground text-[10px] px-3 py-1 rounded-md font-sans font-semibold tracking-wider uppercase mb-3">
-                        {slide.tag}
-                      </span>
-                      <p className="text-[15px] text-foreground font-sans leading-relaxed max-w-md">
-                        {slide.text}
-                      </p>
-                      <span className="inline-block mt-2 text-sm text-df-gold cursor-pointer hover:underline font-medium">
-                        Know more →
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <h2 className="text-white text-5xl font-serif">
+                Enterprise <br /> Consulting
+              </h2>
 
-              {/* Dot indicators */}
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                {slides.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setCurrent(i)}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      i === current ? "bg-foreground w-6" : "bg-foreground/40 w-2"
-                    }`}
-                  />
-                ))}
-              </div>
+              <p className="text-white/90 mt-4 max-w-sm text-sm">
+                Strategically guiding enterprises through transformation with a future-ready consulting framework
+              </p>
+
+              <button className="mt-6 flex items-center gap-4 bg-white text-black px-6 py-3 rounded-full">
+                Explore More
+                <Arrow />
+              </button>
             </div>
           </div>
+
+          {/* RIGHT */}
+          <div className="flex flex-col gap-6">
+
+            {/* CAROUSEL */}
+            <div
+              className="relative overflow-hidden border border-white/10"
+              style={{ minHeight: "clamp(350px,27vw,470px)" }}
+            >
+              <img
+                src={currentItem.image}
+                className="absolute inset-0 h-full w-full object-cover transition duration-700"
+              />
+
+              {/* SINGLE MARQUEE */}
+              <div className="absolute top-3 left-0 right-0 overflow-hidden">
+                <div className="whitespace-nowrap animate-[marquee_10s_linear_infinite] text-white text-sm font-semibold">
+                  Fresh Updates
+                </div>
+              </div>
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+
+              <div className="absolute bottom-5 left-5 right-5 text-white">
+                <span className="bg-white text-black text-xs px-3 py-1 rounded-full">
+                  {currentItem.label}
+                </span>
+
+                <p className="mt-3 text-sm max-w-xs">
+                  {currentItem.title}
+                  <span className="underline ml-1">Know more</span>
+                </p>
+
+                <div className="flex gap-2 mt-4">
+                  {freshUpdates.map((_, i) => (
+                    <span key={i} className={`w-2 h-2 rounded-full ${i === current ? "bg-white" : "bg-white/40"}`} />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <p className="text-white/80 text-center text-sm px-4">
+              Game-changing work. People-powered growth. At DIGITALFABRIC GROUP, we help you think bigger, build stronger, and expand opportunity for all.
+            </p>
+
+            {/* SMALL CARDS */}
+            <div className="grid grid-cols-2 gap-6">
+
+              {[{
+                img: marketingImg,
+                title: "Enterprise Marketing",
+                desc: "Driving enterprise growth through strategy, creativity, and digital impact.",
+              }, {
+                img: aismImg,
+                title: "Prosight AISM",
+                desc: "Enabling responsible, scalable AI adoption for enterprises",
+              }].map((item, i) => (
+
+                <div
+                  key={i}
+                  className="group relative overflow-hidden border border-white/10 transition duration-700 ease-out hover:-translate-y-[10px] hover:scale-[1.012]"
+                  style={{ minHeight: "clamp(350px,27vw,470px)" }}
+                >
+                  <img
+                    src={item.img}
+                    className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.09] group-hover:brightness-[1.02] group-hover:contrast-[1.04] group-hover:saturate-[1.08]"
+                  />
+
+                  <div className="absolute inset-0 bg-black/40" />
+
+                  <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6">
+
+                    <h3 className="text-white text-2xl font-serif">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-white/90 text-sm mt-3">
+                      {item.desc}
+                    </p>
+
+                    <button className="mt-4 flex items-center gap-3 bg-white text-black px-4 py-2 rounded-full text-sm">
+                      Explore More
+                      <Arrow />
+                    </button>
+
+                  </div>
+                </div>
+
+              ))}
+            </div>
+
+          </div>
         </div>
+
       </div>
+
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+        }
+      `}</style>
+
     </section>
   );
 };

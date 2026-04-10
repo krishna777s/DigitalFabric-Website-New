@@ -1,99 +1,76 @@
-import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Search, Menu, X } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const navItems = [
-  { label: "Industries", href: "/services" },
-  { label: "Capabilities", href: "/services" },
-  { label: "Tech & AI", href: "/services" },
-  { label: "Our Insights", href: "/insights" },
-  { label: "Careers", href: "/contact" },
-  { label: "About Us", href: "/about" },
+  "Why DigitalFabric?",
+  "Careers",
+  "Resources",
+  "Contact Us",
 ];
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
+  const [resourcesOpen, setResourcesOpen] = useState(false);
+  const resourcesRef = useRef<HTMLLIElement | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (!resourcesRef.current?.contains(event.target as Node)) {
+        setResourcesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  useEffect(() => setMobileOpen(false), [location]);
-
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "nav-solid py-3" : "bg-transparent py-5"
-      }`}
-    >
-      <div className="section-wrapper flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="flex flex-col leading-none">
-            <span className="text-lg font-bold tracking-wider font-sans text-foreground">
-              DIGITALFABRIC®
-            </span>
-            <span className="text-[10px] tracking-[0.3em] text-muted-foreground font-sans uppercase">
-              Group
-            </span>
-          </div>
-        </Link>
+    <div className="fixed top-0 left-0 right-0 z-50">
+      <header className="bg-[#092f47] text-[#dff0fb] h-[78px] flex items-center justify-between px-6 md:px-10">
 
-        <div className="hidden lg:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              to={item.href}
-              className="text-sm font-sans text-foreground/80 hover:text-foreground transition-colors duration-200 tracking-wide"
-            >
-              {item.label}
-            </Link>
-          ))}
+        {/* LEFT */}
+        <div className="flex items-center gap-5 flex-1 min-w-0">
+
+          {/* LOGO */}
+          <Link to="/" className="flex items-center">
+            <img
+              src={logo}
+              alt="DigitalFabric"
+              className="w-[120px] md:w-[140px]"
+            />
+          </Link>
+
+          {/* NAV LINKS */}
+          <nav className="hidden md:flex items-center pl-4">
+            <ul className="flex items-center">
+              {navItems.map((item) => (
+                <li
+                  key={item}
+                  className="relative"
+                >
+                  <a
+                    href="#"
+                    className="px-3 py-2 text-[14px] hover:text-white transition flex items-center gap-1 font-medium"
+                  >
+                    {item} <span className="text-[10px] opacity-60">▼</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
-        <div className="hidden lg:flex items-center gap-4">
-          <span className="text-sm font-sans text-foreground/70 hover:text-foreground transition-colors cursor-pointer">
-            Sign In
-          </span>
-          <span className="text-foreground/40">|</span>
-          <span className="text-sm font-sans text-foreground/70 hover:text-foreground transition-colors cursor-pointer">
+        {/* RIGHT */}
+        <div className="flex items-center justify-end pl-4">
+          <a
+            href="#"
+            className="text-[13px] hover:text-white transition whitespace-nowrap"
+          >
             Subscribe
-          </span>
-          <button className="ml-2 text-foreground/70 hover:text-foreground transition-colors">
-            <Search size={18} />
-          </button>
+          </a>
         </div>
-
-        <button
-          className="lg:hidden text-foreground"
-          onClick={() => setMobileOpen(!mobileOpen)}
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {mobileOpen && (
-        <div className="lg:hidden nav-solid mt-2 py-6 px-6 animate-fade-in-up">
-          {navItems.map((item) => (
-            <Link
-              key={item.label}
-              to={item.href}
-              className="block py-3 text-foreground/80 hover:text-foreground font-sans text-sm border-b border-border/30"
-            >
-              {item.label}
-            </Link>
-          ))}
-          <div className="flex gap-4 mt-4 text-sm text-foreground/70">
-            <span className="cursor-pointer hover:text-foreground">Sign In</span>
-            <span>|</span>
-            <span className="cursor-pointer hover:text-foreground">Subscribe</span>
-          </div>
-        </div>
-      )}
-    </nav>
+      </header>
+    </div>
   );
 };
 

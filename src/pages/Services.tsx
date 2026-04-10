@@ -1,8 +1,8 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import { ArrowRight } from "lucide-react";
-import strategyImg from "@/assets/strategy-card.jpg";
-import aiImg from "@/assets/ai-engineering-card.jpg";
-import heroConsulting from "@/assets/hero-consulting.jpg";
+import strategyImg from "@/assets/Enterprise Strategy.jpg";
+import aiImg from "@/assets/AI&Digital Engineering.jpeg";
+import heroConsulting from "@/assets/Enterprise Consulting.jpg";
 
 const services = [
   {
