@@ -148,7 +148,7 @@ export default function FounderSection() {
         {/* ---------------------------------------------------------------- */}
         {/* LEFT – copy block                                                 */}
         {/* ---------------------------------------------------------------- */}
-        <div className="relative z-10 max-w-[760px] pb-4 -mt-2 mb-12">
+        <div className="relative z-10 max-w-[760px] pb-4 pt-16 lg:pt-24 mb-12">
           {/* Heading */}
           <h2
             className={`
