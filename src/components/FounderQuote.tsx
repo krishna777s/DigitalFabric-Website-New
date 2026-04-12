@@ -137,18 +137,19 @@ export default function FounderSection() {
       {/* ------------------------------------------------------------------ */}
       <div
         className="
-          relative z-10 w-full max-w-[1536px] mx-auto
-          grid grid-cols-1
-          lg:grid-cols-[minmax(0,0.82fr)_minmax(520px,1.18fr)]
-          gap-7
-          items-start
-          px-11 pt-1.5 pb-6
-        "
+    relative z-10 w-full
+    grid grid-cols-1
+    lg:grid-cols-[minmax(0,0.8fr)_minmax(520px,1.18fr)]
+    gap-7
+    items-start
+    px-[44px] pt-[6px] pb-0
+  "
       >
+
         {/* ---------------------------------------------------------------- */}
         {/* LEFT – copy block                                                 */}
         {/* ---------------------------------------------------------------- */}
-        <div className="relative z-10 max-w-[760px] pb-4 pt-16 lg:pt-24 mb-12">
+        <div className="relative z-10 max-w-[760px] pb-4 pt-16 lg:pt-6 mb-0">
           {/* Heading */}
           <h2
             className={`
@@ -175,7 +176,7 @@ export default function FounderSection() {
           <ul
             className="
               list-none p-0
-              m-0 mb-[88px]
+              m-0 mb-[20px]
               grid grid-cols-3
               gap-3.5
             "
@@ -233,11 +234,12 @@ export default function FounderSection() {
             relative z-[4]
             self-end
             flex items-end justify-start
-            h-full w-full
+            h-auto w-full
             overflow-visible
           "
           style={{
-            marginLeft: '-590px',
+            marginTop: '-180px',
+            marginLeft: '-630px',
             marginRight: '-40px',
           }}
           aria-hidden="true"
