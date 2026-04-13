@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 // IMAGES
 import heroImage from "@/assets/Enterprise Consulting.jpg";
@@ -36,6 +37,23 @@ const Arrow = () => (
   </span>
 );
 
+const SmallArrow = () => (
+  <span className="flex h-[34px] w-[34px] flex-shrink-0 items-center justify-center rounded-full bg-[#0b527b] text-white">
+    <svg
+      viewBox="0 0 24 24"
+      className="h-[15px] w-[15px]"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M7 17 17 7" />
+      <path d="M9 7h8v8" />
+    </svg>
+  </span>
+);
+
 const Hero = () => {
   const [current, setCurrent] = useState(0);
 
@@ -49,7 +67,7 @@ const Hero = () => {
   const currentItem = freshUpdates[current];
 
   return (
-    <section className="bg-[#092f47] pt-24 pb-4">
+    <section className="bg-[#092f47] pt-24 pb-6">
       <div className="max-w-[1500px] mx-auto px-6">
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
@@ -108,9 +126,13 @@ const Hero = () => {
                   {currentItem.label}
                 </span>
 
-                <p className="mt-3 text-sm max-w-xs">
+                <p className="mt-3 text-sm max-w-xs text-white">
                   {currentItem.title}
-                  <span className="underline ml-1">Know more</span>
+                  {currentItem.label.includes("Why Digital Fabric") ? (
+                    <Link to="/why-digital-fabric" className="underline ml-1 hover:text-white/80 transition-colors">Know more</Link>
+                  ) : (
+                    <span className="underline ml-1 cursor-pointer">Know more</span>
+                  )}
                 </p>
 
                 <div className="flex gap-2 mt-4">
@@ -150,7 +172,7 @@ const Hero = () => {
 
                   <div className="absolute inset-0 bg-black/40" />
 
-                  <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6">
+                  <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 overflow-hidden">
 
                     <h3 className="text-white text-2xl font-serif">
                       {item.title}
@@ -160,9 +182,9 @@ const Hero = () => {
                       {item.desc}
                     </p>
 
-                    <button className="mt-4 flex items-center gap-3 bg-white text-black px-4 py-2 rounded-full text-sm">
+                    <button className="mt-4 inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm whitespace-nowrap">
                       Explore More
-                      <Arrow />
+                      <SmallArrow />
                     </button>
 
                   </div>

@@ -41,7 +41,7 @@ export default function HowWeHelp() {
         >
           HOW WE HELP CLIENTS
         </p>
-        
+
         <h2 className="help-heading w-[min(760px,100%)] mx-auto mb-[46px] text-center font-serif text-[clamp(1.9rem,3vw,3rem)] font-normal leading-[1.08]
           [@media(max-width:1560px)]:w-[min(700px,100%)] [@media(max-width:1560px)]:mb-[38px] [@media(max-width:1560px)]:text-[clamp(1.7rem,2.4vw,2.5rem)]
           [@media(max-width:1280px)]:w-[min(620px,100%)] [@media(max-width:1280px)]:mb-[30px] [@media(max-width:1280px)]:text-[clamp(1.55rem,2.1vw,2.15rem)]
@@ -58,8 +58,8 @@ export default function HowWeHelp() {
           [@media(max-width:980px)]:grid-cols-1 [@media(max-width:980px)]:max-w-[760px] [@media(max-width:980px)]:gap-4"
         >
           {helpCards.map((card) => (
-            <article 
-              key={card.key} 
+            <article
+              key={card.key}
               className="help-card group relative w-full h-full p-0 bg-transparent text-[#f7f5f0] flex flex-col border border-transparent 
                 transition-all duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)]
                 hover:bg-[#f6f2ed] hover:text-[#111111] hover:border-white hover:border-[8px] 
@@ -89,7 +89,7 @@ export default function HowWeHelp() {
                   </h3>
                   <span className="help-card-arrow flex-shrink-0 font-serif text-[2.4rem] leading-[0.82] mt-[0.1em] transition-transform duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)]
                     [@media(max-width:1280px)]:text-[2rem]
-                    [@media(max-width:640px)]:text-[2.1rem]" 
+                    [@media(max-width:640px)]:text-[2.1rem]"
                     aria-hidden="true"
                   >
                     &#8250;
@@ -110,4 +110,4 @@ export default function HowWeHelp() {
       </div>
     </section>
   )
-}
+}

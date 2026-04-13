@@ -21,7 +21,7 @@ const Arrow = () => (
 
 const FeaturedCards = () => {
   return (
-    <section className="bg-[#092f47] pt-12 pb-2">
+    <section className="bg-[#092f47] pt-0 pb-6">
       <div className="max-w-[1500px] mx-auto px-6">
 
         {/* GRID */}
@@ -44,7 +44,7 @@ const FeaturedCards = () => {
             {/* CONTENT */}
             <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-xl border border-white/30 p-6">
 
-              <h3 className="text-white text-2xl md:text-3xl font-serif">
+              <h3 className="text-white text-1xl md:text-2xl font-serif">
                 DIGITALFABRIC.IN
               </h3>
 
@@ -74,7 +74,7 @@ const FeaturedCards = () => {
 
             <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-xl border border-white/30 p-6">
 
-              <h3 className="text-white text-2xl md:text-3xl font-serif">
+              <h3 className="text-white text-1xl md:text-2xl font-serif">
                 RESEARCHFABRIC
               </h3>
 
@@ -104,7 +104,7 @@ const FeaturedCards = () => {
 
             <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6">
 
-              <h3 className="text-white text-3xl md:text-4xl font-serif">
+              <h3 className="text-white text-1xl md:text-3xl font-serif">
                 Towards Enterprise 3.0.
               </h3>
 

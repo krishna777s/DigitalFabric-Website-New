@@ -241,6 +241,7 @@ export default function FounderSection() {
             marginTop: '-180px',
             marginLeft: '-630px',
             marginRight: '-40px',
+            marginBottom: '-60px',
           }}
           aria-hidden="true"
         >

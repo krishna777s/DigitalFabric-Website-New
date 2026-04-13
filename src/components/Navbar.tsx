@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const navItems = [
-  "Why DigitalFabric?",
-  "Careers",
-  "Resources",
-  "Contact Us",
+  { name: "Why DigitalFabric?", path: "/why-digital-fabric" },
+  { name: "Careers", path: "#" },
+  { name: "Resources", path: "#" },
+  { name: "Contact Us", path: "/contact" },
 ];
 
 const Navbar = () => {
@@ -45,15 +45,15 @@ const Navbar = () => {
             <ul className="flex items-center">
               {navItems.map((item) => (
                 <li
-                  key={item}
+                  key={item.name}
                   className="relative"
                 >
-                  <a
-                    href="#"
+                  <Link
+                    to={item.path}
                     className="px-3 py-2 text-[14px] hover:text-white transition flex items-center gap-1 font-medium"
                   >
-                    {item} <span className="text-[10px] opacity-60">▼</span>
-                  </a>
+                    {item.name} <span className="text-[10px] opacity-60">▼</span>
+                  </Link>
                 </li>
               ))}
             </ul>
