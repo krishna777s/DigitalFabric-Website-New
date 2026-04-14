@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import AshwinImg from '@/assets/Ashwin.png'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -175,7 +176,7 @@ export default function FounderSection() {
           <ul
             className="
               list-none p-0
-              m-0 mb-[20px]
+              m-0 mb-[60px]
               grid grid-cols-3
               gap-3.5
             "
@@ -221,12 +222,25 @@ export default function FounderSection() {
               </li>
             ))}
           </ul>
+
+          {/* SIGNATURE / NAME */}
+          <div 
+            className={`
+              mt-12 transition-all duration-1000 delay-700
+              ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
+            `}
+          >
+            <p className="m-0 font-serif text-[clamp(1.8rem,2.5vw,2.4rem)] font-bold tracking-tight text-[#111111]">
+              ASHWIN GADHANI
+            </p>
+            <p className="m-0 mt-1 font-serif text-[clamp(0.9rem,1.1vw,1rem)] font-medium uppercase tracking-[0.2em] text-[#111111]/60">
+              Founder, DigitalFabric Group
+            </p>
+          </div>
         </div>
 
         {/* ---------------------------------------------------------------- */}
         {/* RIGHT – portrait (absolutely positioned like original)            */}
-        {/* The original uses negative margins + overflow:visible to bleed    */}
-        {/* the portrait image out of the grid. We replicate that here.       */}
         {/* ---------------------------------------------------------------- */}
         <div
           className="
@@ -238,31 +252,31 @@ export default function FounderSection() {
           "
           style={{
             marginTop: '-180px',
-            marginLeft: '-630px',
+            marginLeft: '-580px', // Slightly reduced to be safer
             marginRight: '-40px',
             marginBottom: '-60px',
           }}
           aria-hidden="true"
         >
-          {/*
-            Portrait: the original sets width: min(119vw, 2780px) which is
-            intentionally oversized so the image bleeds into / behind the
-            signoff band. We replicate the same ratio approach.
-          */}
           <img
-            className="
+            className={`
               block h-auto
               max-w-none max-h-[1830px]
               object-contain object-bottom-left
               [filter:drop-shadow(0_24px_36px_rgba(4,12,20,0.26))]
-            "
+              transition-all duration-1000 delay-300
+              ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-20'}
+            `}
             style={{ width: 'min(119vw, 2780px)' }}
-            src="/src/assets/Ashwin.png"
-            alt=""
+            src={AshwinImg}
+            alt="Ashwin Gadhani"
           />
         </div>
       </div>
 
     </section>
+  )
+}
+
   )
 }
