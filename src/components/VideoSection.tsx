@@ -115,10 +115,10 @@ const showcaseBrands = [
 function BrandTitle({ title }: { title: string }) {
   const n = title.toUpperCase().trim();
   const Sup = ({ m }: { m: string }) => (
-    <sup className="text-[0.8em] align-top ml-[2px] font-bold leading-none">{m}</sup>
+    <span className="inline-block translate-y-[-0.1em] text-[1.6em] font-black ml-[3px]">{m}</span>
   );
   const Sub = ({ m }: { m: string }) => (
-    <sub className="text-[0.75em] align-baseline ml-[2px] font-bold leading-none">{m}</sub>
+    <sub className="text-[1.1em] align-baseline font-black leading-none ml-[2px]">{m}</sub>
   );
   if (n === "DIGITALFABRIC") return <>{title}<Sup m="®" /></>;
   if (n === "IMAGENIE") return <>{title}<Sup m="™" /></>;
@@ -140,13 +140,14 @@ export default function VideoSection() {
   const [duration, setDuration] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
   const [showControls, setShowControls] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     // Reset video state when active brand changes
     if (active.videoSrc) {
       setShowControls(true);
       const timer = setTimeout(() => setShowControls(false), 2500);
-      
+
       if (videoRef.current) {
         videoRef.current.currentTime = 0;
         setCurrentTime(0);
@@ -225,7 +226,7 @@ export default function VideoSection() {
             style={{ fontSize: "clamp(2rem,2.85vw,3.35rem)" }}
           >
             DIGITALFABRIC
-            <sup className="text-[0.8em] align-top ml-[2px] font-bold leading-none">®</sup>
+            <span className="inline-block translate-y-[-0.1em] text-[1.25em] font-black ml-1">®</span>
             {" "}GROUP OF COMPANIES.
           </h2>
           <p
@@ -269,21 +270,24 @@ export default function VideoSection() {
 
       {/* ══ FEATURE: left panel + right media ═══════════════════════════════ */}
       <div
-        className="grid"
+        className="grid transition-all duration-700 ease-in-out"
         style={{
-          gridTemplateColumns: "minmax(320px,0.92fr) minmax(360px,1.08fr)",
+          gridTemplateColumns: isExpanded
+            ? "0fr 1fr"
+            : "minmax(320px,0.92fr) minmax(360px,1.08fr)",
           minHeight: "clamp(620px,52vw,780px)",
         }}
       >
 
         {/* LEFT — info panel */}
         <div
-          className="flex flex-col items-center justify-center text-center transition-colors duration-500"
+          className={`flex flex-col items-center justify-center text-center transition-all duration-700 ease-in-out overflow-hidden ${isExpanded ? 'opacity-0 pointer-events-none px-0' : 'opacity-100'}`}
           style={{
             background: active.panelBg,
             color: active.panelText,
-            padding: "80px clamp(20px,1.9vw,26px) clamp(24px,2.2vw,30px)",
-            minHeight: "clamp(620px,52vw,780px)",
+            padding: isExpanded ? "0" : "80px clamp(20px,1.9vw,26px) clamp(24px,2.2vw,30px)",
+            minHeight: isExpanded ? "0" : "clamp(620px,52vw,780px)",
+            width: isExpanded ? "0" : "auto",
           }}
         >
           {/* Logo area */}
@@ -381,7 +385,7 @@ export default function VideoSection() {
 
           {/* CUSTOM CONTROLS OVERLAY */}
           {active.videoSrc && (
-            <div 
+            <div
               className={`absolute inset-0 flex flex-col justify-between p-6 transition-opacity duration-300 ${showControls ? "opacity-100" : "opacity-0"}`}
               style={{ background: "rgba(0,0,0,0.2)" }}
             >
@@ -389,7 +393,7 @@ export default function VideoSection() {
 
               {/* CENTER CONTROLS */}
               <div className="flex items-center justify-center gap-12">
-                <button 
+                <button
                   onClick={() => skip(-10)}
                   className="text-white/80 hover:text-white transition-all transform hover:scale-110"
                   aria-label="Rewind 10 seconds"
@@ -399,7 +403,7 @@ export default function VideoSection() {
                   </svg>
                 </button>
 
-                <button 
+                <button
                   onClick={togglePlay}
                   className="w-20 h-20 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 transition-all transform hover:scale-105"
                   aria-label={isPlaying ? "Pause" : "Play"}
@@ -416,7 +420,7 @@ export default function VideoSection() {
                   )}
                 </button>
 
-                <button 
+                <button
                   onClick={() => skip(10)}
                   className="text-white/80 hover:text-white transition-all transform hover:scale-110"
                   aria-label="Forward 10 seconds"
@@ -432,7 +436,7 @@ export default function VideoSection() {
                 <div className="flex items-center gap-4 text-xs font-medium tracking-tight text-white/90">
                   <span>{formatTime(currentTime)}</span>
                   <div className="relative flex-1 h-1.5 group/progress">
-                    <input 
+                    <input
                       type="range"
                       min="0"
                       max={duration}
@@ -441,33 +445,51 @@ export default function VideoSection() {
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                     />
                     <div className="absolute inset-0 bg-white/20 rounded-full" />
-                    <div 
+                    <div
                       className="absolute inset-y-0 left-0 bg-white rounded-full transition-all duration-100"
                       style={{ width: `${(currentTime / duration) * 100}%` }}
                     />
-                    <div 
+                    <div
                       className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg transition-all duration-100 scale-0 group-hover/progress:scale-100"
                       style={{ left: `${(currentTime / duration) * 100}%` }}
                     />
                   </div>
                   <span>{formatTime(duration)}</span>
-                  
-                  <button 
-                    onClick={toggleMute}
-                    className="ml-2 hover:text-white transition-colors"
-                    aria-label={isMuted ? "Unmute" : "Mute"}
-                  >
-                    {isMuted ? (
-                      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-                        <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z" />
-                        <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" strokeWidth="2" />
-                      </svg>
-                    ) : (
-                      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-                        <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
-                      </svg>
-                    )}
-                  </button>
+
+                  <div className="flex items-center gap-3 ml-4">
+                    <button
+                      onClick={toggleMute}
+                      className="hover:text-white transition-colors"
+                      aria-label={isMuted ? "Unmute" : "Mute"}
+                    >
+                      {isMuted ? (
+                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                          <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z" />
+                          <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" strokeWidth="2" />
+                        </svg>
+                      ) : (
+                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                          <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                        </svg>
+                      )}
+                    </button>
+
+                    <button
+                      onClick={() => setIsExpanded(!isExpanded)}
+                      className="hover:text-white transition-colors"
+                      aria-label={isExpanded ? "Collapse video" : "Expand video"}
+                    >
+                      {isExpanded ? (
+                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                          <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z" />
+                        </svg>
+                      ) : (
+                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                          <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

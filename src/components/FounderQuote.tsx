@@ -223,20 +223,6 @@ export default function FounderSection() {
             ))}
           </ul>
 
-          {/* SIGNATURE / NAME */}
-          <div 
-            className={`
-              mt-12 transition-all duration-1000 delay-700
-              ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}
-            `}
-          >
-            <p className="m-0 font-serif text-[clamp(1.8rem,2.5vw,2.4rem)] font-bold tracking-tight text-[#111111]">
-              ASHWIN GADHANI
-            </p>
-            <p className="m-0 mt-1 font-serif text-[clamp(0.9rem,1.1vw,1rem)] font-medium uppercase tracking-[0.2em] text-[#111111]/60">
-              Founder, DigitalFabric Group
-            </p>
-          </div>
         </div>
 
         {/* ---------------------------------------------------------------- */}
@@ -275,8 +261,5 @@ export default function FounderSection() {
       </div>
 
     </section>
-  )
-}
-
   )
 }
