@@ -27,7 +27,7 @@ const Contact = () => {
           <div className="pt-[clamp(18px,3vw,42px)] flex flex-col gap-[18px]">
             <h1 
               className="m-0 font-serif font-normal leading-[0.98] -tracking-[0.05em] text-white"
-              style={{ fontSize: "clamp(3.1rem, 5.2vw, 5rem)", fontFamily: 'Georgia, "Times New Roman", serif' }}
+              style={{ fontSize: "clamp(3.1rem, 5.2vw, 5rem)" }}
             >
               Contact Us
             </h1>

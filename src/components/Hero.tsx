@@ -82,7 +82,10 @@ const Hero = () => {
               className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.09] group-hover:brightness-[1.02] group-hover:contrast-[1.04] group-hover:saturate-[1.08]"
             />
 
-            <div className="absolute bottom-8 left-8 right-8 bg-white/10 backdrop-blur-xl border border-white/30 p-8">
+            {/* DARK MASK FOR LEGIBILITY */}
+            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-700" />
+
+            <div className="absolute bottom-10 left-8 right-8 bg-white/15 backdrop-blur-xl border border-white/30 p-8 shadow-2xl">
 
               <h2 className="text-white text-5xl font-serif">
                 Enterprise <br /> Consulting
@@ -121,7 +124,7 @@ const Hero = () => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
-              <div className="absolute bottom-5 left-5 right-5 text-white">
+              <div className="absolute bottom-6 left-6 right-6 text-white pb-2">
                 <span className="bg-white text-black text-xs px-3 py-1 rounded-full">
                   {currentItem.label}
                 </span>
@@ -172,7 +175,7 @@ const Hero = () => {
 
                   <div className="absolute inset-0 bg-black/40" />
 
-                  <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 overflow-hidden">
+                  <div className="absolute bottom-8 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-5 overflow-hidden">
 
                     <h3 className="text-white text-2xl font-serif">
                       {item.title}

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import ResourcesMenu from "@/components/resources/ResourcesMenu"; // ✅ import
 
 const navItems = [
   { name: "Why DigitalFabric?", path: "/why-digital-fabric" },
@@ -13,6 +14,7 @@ const Navbar = () => {
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const resourcesRef = useRef<HTMLLIElement | null>(null);
 
+  // ✅ close when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (!resourcesRef.current?.contains(event.target as Node)) {
@@ -43,19 +45,38 @@ const Navbar = () => {
           {/* NAV LINKS */}
           <nav className="hidden md:flex items-center pl-4">
             <ul className="flex items-center">
-              {navItems.map((item) => (
-                <li
-                  key={item.name}
-                  className="relative"
-                >
-                  <Link
-                    to={item.path}
-                    className="px-3 py-2 text-[14px] hover:text-white transition flex items-center gap-1 font-medium"
-                  >
-                    {item.name} <span className="text-[10px] opacity-60">▼</span>
-                  </Link>
-                </li>
-              ))}
+
+              {navItems.map((item) => {
+                // ✅ SPECIAL HANDLING FOR RESOURCES
+                if (item.name === "Resources") {
+                  return (
+                    <li
+                      key={item.name}
+                      ref={resourcesRef}
+                      className="relative"
+                    >
+                      <button className="px-3 py-2 text-[14px] hover:text-white transition flex items-center gap-1 font-medium cursor-default">
+                        {item.name}
+                        <span className="text-[10px] opacity-60">▼</span>
+                      </button>
+                    </li>
+                  );
+                }
+
+                // ✅ NORMAL LINKS
+                return (
+                  <li key={item.name} className="relative">
+                    <Link
+                      to={item.path}
+                      className="px-3 py-2 text-[14px] hover:text-white transition flex items-center gap-1 font-medium"
+                    >
+                      {item.name}
+                      <span className="text-[10px] opacity-60">▼</span>
+                    </Link>
+                  </li>
+                );
+              })}
+
             </ul>
           </nav>
         </div>
@@ -69,6 +90,7 @@ const Navbar = () => {
             Subscribe
           </a>
         </div>
+
       </header>
     </div>
   );

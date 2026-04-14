@@ -128,8 +128,7 @@ export default function FounderSection() {
     <section
       ref={sectionRef}
       // White background matching original #ffffff about-section redesign
-      className="relative w-full overflow-hidden bg-white border-t border-black/[0.08]"
-      style={{ fontFamily: "'Signika Negative', Arial, sans-serif" }}
+      className="relative w-full overflow-hidden bg-white border-t border-black/[0.08] font-serif"
       aria-label="About DigitalFabric leadership"
     >
       {/* ------------------------------------------------------------------ */}
@@ -154,9 +153,9 @@ export default function FounderSection() {
           <h2
             className={`
               m-0 mb-8 max-w-full
-              font-['Georgia','Times_New_Roman',serif]
-              text-[clamp(1.15rem,1.7vw,1.7rem)]
-              not-italic font-bold leading-[1.18] tracking-[-0.03em]
+              font-serif
+              text-[clamp(1.1rem,1.6vw,1.6rem)]
+              not-italic font-bold leading-[1.2] tracking-[-0.03em]
               text-[#111111]
               transition-[transform,opacity,filter]
               duration-[450ms]
@@ -186,22 +185,22 @@ export default function FounderSection() {
                 key={card.key}
                 className={`
                   flex flex-col items-start justify-start
-                  min-h-[140px]
+                  min-h-[150px]
                   p-[18px_18px_20px]
                   border border-black rounded-[18px]
                   bg-white/54
                   shadow-[0_14px_28px_rgba(28,63,92,0.08)]
-                  font-['Georgia','Times_New_Roman',serif]
-                  text-[clamp(1rem,1.2vw,1.15rem)] font-normal leading-[1.25]
+                  font-serif
+                  text-[clamp(0.95rem,1.1vw,1.1rem)] font-normal leading-[1.25]
                   text-[rgba(17,17,17,0.96)]
                   ${inView ? `card-animate-${i + 1}` : 'card-hidden'}
                 `}
               >
                 <strong
                   className="
-                    font-['Georgia','Times_New_Roman',serif]
+                    font-serif
                     font-bold
-                    text-[clamp(1.2rem,1.55vw,1.45rem)]
+                    text-[clamp(1.15rem,1.5vw,1.4rem)]
                     tracking-[-0.03em]
                     text-[#111111]
                   "
@@ -211,8 +210,8 @@ export default function FounderSection() {
                 <span
                   className="
                     block mt-2.5
-                    font-['Georgia','Times_New_Roman',serif]
-                    text-[0.9rem] font-normal
+                    font-serif
+                    text-[0.82rem] font-normal
                     tracking-[0.04em]
                     text-[rgba(17,17,17,0.78)]
                   "

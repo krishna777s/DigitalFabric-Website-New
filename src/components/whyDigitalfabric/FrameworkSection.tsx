@@ -340,10 +340,10 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
         padding: "58px 0 0",
         ...(isExtended
           ? {
-              marginInline: `calc(${sidePad} * -1)`,
-              paddingInline: sidePad,
-              background: variantBg[variant],
-            }
+            marginInline: `calc(${sidePad} * -1)`,
+            paddingInline: sidePad,
+            background: variantBg[variant],
+          }
           : {}),
       }}
     >
@@ -366,10 +366,9 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
 
         {/* Description */}
         <p
-          className="m-0 text-center leading-[1.42] text-[rgba(234,236,245,0.82)]"
+          className="m-0 text-center leading-[1.42] text-[rgba(234,236,245,0.82)] font-serif"
           style={{
             maxWidth: "980px",
-            fontFamily: '"Segoe UI", Arial, sans-serif',
             fontSize: "clamp(0.98rem, 1.4vw, 1.22rem)",
           }}
         >
@@ -392,13 +391,11 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
 
 /* ─── Badge pill ─────────────────────────────────────────────── */
 const BadgePill: React.FC<{ label: string; layoutId: string }> = ({ label }) => (
-  <span
+  <h3
     className="
-      inline-flex items-center justify-center gap-[10px]
-      mt-[14px] mb-[18px]
-      px-[22px] py-3
-      rounded-full
-      text-[#d8f4ff] font-bold tracking-[0.02em] leading-none
+      flex items-center justify-center gap-[14px]
+      mt-[24px] mb-[26px]
+      text-[#d8f4ff] font-serif font-normal tracking-[-0.01em] leading-tight
       transition-all duration-[260ms] ease
       cursor-default
       badge-pill
@@ -406,26 +403,12 @@ const BadgePill: React.FC<{ label: string; layoutId: string }> = ({ label }) => 
     style={{
       maxWidth: "100%",
       width: "max-content",
-      border: "1px solid rgba(96,201,255,0.42)",
-      background:
-        "linear-gradient(180deg,rgba(72,195,255,0.28) 0%,rgba(40,132,238,0.16) 100%)",
-      boxShadow:
-        "inset 0 1px 0 rgba(255,255,255,0.16), 0 10px 26px rgba(10,24,57,0.22)",
-      fontFamily: '"Segoe UI", Arial, sans-serif',
-      fontSize: "0.92rem",
+      fontSize: "clamp(1.85rem, 3.2vw, 2.6rem)",
+      textShadow: "0 2px 4px rgba(0,0,0,0.3)",
     }}
   >
-    <span
-      className="inline-block rounded-full bg-[#25d8ff]"
-      style={{
-        width: 10,
-        height: 10,
-        boxShadow: "0 0 0 3px rgba(37,216,255,0.16)",
-        flexShrink: 0,
-      }}
-    />
     {label}
-  </span>
+  </h3>
 );
 
 /* ─── Point card ─────────────────────────────────────────────── */
@@ -470,9 +453,8 @@ const PointCard: React.FC<PointCardProps> = ({ icon, title, body }) => (
     </span>
 
     <p
-      className="m-0 leading-[1.5] text-[rgba(234,236,245,0.78)]"
+      className="m-0 leading-[1.5] text-[rgba(234,236,245,0.78)] font-serif"
       style={{
-        fontFamily: '"Segoe UI", Arial, sans-serif',
         fontSize: "clamp(0.9rem, 1.08vw, 1.02rem)",
       }}
     >
@@ -604,7 +586,7 @@ const FrameworkSection: React.FC = () => {
     {
       id: "fw-product",
       icon: <ProductLeadIcon />,
-      label: "Product : Delivering E@E Solutions",
+      label: "Product : Delivering E2E Solutions",
       description:
         'The "Product" dimension reflects the outputs and services that an organization offers. DIGITALFABRIC highlights the importance of developing products that meet comprehensive customer expectations and deliver end-to-end (E2E) solutions.',
       variant: "product" as LayoutVariant,

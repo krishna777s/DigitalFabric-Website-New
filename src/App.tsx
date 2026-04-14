@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import WhyDigitalFabric from "./pages/WhyDigitalFabric";
+import TFIFramework from "./pages/TFIFramework";
+import AISWITCHFramework from "./pages/AISWITCHFramework";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +20,8 @@ const App = () => (
         <Route path="/contact" element={<Contact />} />
         <Route path="/why-digital-fabric" element={<WhyDigitalFabric />} />
         <Route path="*" element={<NotFound />} />
+        {/* <Route path="/tfi" element={<TFIFramework />} />  
+        <Route path="/awswitch" element={<AISWITCHFramework />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>

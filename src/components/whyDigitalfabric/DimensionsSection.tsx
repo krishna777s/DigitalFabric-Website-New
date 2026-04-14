@@ -38,9 +38,8 @@ const DimensionsSection: React.FC = () => {
         {/* Copy */}
         <div className="max-w-[1200px] max-[1120px]:max-w-none">
           <p
-            className="m-0 text-[#1a2348] leading-[1.42]"
+            className="m-0 text-[#1a2348] leading-[1.42] font-serif"
             style={{
-              fontFamily: 'Georgia, "Times New Roman", serif',
               fontSize: "clamp(1rem, 1.2vw, 1.45rem)",
             }}
           >
@@ -49,9 +48,8 @@ const DimensionsSection: React.FC = () => {
             environment.
           </p>
           <p
-            className="mt-[18px] m-0 text-[#1a2348] leading-[1.42] max-[760px]:text-[0.94rem] max-[760px]:leading-[1.5]"
+            className="mt-[18px] m-0 text-[#1a2348] leading-[1.42] max-[760px]:text-[0.94rem] max-[760px]:leading-[1.5] font-serif"
             style={{
-              fontFamily: 'Georgia, "Times New Roman", serif',
               fontSize: "clamp(1rem, 1.2vw, 1.45rem)",
             }}
           >

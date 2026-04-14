@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import logo from '@/assets/logo.png'
 
 const menuItems = [
   { text: 'Why DIGITALFABRIC', superscript: true, path: '/why-digital-fabric' },
@@ -24,50 +25,29 @@ function Footer() {
           [@media(max-width:640px)]:grid-cols-1 [@media(max-width:640px)]:px-3 [@media(max-width:640px)]:pt-6 [@media(max-width:640px)]:pb-11 [@media(max-width:640px)]:gap-[22px]"
       >
         <div
-          className="footer-brand pt-[72px]
-            [@media(max-width:1400px)]:pt-9
+          className="footer-brand pt-[120px]
+            [@media(max-width:1400px)]:pt-20
             [@media(max-width:1100px)]:pt-0
             [@media(max-width:1024px)]:col-span-full [@media(max-width:1024px)]:pt-0"
         >
-          <svg
-            className="footer-brand-wave block w-full max-w-[450px] h-auto mb-[18px]
+          <img
+            src={logo}
+            alt="DigitalFabric"
+            className="footer-brand-logo block w-full max-w-[450px] h-auto mb-[18px]
               [@media(max-width:1400px)]:max-w-[360px]
               [@media(max-width:1024px)]:max-w-[320px] [@media(max-width:1024px)]:mb-3.5
               [@media(max-width:640px)]:max-w-[250px]"
-            viewBox="0 0 160 40"
-            aria-hidden="true"
-          >
-            <path
-              d="M10 32C26 8 42 8 58 32s32 24 48 0 32-24 44 0"
-              fill="none" stroke="#64c6d7" strokeWidth="1.45" strokeLinecap="round" className="opacity-90"
-            />
-            <path
-              d="M18 32C34 6 50 6 66 32s32 26 48 0 28-26 38 0"
-              fill="none" stroke="#64c6d7" strokeWidth="1.45" strokeLinecap="round" className="opacity-90"
-            />
-            <path
-              d="M26 32C42 10 58 10 74 32s30 22 42 0 24-22 32 0"
-              fill="none" stroke="#64c6d7" strokeWidth="1.45" strokeLinecap="round" className="opacity-90"
-            />
-            <path
-              d="M34 32C50 12 66 12 82 32s22 18 30 0 18-18 24 0"
-              fill="none" stroke="#64c6d7" strokeWidth="1.45" strokeLinecap="round" className="opacity-90"
-            />
-            <path
-              d="M0 34h44"
-              fill="none" stroke="#f2ebe3" strokeWidth="1.45" strokeLinecap="round" className="opacity-90"
-            />
-          </svg>
+          />
 
           <div className="footer-brand-text font-serif text-[clamp(3rem,4vw,4.5rem)] leading-[0.86] -tracking-[0.035em] [text-shadow:0_1px_0_rgba(255,255,255,0.18)]
             [@media(max-width:1024px)]:text-[clamp(2.4rem,4vw,3.6rem)]
             [@media(max-width:640px)]:text-[2.1rem] [@media(max-width:640px)]:leading-[0.92]"
             aria-label="DigitalFabric Group"
           >
-            <span className="block">
+            {/* <span className="block">
               DIGITALFABRIC<sup className="text-[0.6em]">®</sup>
             </span>
-            <span className="block">GROUP</span>
+            <span className="block">GROUP</span> */}
           </div>
         </div>
 

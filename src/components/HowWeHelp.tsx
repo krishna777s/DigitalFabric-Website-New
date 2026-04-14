@@ -1,4 +1,4 @@
-import EnterpriseStrategy from "../assets/Enterprise strategy.jpeg"
+import EnterpriseStrategy from "../assets/Enterprise Strategy.jpg"
 import AiDigitalEnginnering from "../assets/AI&Digital Engineering.jpeg"
 import ConsultingAdvisory from "../assets/Consulting & Advisory.jpeg"
 
@@ -80,9 +80,9 @@ export default function HowWeHelp() {
                 [@media(max-width:1280px)]:pt-2.5"
               >
                 <div className="help-card-title-row flex items-start justify-between gap-3.5 px-0">
-                  <h3 className="help-card-title m-0 font-serif text-[clamp(1.8rem,2.2vw,2.45rem)] font-normal leading-[1.02] -tracking-[0.03em] whitespace-pre-line
-                    [@media(max-width:1560px)]:text-[clamp(1.55rem,1.9vw,2.1rem)]
-                    [@media(max-width:1280px)]:text-[clamp(1.35rem,1.7vw,1.8rem)]
+                  <h3 className="help-card-title m-0 font-serif text-[clamp(1.65rem,2.1vw,2.2rem)] font-normal leading-[1.05] -tracking-[0.03em] whitespace-pre-line
+                    [@media(max-width:1560px)]:text-[clamp(1.45rem,1.8vw,1.95rem)]
+                    [@media(max-width:1280px)]:text-[clamp(1.25rem,1.6vw,1.75rem)]
                     [@media(max-width:640px)]:text-[1.75rem]"
                   >
                     {card.title}
@@ -95,7 +95,7 @@ export default function HowWeHelp() {
                     &#8250;
                   </span>
                 </div>
-                <p className="help-card-description max-w-full mt-2.5 m-0 font-serif text-[0.88rem] leading-[1.18] text-[rgba(243,247,250,0.94)]
+                <p className="help-card-description max-w-full mt-2.5 m-0 font-serif text-[0.84rem] leading-[1.22] text-[rgba(243,247,250,0.94)]
                   transition-colors duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)]
                   group-hover:text-[rgba(17,17,17,0.86)]
                   [@media(max-width:1560px)]:text-[0.82rem]
