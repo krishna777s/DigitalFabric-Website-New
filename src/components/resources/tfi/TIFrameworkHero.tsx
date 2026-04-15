@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import tiFrameworkHero from "@/assets/TI Framework.jpeg";
+import tiFrameworkHero from "@/assets/ti- hero bg.jpg";
 
 const TIFrameworkHero = () => {
   const [isInView, setIsInView] = useState(false);
@@ -28,10 +28,10 @@ const TIFrameworkHero = () => {
         backgroundImage: `linear-gradient(180deg, rgba(10, 18, 42, 0.30) 0%, rgba(10, 18, 42, 0.40) 52%, rgba(8, 14, 34, 0.58) 100%), url("${tiFrameworkHero}")`,
       }}
     >
-      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.015)_22%,rgba(5,12,30,0.08)_100%),radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_18%,rgba(255,255,255,0)_38%)] backdrop-blur-[4px]" />
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.015)_22%,rgba(5,12,30,0.08)_100%),radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_18%,rgba(255,255,255,0)_38%)] backdrop-blur-[0px]" />
 
       <div className="relative z-10 w-[min(100%,980px)] pt-0 pb-[96px] pl-[66px] max-[1100px]:w-[min(100%,820px)] max-[1100px]:px-7 max-[1100px]:pb-[72px] max-[640px]:px-[18px] max-[640px]:pb-[44px]">
-        <h1 
+        <h1
           className={`m-0 font-serif font-bold leading-[0.96] -tracking-[0.045em] text-white will-change-[transform,opacity]
             opacity-0 -translate-y-[72px]
             ${isInView ? "animate-ti-title" : ""}
@@ -43,7 +43,7 @@ const TIFrameworkHero = () => {
           Innovation) Framework
         </h1>
 
-        <p 
+        <p
           className={`mt-[42px] max-w-[980px] font-sans font-light leading-[1.28] text-[#f6f8fc]/98 will-change-[transform,opacity]
             opacity-0 translate-y-[72px]
             ${isInView ? "animate-ti-desc" : ""}
