@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '@/assets/logo.png'
+import logo from '@/assets/DFG-Blue.png'
 
 const menuItems = [
   { text: 'Why DIGITALFABRIC', superscript: true, path: '/why-digital-fabric' },
@@ -13,7 +13,7 @@ const menuItems = [
 
 function Footer() {
   return (
-    <footer className="site-footer relative z-[2] mt-0 bg-[#0B3F60] text-[#f2ebe3]">
+    <footer className="site-footer relative z-[2] mt-0 bg-[#FFFFFF] text-black">
       <div
         className="footer-main mx-auto w-full max-w-[1780px] 
           grid grid-cols-[minmax(360px,1.15fr)_minmax(220px,0.62fr)_minmax(420px,1fr)] 
@@ -52,7 +52,7 @@ function Footer() {
         </div>
 
         <div className="footer-menu">
-          <h2 className="font-serif text-[clamp(2.35rem,2.7vw,3.25rem)] font-normal leading-none mb-7
+          <h2 className="font-serif text-[clamp(2.35rem,2.7vw,3.25rem)] font-normal leading-none mb-7 text-black
             [@media(max-width:1024px)]:text-[clamp(1.8rem,3vw,2.4rem)] [@media(max-width:1024px)]:mb-[18px]
             [@media(max-width:640px)]:text-[1.6rem] [@media(max-width:640px)]:mb-3.5"
           >
@@ -62,7 +62,7 @@ function Footer() {
             <ul className="list-none p-0 m-0">
               {menuItems.map((item) => (
                 <li key={item.text} className="[&:not(:first-child)]:mt-7 [@media(max-width:640px)]:[&:not(:first-child)]:mt-3.5 [@media(max-width:1024px)]:[&:not(:first-child)]:mt-[18px]">
-                  <Link to={item.path} className="text-[#f2ebe3] no-underline font-serif text-[1.1rem] leading-[1.35] [@media(max-width:1024px)]:text-[1rem] [@media(max-width:640px)]:text-[0.9rem]">
+                  <Link to={item.path} className="text-black no-underline font-serif text-[1.1rem] leading-[1.35] [@media(max-width:1024px)]:text-[1rem] [@media(max-width:640px)]:text-[0.9rem]">
                     {item.text.includes('DIGITALFABRIC') && item.superscript ? (
                       <>
                         {item.text}
@@ -79,7 +79,7 @@ function Footer() {
         </div>
 
         <div className="footer-subscribe">
-          <h2 className="font-serif text-[clamp(2.35rem,2.7vw,3.25rem)] font-normal leading-none mb-7
+          <h2 className="font-serif text-[clamp(2.35rem,2.7vw,3.25rem)] font-normal leading-none mb-7 text-black
             [@media(max-width:1024px)]:text-[clamp(1.8rem,3vw,2.4rem)] [@media(max-width:1024px)]:mb-[18px]
             [@media(max-width:640px)]:text-[1.6rem] [@media(max-width:640px)]:mb-3.5"
           >
@@ -109,23 +109,23 @@ function Footer() {
               <span aria-hidden="true">→</span>
             </button>
           </form>
-          <a href="/" className="footer-message-link inline-block mt-4 text-[#f2ebe3] no-underline font-serif text-[0.95rem] opacity-90 [@media(max-width:640px)]:text-[0.9rem] [@media(max-width:640px)]:mt-3">
+          <a href="/" className="footer-message-link inline-block mt-4 text-black no-underline font-serif text-[0.95rem] opacity-90 [@media(max-width:640px)]:text-[0.9rem] [@media(max-width:640px)]:mt-3 hover:underline">
             *Send Message
           </a>
         </div>
       </div>
 
       <div
-        className="footer-meta mx-auto w-full max-w-[1780px] px-[92px] py-[44px] pb-[54px] border-t border-[rgba(232,236,238,0.36)] flex justify-between gap-6
+        className="footer-meta mx-auto w-full max-w-[1780px] px-[92px] py-[44px] pb-[54px] border-t border-black/10 flex justify-between gap-6
           [@media(max-width:1400px)]:max-w-[calc(100%-48px)] [@media(max-width:1400px)]:px-8 [@media(max-width:1400px)]:py-8 [@media(max-width:1400px)]:pb-10
           [@media(max-width:1100px)]:px-7 [@media(max-width:1100px)]:py-7 [@media(max-width:1100px)]:pb-9
           [@media(max-width:1024px)]:max-w-[calc(100%-32px)] [@media(max-width:1024px)]:px-5 [@media(max-width:1024px)]:py-6 [@media(max-width:1024px)]:pb-8 [@media(max-width:1024px)]:flex-col [@media(max-width:1024px)]:items-start [@media(max-width:1024px)]:gap-2.5
           [@media(max-width:640px)]:max-w-[calc(100%-24px)] [@media(max-width:640px)]:px-3 [@media(max-width:640px)]:py-[18px] [@media(max-width:640px)]:pb-[26px] [@media(max-width:640px)]:gap-2"
       >
-        <p className="m-0 text-[#e6ebee94] font-serif text-[0.94rem] leading-[1.3] [@media(max-width:640px)]:text-[0.9rem]">
+        <p className="m-0 text-black font-serif text-[0.94rem] leading-[1.3] [@media(max-width:640px)]:text-[0.9rem]">
           © 2022 DIGITALFABRIC<span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[4px]">®</span>, All Rights Reserved
         </p>
-        <p className="m-0 text-[#e6ebee94] font-serif text-[0.94rem] leading-[1.3] [@media(max-width:640px)]:text-[0.9rem]">
+        <p className="m-0 text-black font-serif text-[0.94rem] leading-[1.3] [@media(max-width:640px)]:text-[0.9rem]">
           Hyderabad, Telangana, India
         </p>
       </div>

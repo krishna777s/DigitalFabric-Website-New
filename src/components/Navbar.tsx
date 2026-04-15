@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/DFG-Blue.png";
 import ResourcesMenu from "@/components/resources/ResourcesMenu"; // ✅ import
 
 const navItems = [
@@ -28,8 +28,7 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <header className="bg-[#092f47] text-[#dff0fb] h-[78px] flex items-center justify-between px-6 md:px-10">
-
+      <header className="bg-[#FFFFFF] text-black h-[78px] flex items-center justify-between px-6 md:px-10 border-b border-black/10 shadow-sm">
         {/* LEFT */}
         <div className="flex items-center gap-5 flex-1 min-w-0">
 
@@ -55,12 +54,12 @@ const Navbar = () => {
                       ref={resourcesRef}
                       className={item.name === "Resources" ? "" : "relative"}
                     >
-                      <button 
+                      <button
                         onClick={() => item.name === "Resources" && setResourcesOpen(!resourcesOpen)}
-                        className={`px-3 py-2 text-[14px] transition flex items-center gap-1 font-medium ${resourcesOpen ? 'text-white' : 'hover:text-white'}`}
+                        className={`px-3 py-2 text-[14px] transition flex items-center gap-1 font-semibold text-black hover:text-black`}
                       >
                         {item.name}
-                        <span className={`text-[10px] opacity-60 transition-transform ${resourcesOpen ? 'rotate-180' : ''}`}>▼</span>
+                        <span className={`text-[10px] opacity-80 transition-transform ${resourcesOpen ? 'rotate-180' : ''}`}>▼</span>
                       </button>
                       {resourcesOpen && (
                         <ResourcesMenu onNavigate={() => setResourcesOpen(false)} />
@@ -74,10 +73,9 @@ const Navbar = () => {
                   <li key={item.name} className="relative">
                     <Link
                       to={item.path}
-                      className="px-3 py-2 text-[14px] hover:text-white transition flex items-center gap-1 font-medium"
-                    >
+                      className="px-3 py-2 text-[14px] text-black hover:text-black transition flex items-center gap-1 font-semibold"                    >
                       {item.name}
-                      <span className="text-[10px] opacity-60">▼</span>
+                      <span className="text-[10px] opacity-80">▼</span>
                     </Link>
                   </li>
                 );
@@ -91,8 +89,7 @@ const Navbar = () => {
         <div className="flex items-center justify-end pl-4">
           <a
             href="#"
-            className="text-[13px] hover:text-white transition whitespace-nowrap"
-          >
+            className="text-[13px] text-black hover:text-black transition whitespace-nowrap"          >
             Subscribe
           </a>
         </div>
