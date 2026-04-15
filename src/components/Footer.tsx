@@ -66,7 +66,7 @@ function Footer() {
                     {item.text.includes('DIGITALFABRIC') && item.superscript ? (
                       <>
                         {item.text}
-                        <sup className="text-[0.6em]">®</sup>
+                        <span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[4px]">®</span>
                       </>
                     ) : (
                       item.text
@@ -123,7 +123,7 @@ function Footer() {
           [@media(max-width:640px)]:max-w-[calc(100%-24px)] [@media(max-width:640px)]:px-3 [@media(max-width:640px)]:py-[18px] [@media(max-width:640px)]:pb-[26px] [@media(max-width:640px)]:gap-2"
       >
         <p className="m-0 text-[#e6ebee94] font-serif text-[0.94rem] leading-[1.3] [@media(max-width:640px)]:text-[0.9rem]">
-          © 2022 DIGITALFABRIC<sup className="text-[0.6em]">®</sup>, All Rights Reserved
+          © 2022 DIGITALFABRIC<span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[4px]">®</span>, All Rights Reserved
         </p>
         <p className="m-0 text-[#e6ebee94] font-serif text-[0.94rem] leading-[1.3] [@media(max-width:640px)]:text-[0.9rem]">
           Hyderabad, Telangana, India

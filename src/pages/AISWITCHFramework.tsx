@@ -1,9 +1,17 @@
 import AISWITCHFrameworkHero from "@/components/resources/awswitch/AISWITCHFrameworkHero";
+import AISWITCHFrameworkOverview from "@/components/resources/awswitch/AISWITCHFrameworkOverview";
+import AISWITCHFrameworkBanner from "@/components/resources/awswitch/AISWITCHFrameworkBanner";
+import AISWITCHFrameworkFeatures from "@/components/resources/awswitch/AISWITCHFrameworkFeatures";
 
-export default function AISWITCHFramework() {
+const AISWITCHFramework = () => {
   return (
-    <main className="bg-[#081229] pt-[78px]">
+    <main className="min-h-screen bg-[#081229]">
       <AISWITCHFrameworkHero />
+      <AISWITCHFrameworkOverview />
+      <AISWITCHFrameworkBanner />
+      <AISWITCHFrameworkFeatures />
     </main>
   );
-}
+};
+
+export default AISWITCHFramework;

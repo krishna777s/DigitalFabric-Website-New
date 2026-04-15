@@ -1,13 +1,15 @@
-import TFIFrameworkHero from "@/components/resources/tfi/TFIFrameworkHero.tsx";
-import TFIFrameworkOverview from "@/components/resources/tfi/TFIFrameworkOverview";
-import TFIFrameworkBlueprint from "@/components/resources/tfi/TFIFrameworkBlueprint";
+import TIFrameworkHero from "@/components/resources/tfi/TIFrameworkHero";
+import TIFrameworkOverview from "@/components/resources/tfi/TIFrameworkOverview";
+import TIFrameworkBlueprint from "@/components/resources/tfi/TIFrameworkBlueprint";
 
-export default function TFIFramework() {
+const TFIFramework = () => {
   return (
-    <main className="bg-[#081229] pt-[78px]">
-      <TFIFrameworkHero />
-      <TFIFrameworkOverview />
-      <TFIFrameworkBlueprint />
+    <main className="min-h-screen pt-[78px] bg-[#081229]">
+      <TIFrameworkHero />
+      <TIFrameworkOverview />
+      <TIFrameworkBlueprint />
     </main>
   );
-}
+};
+
+export default TFIFramework;

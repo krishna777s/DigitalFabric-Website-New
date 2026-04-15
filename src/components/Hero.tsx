@@ -21,10 +21,10 @@ const freshUpdates = [
 ];
 
 const Arrow = () => (
-  <span className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[#0b527b] text-white">
+  <span className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#0b527b] text-white">
     <svg
       viewBox="0 0 24 24"
-      className="h-[19px] w-[19px]"
+      className="h-[14px] w-[14px]"
       fill="none"
       stroke="currentColor"
       strokeWidth="2.4"
@@ -38,10 +38,10 @@ const Arrow = () => (
 );
 
 const SmallArrow = () => (
-  <span className="flex h-[34px] w-[34px] flex-shrink-0 items-center justify-center rounded-full bg-[#0b527b] text-white">
+  <span className="flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-full bg-[#0b527b] text-white">
     <svg
       viewBox="0 0 24 24"
-      className="h-[15px] w-[15px]"
+      className="h-[12px] w-[12px]"
       fill="none"
       stroke="currentColor"
       strokeWidth="2.4"
@@ -67,7 +67,7 @@ const Hero = () => {
   const currentItem = freshUpdates[current];
 
   return (
-    <section className="bg-[#092f47] pt-24 pb-6">
+    <section className="bg-[#092f47] pt-12 pb-6">
       <div className="max-w-[1500px] mx-auto px-6">
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
@@ -85,17 +85,17 @@ const Hero = () => {
             {/* DARK MASK FOR LEGIBILITY */}
             <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-700" />
 
-            <div className="absolute bottom-10 left-8 right-8 bg-white/15 backdrop-blur-xl border border-white/30 p-8 shadow-2xl">
+            <div className="absolute bottom-6 left-6 right-6 lg:max-w-[90%] bg-white/10 backdrop-blur-xl border border-white/20 p-6 py-10 shadow-2xl">
 
-              <h2 className="text-white text-5xl font-serif">
-                Enterprise <br /> Consulting
+              <h2 className="text-white text-3xl md:text-4xl font-serif leading-tight">
+                Enterprise Consulting
               </h2>
 
-              <p className="text-white/90 mt-4 max-w-sm text-sm">
+              <p className="text-white/90 mt-3 text-[13px] leading-relaxed line-clamp-2">
                 Strategically guiding enterprises through transformation with a future-ready consulting framework
               </p>
 
-              <button className="mt-6 flex items-center gap-4 bg-white text-black px-6 py-3 rounded-full">
+              <button className="mt-5 flex items-center gap-3 w-fit bg-white text-black px-4 py-1.5 rounded-full text-xs font-semibold">
                 Explore More
                 <Arrow />
               </button>
@@ -126,7 +126,14 @@ const Hero = () => {
 
               <div className="absolute bottom-6 left-6 right-6 text-white pb-2">
                 <span className="bg-white text-black text-xs px-3 py-1 rounded-full">
-                  {currentItem.label}
+                  {currentItem.label.includes("®") ? (
+                    <>
+                      {currentItem.label.replace("®", "")}
+                      <span className="inline-block translate-y-[-0.38em] text-[0.55em] ml-[4px] font-black">®</span>
+                    </>
+                  ) : (
+                    currentItem.label
+                  )}
                 </span>
 
                 <p className="mt-3 text-sm max-w-xs text-white">
@@ -175,17 +182,17 @@ const Hero = () => {
 
                   <div className="absolute inset-0 bg-black/40" />
 
-                  <div className="absolute bottom-8 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-5 overflow-hidden">
+                  <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 p-4">
 
-                    <h3 className="text-white text-2xl font-serif">
+                    <h3 className="text-white text-lg font-serif">
                       {item.title}
                     </h3>
 
-                    <p className="text-white/90 text-sm mt-3">
+                    <p className="text-white/90 text-[11px] mt-2 leading-snug line-clamp-2">
                       {item.desc}
                     </p>
 
-                    <button className="mt-4 inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm whitespace-nowrap">
+                    <button className="mt-3 inline-flex items-center gap-2 w-fit bg-white text-black px-3 py-1.5 rounded-full text-[10px] font-semibold whitespace-nowrap">
                       Explore More
                       <SmallArrow />
                     </button>

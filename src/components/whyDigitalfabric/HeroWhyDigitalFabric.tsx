@@ -83,14 +83,14 @@ const HeroWhyDigitalFabric: React.FC = () => {
             className="font-serif text-[3.5rem] font-bold mb-[30px] whitespace-nowrap max-[640px]:whitespace-normal"
             style={{ fontFamily: "Georgia, serif" }}
           >
-            Why DIGITALFABRIC<sup>®</sup>?
+            Why DIGITALFABRIC<span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[6px]">®</span>?
           </h1>
 
           <p
             className="max-w-[520px] mt-7 text-[1.4rem] leading-relaxed max-[640px]:mt-6"
           >
             This segment is related to the derived ideology of
-            DIGITALFABRIC<sup>®</sup> from various technology and business
+            DIGITALFABRIC<span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[6px]">®</span> from various technology and business
             domains to assist enterprises in scaling the digital business
             transformation initiative.
           </p>

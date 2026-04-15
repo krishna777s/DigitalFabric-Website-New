@@ -112,19 +112,28 @@ const showcaseBrands = [
 
 // ─── Trademark symbols ────────────────────────────────────────────────────────
 
+const Sup = ({ m }: { m: string }) => (
+  <span className="inline-block translate-y-[-0.08em] text-[0.92em] font-black ml-0">{m}</span>
+);
+const Sub = ({ m }: { m: string }) => (
+  <span className="align-super text-[0.55em] font-bold ml-[2px]">{m}</span>
+);
+
+// Helpers specifically for the 5 bottom slides
+const SlideSup = ({ m }: { m: string }) => (
+  <span className="inline-block translate-y-[-0.08em] text-[0.95em] font-black ml-0">{m}</span>
+);
+const SlideSub = ({ m }: { m: string }) => (
+  <span className="inline-block translate-y-[0.3em] text-[0.9em] font-black ml-[2px]">{m}</span>
+);
+
 function BrandTitle({ title }: { title: string }) {
   const n = title.toUpperCase().trim();
-  const Sup = ({ m }: { m: string }) => (
-    <span className="inline-block translate-y-[-0.1em] text-[1.6em] font-black ml-[3px]">{m}</span>
-  );
-  const Sub = ({ m }: { m: string }) => (
-    <sub className="text-[1.1em] align-baseline font-black leading-none ml-[2px]">{m}</sub>
-  );
-  if (n === "DIGITALFABRIC") return <>{title}<Sup m="®" /></>;
-  if (n === "IMAGENIE") return <>{title}<Sup m="™" /></>;
-  if (n === "PROSIGHT") return <>{title}<Sub m="™" /></>;
-  if (n === "DIGITALFABRIC CONSULTING") return <>{title}<Sup m="®" /></>;
-  if (n === "RESEARCHFABRIC") return <>{title}<Sup m="™" /></>;
+  if (n === "DIGITALFABRIC") return <>{title}<SlideSup m="®" /></>;
+  if (n === "IMAGENIE") return <>{title}<SlideSup m="™" /></>;
+  if (n === "PROSIGHT") return <>{title}<SlideSub m="™" /></>;
+  if (n === "DIGITALFABRIC CONSULTING") return <>DIGITALFABRIC<SlideSup m="®" /> CONSULTING</>;
+  if (n === "RESEARCHFABRIC") return <>{title}<SlideSup m="™" /></>;
   return <>{title}</>;
 }
 
@@ -209,10 +218,12 @@ export default function VideoSection() {
   return (
     <section
       aria-label="DigitalFabric group showcase"
-      className="mx-auto w-[min(calc(100%-8px),100%)] text-white"
+      className="mx-auto w-[min(calc(100%-8px),100%)] text-white pt-24"
       style={{
         background: "linear-gradient(135deg,#0b3f60 0%,#12698e 45%,#4ec9f3 100%)",
-        padding: "clamp(42px,4vw,66px) clamp(12px,2vw,32px) 24px",
+        paddingBottom: "24px",
+        paddingLeft: "clamp(12px,2vw,32px)",
+        paddingRight: "clamp(12px,2vw,32px)",
       }}
     >
 
@@ -226,7 +237,7 @@ export default function VideoSection() {
             style={{ fontSize: "clamp(2rem,2.85vw,3.35rem)" }}
           >
             DIGITALFABRIC
-            <span className="inline-block translate-y-[-0.1em] text-[1.25em] font-black ml-1">®</span>
+            <Sup m="®" />
             {" "}GROUP OF COMPANIES.
           </h2>
           <p
@@ -241,31 +252,6 @@ export default function VideoSection() {
           </p>
         </div>
 
-        {/* Learn More CTA */}
-        <button
-          type="button"
-          className="mt-[22px] inline-flex shrink-0 cursor-pointer items-center gap-[18px] rounded-full border-0 bg-white px-6 pb-[6px] pl-6 pr-2 pt-[6px] font-bold text-black"
-          style={{
-            fontSize: "0.9rem",
-            boxShadow: "0 10px 18px rgba(8,16,25,0.28)",
-          }}
-        >
-          <span>Learn More</span>
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0b3f60] text-white">
-            <svg
-              viewBox="0 0 24 24"
-              className="h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M7 17 17 7" />
-              <path d="M9 7h8v8" />
-            </svg>
-          </span>
-        </button>
       </div>
 
       {/* ══ FEATURE: left panel + right media ═══════════════════════════════ */}
@@ -522,7 +508,7 @@ export default function VideoSection() {
             style={{ color: "#ffffff" }}
           >
             <span
-              className="block font-serif font-bold leading-[1.05]"
+              className="block font-serif font-bold leading-[1.2]"
               style={{ fontSize: "clamp(1.05rem,1.6vw,2rem)" }}
             >
               <BrandTitle title={b.brandTitle} />

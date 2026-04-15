@@ -3,10 +3,10 @@ import researchImg from "@/assets/research-fabric.jpg";
 import featureImg from "@/assets/Marketing that drives real growth.jpeg";
 
 const Arrow = () => (
-  <span className="flex h-[42px] w-[42px] items-center justify-center rounded-full bg-[#0b527b] text-white">
+  <span className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-[#0b527b] text-white">
     <svg
       viewBox="0 0 24 24"
-      className="h-[19px] w-[19px]"
+      className="h-[12px] w-[12px]"
       fill="none"
       stroke="currentColor"
       strokeWidth="2.4"
@@ -42,17 +42,17 @@ const FeaturedCards = () => {
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,15,23,0.02)_0%,rgba(4,15,23,0.08)_34%,rgba(4,15,23,0.7)_100%)] opacity-70" />
 
             {/* CONTENT */}
-            <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-xl border border-white/30 p-6">
+            <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-xl border border-white/20 p-5">
 
-              <h3 className="text-white text-1xl md:text-2xl font-serif">
+              <h3 className="text-white text-lg md:text-xl font-serif">
                 DIGITALFABRIC.IN
               </h3>
 
-              <p className="text-white/90 text-sm mt-3 max-w-[18ch]">
+              <p className="text-white/90 text-[12px] mt-2 line-clamp-2 leading-relaxed">
                 Building future-ready enterprises through sustainability, resiliency, and agility.
               </p>
 
-              <button className="mt-5 flex items-center gap-4 bg-white text-black px-5 py-2 rounded-full text-sm">
+              <button className="mt-4 flex items-center gap-3 w-fit bg-white text-black px-3 py-1.5 rounded-full text-[10px] font-semibold">
                 Explore More
                 <Arrow />
               </button>
@@ -72,17 +72,17 @@ const FeaturedCards = () => {
 
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,15,23,0.02)_0%,rgba(4,15,23,0.08)_34%,rgba(4,15,23,0.7)_100%)] opacity-70" />
 
-            <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-xl border border-white/30 p-6">
+            <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-xl border border-white/30 p-5">
 
-              <h3 className="text-white text-1xl md:text-2xl font-serif">
+              <h3 className="text-white text-lg md:text-xl font-serif">
                 RESEARCHFABRIC
               </h3>
 
-              <p className="text-white/90 text-sm mt-3 max-w-[16ch]">
+              <p className="text-white/90 text-[12px] mt-2 line-clamp-2 leading-relaxed">
                 Bridging technology and business to accelerate enterprise transformation
               </p>
 
-              <button className="mt-5 flex items-center gap-4 bg-white text-black px-5 py-2 rounded-full text-sm">
+              <button className="mt-4 flex items-center gap-3 w-fit bg-white text-black px-3 py-1.5 rounded-full text-[10px] font-semibold">
                 Explore More
                 <Arrow />
               </button>
@@ -102,17 +102,17 @@ const FeaturedCards = () => {
 
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,15,23,0.02)_0%,rgba(4,15,23,0.08)_34%,rgba(4,15,23,0.75)_100%)]" />
 
-            <div className="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-6">
+            <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 p-5">
 
-              <h3 className="text-white text-1xl md:text-3xl font-serif">
+              <h3 className="text-white text-xl md:text-2xl font-serif">
                 Towards Enterprise 3.0.
               </h3>
 
-              <p className="text-white/90 text-sm mt-3 max-w-[40ch]">
+              <p className="text-white/90 text-[12px] mt-2 line-clamp-2 leading-relaxed">
                 Enterprise 3.0 is a pivotal phase in digital transformation, integrating AI, IoT, and cloud computing to reshape businesses.
               </p>
 
-              <button className="mt-5 flex items-center gap-4 bg-white text-black px-6 py-3 rounded-full text-sm">
+              <button className="mt-4 flex items-center gap-3 w-fit bg-white text-black px-4 py-1.5 rounded-full text-[10px] font-semibold">
                 Explore More
                 <Arrow />
               </button>

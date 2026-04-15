@@ -35,12 +35,7 @@ export default function HowWeHelp() {
         [@media(max-width:980px)]:w-[min(100%,calc(100%-40px))] [@media(max-width:980px)]:pt-8 [@media(max-width:980px)]:pb-6
         [@media(max-width:640px)]:pt-[32px] [@media(max-width:640px)]:pb-6"
       >
-        <p className="help-eyebrow m-0 mb-7 text-center font-serif text-[0.82rem] font-bold tracking-[0.02em]
-          [@media(max-width:1280px)]:mb-5 [@media(max-width:1280px)]:text-[0.76rem]
-          [@media(max-width:640px)]:mb-[18px] [@media(max-width:640px)]:text-[0.82rem]"
-        >
-          HOW WE HELP CLIENTS
-        </p>
+
 
         <h2 className="help-heading w-[min(760px,100%)] mx-auto mb-[46px] text-center font-serif text-[clamp(1.9rem,3vw,3rem)] font-normal leading-[1.08]
           [@media(max-width:1560px)]:w-[min(700px,100%)] [@media(max-width:1560px)]:mb-[38px] [@media(max-width:1560px)]:text-[clamp(1.7rem,2.4vw,2.5rem)]

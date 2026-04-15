@@ -53,12 +53,18 @@ const Navbar = () => {
                     <li
                       key={item.name}
                       ref={resourcesRef}
-                      className="relative"
+                      className={item.name === "Resources" ? "" : "relative"}
                     >
-                      <button className="px-3 py-2 text-[14px] hover:text-white transition flex items-center gap-1 font-medium cursor-default">
+                      <button 
+                        onClick={() => item.name === "Resources" && setResourcesOpen(!resourcesOpen)}
+                        className={`px-3 py-2 text-[14px] transition flex items-center gap-1 font-medium ${resourcesOpen ? 'text-white' : 'hover:text-white'}`}
+                      >
                         {item.name}
-                        <span className="text-[10px] opacity-60">▼</span>
+                        <span className={`text-[10px] opacity-60 transition-transform ${resourcesOpen ? 'rotate-180' : ''}`}>▼</span>
                       </button>
+                      {resourcesOpen && (
+                        <ResourcesMenu onNavigate={() => setResourcesOpen(false)} />
+                      )}
                     </li>
                   );
                 }

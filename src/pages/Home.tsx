@@ -7,9 +7,9 @@ import FounderQuote from "@/components/FounderQuote";
 const Home = () => {
   return (
     <main>
+      <VideoSection />
       <Hero />
       <FeaturedCards />
-      <VideoSection />
       <HowWeHelp />
       <FounderQuote />
     </main>
