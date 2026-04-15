@@ -29,11 +29,11 @@ const helpCards = [
 export default function HowWeHelp() {
   return (
     <section className="bg-[#0B3F60] text-[#f7f5f0]" aria-label="How we help clients">
-      <div className="help-section w-[min(1100px,calc(100%-32px))] mx-auto px-0 pt-[46px] pb-[34px]
-        [@media(max-width:1560px)]:w-[min(100%,calc(100%-120px))] [@media(max-width:1560px)]:pt-10 [@media(max-width:1560px)]:pb-[30px]
-        [@media(max-width:1280px)]:w-[min(100%,calc(100%-72px))] [@media(max-width:1280px)]:pt-[34px] [@media(max-width:1280px)]:pb-6
-        [@media(max-width:980px)]:w-[min(100%,calc(100%-40px))] [@media(max-width:980px)]:pt-8 [@media(max-width:980px)]:pb-6
-        [@media(max-width:640px)]:w-[calc(100%-24px)] [@media(max-width:640px)]:pt-[32px] [@media(max-width:640px)]:pb-6"
+      <div className="help-section w-[min(1100px,calc(100%-32px))] mx-auto px-0 pt-[46px] pb-[80px]
+        [@media(max-width:1560px)]:w-[min(100%,calc(100%-120px))] [@media(max-width:1560px)]:pt-10 [@media(max-width:1560px)]:pb-[60px]
+        [@media(max-width:1280px)]:w-[min(100%,calc(100%-72px))] [@media(max-width:1280px)]:pt-[34px] [@media(max-width:1280px)]:pb-12
+        [@media(max-width:980px)]:w-[min(100%,calc(100%-40px))] [@media(max-width:980px)]:pt-8 [@media(max-width:980px)]:pb-10
+        [@media(max-width:640px)]:w-[calc(100%-24px)] [@media(max-width:640px)]:pt-[32px] [@media(max-width:640px)]:pb-10"
       >
 
 
@@ -57,9 +57,9 @@ export default function HowWeHelp() {
               key={card.key}
               className="help-card group relative w-full h-full p-0 bg-transparent text-[#f7f5f0] flex flex-col border border-transparent 
                 transition-all duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-                hover:bg-[#f6f2ed] hover:text-[#111111] hover:border-white hover:border-[8px] 
-                hover:shadow-[inset_0_0_0_18px_#f6f2ed] 
-                [@media(max-width:640px)]:hover:border-[5px] [@media(max-width:640px)]:hover:shadow-[inset_0_0_0_10px_#f6f2ed]"
+                hover:bg-white hover:text-[#111111] hover:border-white hover:border-[8px] 
+                hover:shadow-[inset_0_0_0_18px_white] 
+                [@media(max-width:640px)]:hover:border-[5px] [@media(max-width:640px)]:hover:shadow-[inset_0_0_0_10px_white]"
             >
               <div
                 className="help-card-image w-full aspect-[1.62/1] min-h-[235px] bg-center bg-cover 
@@ -71,8 +71,8 @@ export default function HowWeHelp() {
                 aria-hidden="true"
               />
 
-              <div className="help-card-body flex-1 flex flex-col pt-3 transition-all duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:pt-[14px]
-                [@media(max-width:1280px)]:pt-2.5"
+              <div className="help-card-body flex-1 flex flex-col pt-3 px-4 pb-6 transition-all duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)] 
+                group-hover:bg-white group-hover:pt-[14px]"
               >
                 <div className="help-card-title-row flex items-start justify-between gap-3.5 px-0">
                   <h3 className="help-card-title m-0 font-serif text-[clamp(1.65rem,2.1vw,2.2rem)] font-normal leading-[1.05] -tracking-[0.03em] whitespace-pre-line
@@ -90,11 +90,11 @@ export default function HowWeHelp() {
                     &#8250;
                   </span>
                 </div>
-                <p className="help-card-description max-w-full mt-2.5 m-0 font-serif text-[0.84rem] leading-[1.22] text-[rgba(243,247,250,0.94)]
+                <p className="help-card-description max-w-full mt-2.5 m-0 font-serif text-[0.95rem] leading-[1.3] text-[rgba(243,247,250,0.94)]
                   transition-colors duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-                  group-hover:text-[rgba(17,17,17,0.86)]
-                  [@media(max-width:1560px)]:text-[0.82rem]
-                  [@media(max-width:1280px)]:mt-2 [@media(max-width:1280px)]:text-[0.78rem]"
+                  group-hover:text-black
+                  [@media(max-width:1560px)]:text-[0.9rem]
+                  [@media(max-width:1280px)]:mt-2 [@media(max-width:1280px)]:text-[0.85rem]"
                 >
                   {card.description}
                 </p>

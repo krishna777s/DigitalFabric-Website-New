@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import bgPattern from "../../assets/hero-bg.png";
-import questionImg from "../../assets/question-mark.png";
+import bgPattern from "@/assets/copygamie blue bg.jpg"
+import questionImg from "@/assets/why df hero.png";
 
 const HeroWhyDigitalFabric: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -45,25 +45,17 @@ const HeroWhyDigitalFabric: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[84vh] overflow-hidden text-[#f4f3ef] bg-[#0a0f1f] bg-no-repeat bg-cover"
-      style={{
-        backgroundImage: `url(${bgPattern})`,
-        backgroundPosition: `center calc(0px + ${backgroundOffset}px)`,
-      }}
+      className="relative min-h-[84vh] overflow-hidden text-[#f4f3ef] bg-[#0a0f1f]"
     >
-      {/* Glassmorphism overlay */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 w-full h-full bg-no-repeat bg-cover brightness-[1.0] pointer-events-none"
         style={{
-          border: "1px solid rgba(255,255,255,0.18)",
-          background:
-            "linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06))",
-          boxShadow:
-            "inset 0 1px 0 rgba(255,255,255,0.18), 0 24px 60px rgba(4,14,28,0.22)",
-          backdropFilter: "blur(18px)",
-          WebkitBackdropFilter: "blur(18px)",
+          backgroundImage: `url('${bgPattern}')`,
+          backgroundPosition: `center calc(0px + ${backgroundOffset}px)`,
         }}
       />
+      <div className="absolute inset-0 bg-[#081229]/70 mix-blend-multiply pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#030919] via-[#081229]/80 to-transparent pointer-events-none" />
 
       {/* Inner grid */}
       <div className="relative z-[2] w-full max-w-[1760px] mx-auto px-[88px] py-[48px] pb-[44px] grid grid-cols-[1.06fr_0.94fr] gap-[44px] items-center max-[1024px]:grid-cols-1 max-[1024px]:gap-8 max-[1024px]:px-10 max-[640px]:px-5">
@@ -80,17 +72,17 @@ const HeroWhyDigitalFabric: React.FC = () => {
           }}
         >
           <h1
-            className="font-serif text-[3.5rem] font-bold mb-[30px] whitespace-nowrap max-[640px]:whitespace-normal"
+            className="font-serif text-[3.5rem] font-bold mb-[30px] whitespace-nowrap max-[640px]:whitespace-normal flex items-start"
             style={{ fontFamily: "Georgia, serif" }}
           >
-            Why DIGITALFABRIC<span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[6px]">®</span>?
+            Why DIGITALFABRIC<span className="text-[0.9em] font-normal font-sans ml-[2px] leading-none mt-[14px]">®</span>?
           </h1>
 
           <p
             className="max-w-[520px] mt-7 text-[1.4rem] leading-relaxed max-[640px]:mt-6"
           >
             This segment is related to the derived ideology of
-            DIGITALFABRIC<span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[6px]">®</span> from various technology and business
+            DIGITALFABRIC<span className="text-[1.2em] font-normal font-sans align-top relative top-[0.2em] leading-none">®</span> from various technology and business
             domains to assist enterprises in scaling the digital business
             transformation initiative.
           </p>
@@ -98,19 +90,17 @@ const HeroWhyDigitalFabric: React.FC = () => {
 
         {/* RIGHT – art */}
         <div
-          className="relative w-full max-w-[700px] min-h-[560px] overflow-hidden max-[1024px]:w-full max-[1024px]:min-h-[340px] max-[640px]:min-h-[240px]"
+          className="relative w-full max-w-[700px] min-h-[560px] flex items-center justify-center max-[1024px]:w-full max-[1024px]:min-h-[340px] max-[640px]:min-h-[240px]"
         >
           <img
             src={questionImg}
             alt="Question"
-            className="absolute left-1/2 w-full max-w-[360px] max-[1024px]:max-w-[280px] max-[640px]:max-w-[200px] h-auto object-contain"
+            className="w-full max-w-[260px] max-[720px]:max-w-[300px] max-[640px]:max-w-[200px] h-auto object-contain"
             style={{
-              top: "62%",
-              clipPath: "inset(0 0 14% 0)",
               opacity: isVisible ? 1 : 0,
               transform: isVisible
-                ? "translate(-50%, -50%)"
-                : "translate(-50%, calc(-50% - 88px))",
+                ? "translateY(0)"
+                : "translateY(-40px)",
               transition:
                 "opacity 860ms cubic-bezier(0.22,1,0.36,1), transform 860ms cubic-bezier(0.22,1,0.36,1)",
               transitionDelay: "100ms",

@@ -51,7 +51,7 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 z-50">
 
       {/* ═══════════════ HEADER BAR ═══════════════ */}
-      <header className="bg-white text-black h-[78px] flex items-center justify-between px-4 md:px-10 border-b border-black/10 shadow-sm">
+      <header className="bg-white text-black h-[78px] flex items-center justify-between px-[12px] md:px-[32px] border-b border-black/10 shadow-sm">
 
         {/* LEFT: Logo + Desktop Nav */}
         <div className="flex items-center gap-5 min-w-0 overflow-hidden">
@@ -74,7 +74,7 @@ const Navbar = () => {
                     <li key={item.name} ref={resourcesRef}>
                       <button
                         onClick={() => setResourcesOpen(!resourcesOpen)}
-                        className="px-3 py-2 text-[14px] transition flex items-center gap-1 font-semibold text-black hover:text-black/70"
+                        className="px-3 py-2 text-[15px] transition flex items-center gap-1 font-semibold text-black hover:text-black/70"
                       >
                         {item.name}
                         <span className={`text-[10px] opacity-80 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`}>▼</span>
@@ -89,7 +89,7 @@ const Navbar = () => {
                   <li key={item.name} className="relative">
                     <Link
                       to={item.path}
-                      className="px-3 py-2 text-[14px] text-black hover:text-black/70 transition flex items-center gap-1 font-semibold"
+                      className="px-3 py-2 text-[15px] text-black hover:text-black/70 transition flex items-center gap-1 font-semibold"
                     >
                       {item.name}
                       <span className="text-[10px] opacity-80">▼</span>
@@ -105,7 +105,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3 flex-shrink-0 ml-auto">
           <a
             href="#"
-            className="hidden md:block text-[13px] font-medium text-black hover:text-black/70 transition whitespace-nowrap"
+            className="hidden md:block text-[14px] font-medium text-black hover:text-black/70 transition whitespace-nowrap"
           >
             Subscribe
           </a>

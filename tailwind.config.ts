@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         serif: ["'Abhaya Libre'", "serif"],
-        sans: ["'Abhaya Libre'", "sans-serif"],
+        sans: ["'Abhaya Libre'", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",

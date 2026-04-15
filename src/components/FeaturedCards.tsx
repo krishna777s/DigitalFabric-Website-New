@@ -3,13 +3,13 @@ import researchImg from "@/assets/research-fabric.jpg";
 import featureImg from "@/assets/Marketing that drives real growth.jpeg";
 
 const Arrow = () => (
-  <span className="flex h-[30px] w-[30px] items-center justify-center rounded-full bg-[#0b527b] text-white">
+  <span className="flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#0b527b] text-white flex-shrink-0">
     <svg
       viewBox="0 0 24 24"
       className="h-[12px] w-[12px]"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2.4"
+      strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
@@ -52,7 +52,7 @@ const FeaturedCards = () => {
                 Building future-ready enterprises through sustainability, resiliency, and agility.
               </p>
 
-              <button className="mt-4 flex items-center gap-3 w-fit bg-white text-black px-3 py-1.5 rounded-full text-[10px] font-semibold">
+              <button className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95">
                 Explore More
                 <Arrow />
               </button>
@@ -82,7 +82,7 @@ const FeaturedCards = () => {
                 Bridging technology and business to accelerate enterprise transformation
               </p>
 
-              <button className="mt-4 flex items-center gap-3 w-fit bg-white text-black px-3 py-1.5 rounded-full text-[10px] font-semibold">
+              <button className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95">
                 Explore More
                 <Arrow />
               </button>
@@ -112,7 +112,7 @@ const FeaturedCards = () => {
                 Enterprise 3.0 is a pivotal phase in digital transformation, integrating AI, IoT, and cloud computing to reshape businesses.
               </p>
 
-              <button className="mt-4 flex items-center gap-3 w-fit bg-white text-black px-4 py-1.5 rounded-full text-[10px] font-semibold">
+              <button className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95">
                 Explore More
                 <Arrow />
               </button>

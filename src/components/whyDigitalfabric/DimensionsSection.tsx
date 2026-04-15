@@ -43,7 +43,7 @@ const DimensionsSection: React.FC = () => {
               fontSize: "clamp(1rem, 1.2vw, 1.45rem)",
             }}
           >
-            DIGITALFABRIC<span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[4px]">®</span> provides a comprehensive framework that aligns
+            DIGITALFABRIC<span className="inline-block translate-y-[0.2em] text-[1.5em] font-black ml-[2px]">®</span> provides a comprehensive framework that aligns
             various organizational elements to drive success in a digital-first
             environment.
           </p>

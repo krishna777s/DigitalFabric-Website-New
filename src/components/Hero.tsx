@@ -21,13 +21,13 @@ const freshUpdates = [
 ];
 
 const Arrow = () => (
-  <span className="flex h-[32px] w-[32px] items-center justify-center rounded-full bg-[#0b527b] text-white">
+  <span className="flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#0b527b] text-white flex-shrink-0">
     <svg
       viewBox="0 0 24 24"
-      className="h-[14px] w-[14px]"
+      className="h-[12px] w-[12px]"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2.4"
+      strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
@@ -37,14 +37,15 @@ const Arrow = () => (
   </span>
 );
 
-const SmallArrow = () => (
-  <span className="flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-full bg-[#0b527b] text-white">
+// Standardized arrow for all buttons
+const StandardArrow = () => (
+  <span className="flex h-[28px] w-[28px] items-center justify-center rounded-full bg-[#0b527b] text-white flex-shrink-0">
     <svg
       viewBox="0 0 24 24"
       className="h-[12px] w-[12px]"
       fill="none"
       stroke="currentColor"
-      strokeWidth="2.4"
+      strokeWidth="3"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
@@ -95,9 +96,9 @@ const Hero = () => {
                 Strategically guiding enterprises through transformation with a future-ready consulting framework
               </p>
 
-              <button className="mt-3 md:mt-5 flex items-center gap-3 w-fit bg-white text-black px-3 md:px-4 py-1.5 rounded-full text-[10px] md:text-xs font-semibold">
+              <button className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95">
                 Explore More
-                <Arrow />
+                <StandardArrow />
               </button>
             </div>
           </div>
@@ -192,9 +193,9 @@ const Hero = () => {
                       {item.desc}
                     </p>
 
-                    <button className="mt-3 inline-flex items-center gap-2 w-fit bg-white text-black px-3 py-1.5 rounded-full text-[10px] font-semibold whitespace-nowrap">
+                    <button className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95">
                       Explore More
-                      <SmallArrow />
+                      <StandardArrow />
                     </button>
 
                   </div>

@@ -66,7 +66,7 @@ function Footer() {
                     {item.text.includes('DIGITALFABRIC') && item.superscript ? (
                       <>
                         {item.text}
-                        <span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[4px]">®</span>
+                        <span className="inline-block translate-y-[0.1em] text-[1.2em] font-bold ml-[2px]">®</span>
                       </>
                     ) : (
                       item.text

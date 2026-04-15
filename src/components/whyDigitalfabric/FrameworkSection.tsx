@@ -1,258 +1,23 @@
 import React, { useEffect, useRef } from "react";
+import imgPeople from "@/assets/why df culture.png";
+import imgValue from "@/assets/why df value.png";
+import imgCulture from "@/assets/why df culture.png";
+import imgProcess from "@/assets/why df process.png";
+import imgEfficiency from "@/assets/why df efficiency.png";
+import imgEffectiveness from "@/assets/why df effectiveness.png";
+import imgPlatform from "@/assets/why df platform.png";
+import imgComprehensive from "@/assets/why df comprehensive.png";
+import imgCapabilities from "@/assets/why df capabilities.png";
+import imgProduct from "@/assets/why df product.png";
+import imgExpectations from "@/assets/why df expectations.png";
+import imgE2E from "@/assets/why df e2e.png";
+import imgPartnership from "@/assets/why df partnership.png";
+import imgNetwork from "@/assets/why df network.png";
+import imgCollaboration from "@/assets/why df collabration.png";
 
-/* ─── SVG Icons ─────────────────────────────────────────────── */
-
-const PeopleLeadIcon = () => (
-  <svg viewBox="0 0 96 96" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5">
-      <circle cx="22" cy="20" r="8" />
-      <circle cx="48" cy="14" r="8" />
-      <circle cx="74" cy="20" r="8" />
-      <rect x="34" y="28" width="28" height="32" rx="9" />
-      <path d="M16 58V36c0-6 4-10 10-10" />
-      <path d="M80 58V36c0-6-4-10-10-10" />
-      <path d="M34 44v28" />
-      <path d="M62 44v28" />
-      <path d="M22 48v24" />
-      <path d="M74 48v24" />
-      <path d="M44 72V56" />
-      <path d="M52 72V56" />
-    </g>
-  </svg>
-);
-
-const ProcessClusterIcon = () => (
-  <svg viewBox="0 0 96 96" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5">
-      <circle cx="22" cy="34" r="12" />
-      <circle cx="48" cy="18" r="12" />
-      <circle cx="74" cy="34" r="12" />
-      <circle cx="18" cy="64" r="5" />
-      <circle cx="48" cy="64" r="5" />
-      <circle cx="78" cy="64" r="5" />
-      <path d="M22 46v13" />
-      <path d="M48 30v29" />
-      <path d="M74 46v13" />
-      <path d="M18 64h60" />
-      <path d="M48 6c10 0 18 8 18 18" />
-    </g>
-  </svg>
-);
-
-const EfficiencyIcon = () => (
-  <svg viewBox="0 0 80 80" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.8">
-      <path d="M16 56a26 26 0 1 0 48 0" />
-      <path d="M20 40a20 20 0 0 1 40 0" />
-      <path d="M28 40h24" />
-      <path d="M24 28h6" />
-      <path d="M50 28h6" />
-      <path d="M40 20v4" />
-      <path d="m40 40 11-13" />
-      <circle cx="40" cy="40" r="3.5" fill="currentColor" stroke="none" />
-      <path d="M32 56h16" />
-      <path d="M28 64h24" />
-    </g>
-  </svg>
-);
-
-const EffectivenessIcon = () => (
-  <svg viewBox="0 0 80 80" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.8">
-      <path d="M16 54h18c6 0 10 4 10 10H28c-6 0-10-4-12-10Z" />
-      <path d="M24 46 17 37a6 6 0 0 1 9-8l9 10h12c7 0 13 6 13 13v2" />
-      <path d="M57 20v18" />
-      <path d="M67 14v24" />
-      <path d="M47 26v12" />
-      <path d="m57 12 0-4" />
-      <path d="m67 10 0-4" />
-      <path d="m47 20 0-4" />
-    </g>
-  </svg>
-);
-
-const ValueIcon = () => (
-  <svg viewBox="0 0 80 80" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.8">
-      <path d="M18 48c8 0 12-6 15-12 4-7 8-11 16-11 7 0 13 5 13 12v2" />
-      <path d="M18 48c0 9 6 16 18 16h28" />
-      <path d="M44 22 51 14l7 8" />
-      <path d="M44 22h14" />
-      <path d="M20 60h44" />
-      <path d="M24 36c3 4 7 7 12 8" />
-      <path d="M52 48c5-1 9-4 12-8" />
-      <path d="M58 22c6 0 10 4 10 10" />
-    </g>
-  </svg>
-);
-
-const CultureIcon = () => (
-  <svg viewBox="0 0 80 80" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.8">
-      <circle cx="28" cy="24" r="6" />
-      <circle cx="52" cy="22" r="6" />
-      <path d="M22 58V40c0-5 4-9 9-9" />
-      <path d="M58 58V40c0-5-4-9-9-9" />
-      <path d="m34 32 6-10 6 10" />
-      <path d="M40 22v36" />
-      <path d="M32 58V44" />
-      <path d="M48 58V44" />
-      <path d="M14 48v-2" />
-      <path d="M66 48v-2" />
-    </g>
-  </svg>
-);
-
-const PlatformLeadIcon = () => (
-  <svg viewBox="0 0 96 96" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5">
-      <rect x="18" y="12" width="46" height="58" rx="6" />
-      <path d="M64 22h10a4 4 0 0 1 4 4v36" />
-      <path d="M12 70h62" />
-      <path d="M24 78h42" />
-      <path d="m41 27 12 7-12 7-12-7 12-7Z" />
-      <path d="M29 34v12l12 7 12-7V34" />
-      <path d="M77 58v17a3 3 0 0 1-3 3h-4" />
-    </g>
-  </svg>
-);
-
-const ComprehensiveIcon = () => (
-  <svg viewBox="0 0 80 80" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.8">
-      <path d="M40 15c6 0 11 5 11 11 0 4-2 7-5 9v6h-12v-6c-3-2-5-5-5-9 0-6 5-11 11-11Z" />
-      <path d="M35 47h10" />
-      <path d="M36 54h8" />
-      <path d="M40 59h.01" />
-      <path d="M20 24c-5 4-8 10-8 16s3 12 8 16" />
-      <path d="M60 24c5 4 8 10 8 16s-3 12-8 16" />
-      <path d="M27 18c-4 2-7 5-9 9" />
-      <path d="M53 18c4 2 7 5 9 9" />
-      <path d="M27 62c-4-2-7-5-9-9" />
-      <path d="M53 62c4-2 7-5 9-9" />
-    </g>
-  </svg>
-);
-
-const CapabilitiesIcon = () => (
-  <svg viewBox="0 0 80 80" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.8">
-      <circle cx="40" cy="40" r="12" />
-      <path d="M40 16v8" />
-      <path d="M40 56v8" />
-      <path d="M16 40h8" />
-      <path d="M56 40h8" />
-      <path d="m23 23 6 6" />
-      <path d="m51 51 6 6" />
-      <path d="m57 23-6 6" />
-      <path d="m29 51-6 6" />
-      <circle cx="40" cy="40" r="4" fill="currentColor" stroke="none" />
-      <circle cx="40" cy="16" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="40" cy="64" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="16" cy="40" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="64" cy="40" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="23" cy="23" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="57" cy="23" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="23" cy="57" r="2.5" fill="currentColor" stroke="none" />
-      <circle cx="57" cy="57" r="2.5" fill="currentColor" stroke="none" />
-    </g>
-  </svg>
-);
-
-const ProductLeadIcon = () => (
-  <svg viewBox="0 0 96 96" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5">
-      <path d="m18 36 30-14 30 14-30 14-30-14Z" />
-      <path d="m24 43-6 16 30 13 30-13-6-16" />
-      <path d="M35 58v12l13 5 13-5V58" />
-      <path d="m48 18 8-8 8 8" />
-      <path d="M56 10v16" />
-      <path d="m58 16 7-2 2 7" />
-    </g>
-  </svg>
-);
-
-const ExpectationsIcon = () => (
-  <svg viewBox="0 0 80 80" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.8">
-      <circle cx="28" cy="34" r="6" />
-      <circle cx="40" cy="28" r="6" />
-      <circle cx="52" cy="34" r="6" />
-      <path d="M20 50c0-5 4-9 9-9h22c5 0 9 4 9 9" />
-      <path d="M18 58h44" />
-      <path d="M12 20h8" />
-      <path d="M60 20h8" />
-      <path d="M16 12l6 6" />
-      <path d="m64 12-6 6" />
-      <path d="M16 66l6-6" />
-      <path d="m64 66-6-6" />
-    </g>
-  </svg>
-);
-
-const E2EIcon = () => (
-  <svg viewBox="0 0 80 80" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.8">
-      <path d="M40 14c11 0 20 9 20 20 0 7-4 13-9 17v8H29v-8c-5-4-9-10-9-17 0-11 9-20 20-20Z" />
-      <path d="M35 59h10" />
-      <path d="M34 66h12" />
-      <path d="m44 24-10 14h7l-5 12 13-16h-7l2-10Z" />
-      <path d="M14 40h.01" />
-      <path d="M66 40h.01" />
-      <path d="M20 20h.01" />
-      <path d="M60 20h.01" />
-      <path d="M20 60h.01" />
-      <path d="M60 60h.01" />
-    </g>
-  </svg>
-);
-
-const PartnershipLeadIcon = () => (
-  <svg viewBox="0 0 96 96" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5">
-      <path d="m28 36 9 9a7 7 0 0 0 10 0l12-12a7 7 0 0 1 10 0l7 7" />
-      <path d="m16 32 10-10a9 9 0 0 1 13 0l6 6" />
-      <path d="m15 33 13 13a5.5 5.5 0 0 1 0 8l-2 2a5.5 5.5 0 0 1-8 0L5 43" />
-      <path d="m81 45-13 13a5.5 5.5 0 0 1-8 0l-2-2a5.5 5.5 0 0 1 0-8" />
-      <path d="m31 49 5 5" />
-      <path d="m39 52 5 5" />
-      <path d="m47 50 5 5" />
-      <path d="m24 15 8-8 18 18" />
-    </g>
-  </svg>
-);
-
-const NetworkIcon = () => (
-  <svg viewBox="0 0 80 80" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.8">
-      <circle cx="40" cy="20" r="8" />
-      <path d="M30 36c0-6 4-10 10-10s10 4 10 10" />
-      <path d="M40 28v16" />
-      <circle cx="18" cy="58" r="4" />
-      <circle cx="40" cy="58" r="4" />
-      <circle cx="62" cy="58" r="4" />
-      <path d="M34 46 22 54" />
-      <path d="M40 46v8" />
-      <path d="M46 46 58 54" />
-    </g>
-  </svg>
-);
-
-const CollaborationIcon = () => (
-  <svg viewBox="0 0 80 80" aria-hidden="true">
-    <g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="4.8">
-      <circle cx="28" cy="28" r="7" />
-      <circle cx="52" cy="52" r="7" />
-      <path d="M22 44c0-5 3-9 8-10" />
-      <path d="M58 36c0 5-3 9-8 10" />
-      <path d="M40 18c8 0 14 6 14 14" />
-      <path d="M40 62c-8 0-14-6-14-14" />
-      <path d="m50 18h10v10" />
-      <path d="m30 62H20V52" />
-      <path d="M58 22 50 14" />
-      <path d="M22 58 14 50" />
-    </g>
-  </svg>
+/* ─── Image Icon helper ──────────────────────────────────────── */
+const ImgIcon = ({ src, alt }: { src: string; alt: string }) => (
+  <img src={src} alt={alt} className="w-full h-full object-contain drop-shadow-lg" />
 );
 
 /* ─── Keyframes via <style> tag ──────────────────────────────── */
@@ -525,19 +290,19 @@ const FrameworkSection: React.FC = () => {
   const frameworks = [
     {
       id: "fw-people",
-      icon: <PeopleLeadIcon />,
+      icon: <ImgIcon src={imgPeople} alt="People" />,
       label: "People : The Core of Transformation",
       description:
         'At the heart of the DIGITALFABRIC model lies "People." This highlights that human capital remains the foundation of any successful transformation. The people dimension focuses on two critical factors: value and culture.',
       variant: "default" as LayoutVariant,
       points: [
         {
-          icon: <ValueIcon />,
+          icon: <ImgIcon src={imgValue} alt="Value" />,
           title: "Value",
           body: "DIGITALFABRIC underscores the importance of delivering value through employees. By ensuring that the workforce is aligned with strategic goals, businesses can foster a culture that drives innovation and productivity.",
         },
         {
-          icon: <CultureIcon />,
+          icon: <ImgIcon src={imgCulture} alt="Culture" />,
           title: "Culture",
           body: "Emphasizing the cultural aspects ensures that the organization not only adapts to change but thrives in it. A culture that embraces digitalization and innovation leads to more engaged employees, creating a strong foundation for long-term success.",
         },
@@ -545,19 +310,19 @@ const FrameworkSection: React.FC = () => {
     },
     {
       id: "fw-process",
-      icon: <ProcessClusterIcon />,
+      icon: <ImgIcon src={imgProcess} alt="Process" />,
       label: "Process : Achieving Efficiency and Effectiveness",
       description:
         'The next layer emphasizes "Process." It highlights the role of optimizing workflows and operations to enhance overall performance. The model points to two critical aspects:',
       variant: "default" as LayoutVariant,
       points: [
         {
-          icon: <EfficiencyIcon />,
+          icon: <ImgIcon src={imgEfficiency} alt="Efficiency" />,
           title: "Efficiency",
           body: "By focusing on process efficiency, organizations can streamline their operations, eliminate redundancies, and enhance productivity.",
         },
         {
-          icon: <EffectivenessIcon />,
+          icon: <ImgIcon src={imgEffectiveness} alt="Effectiveness" />,
           title: "Effectiveness",
           body: "DIGITALFABRIC ensures that processes are not only efficient but also effective in meeting the organization's goals. This balance between efficiency and effectiveness allows companies to optimize resource utilization while meeting customer and business expectations.",
         },
@@ -565,19 +330,19 @@ const FrameworkSection: React.FC = () => {
     },
     {
       id: "fw-platform",
-      icon: <PlatformLeadIcon />,
+      icon: <ImgIcon src={imgPlatform} alt="Platform" />,
       label: "Platform : Enabling Comprehensive Capabilities",
       description:
         'The "Platform" dimension represents the technological infrastructure that underpins digital transformation. It focuses on providing comprehensive capabilities that enable organizations to innovate and grow.',
       variant: "platform" as LayoutVariant,
       points: [
         {
-          icon: <ComprehensiveIcon />,
+          icon: <ImgIcon src={imgComprehensive} alt="Comprehensive" />,
           title: "Comprehensive",
           body: "A robust platform provides an integrated approach to digital transformation. This includes infrastructure, software, and tools that support various business functions.",
         },
         {
-          icon: <CapabilitiesIcon />,
+          icon: <ImgIcon src={imgCapabilities} alt="Capabilities" />,
           title: "Capabilities",
           body: "DIGITALFABRIC emphasizes the development of digital capabilities that empower organizations to innovate and deliver superior products and services. A strong platform enables seamless collaboration across departments, enhancing operational agility.",
         },
@@ -585,19 +350,19 @@ const FrameworkSection: React.FC = () => {
     },
     {
       id: "fw-product",
-      icon: <ProductLeadIcon />,
+      icon: <ImgIcon src={imgProduct} alt="Product" />,
       label: "Product : Delivering E2E Solutions",
       description:
         'The "Product" dimension reflects the outputs and services that an organization offers. DIGITALFABRIC highlights the importance of developing products that meet comprehensive customer expectations and deliver end-to-end (E2E) solutions.',
       variant: "product" as LayoutVariant,
       points: [
         {
-          icon: <ExpectationsIcon />,
+          icon: <ImgIcon src={imgExpectations} alt="Expectations" />,
           title: "Expectations",
           body: "By focusing on customer needs, organizations can ensure that their products are not only competitive but also relevant in the market. DIGITALFABRIC enables businesses to anticipate and meet evolving customer expectations effectively.",
         },
         {
-          icon: <E2EIcon />,
+          icon: <ImgIcon src={imgE2E} alt="E2E Solution" />,
           title: "E2E Solution",
           body: "The emphasis on end-to-end solutions ensures that organizations can offer a seamless and integrated experience to customers, addressing their needs across the entire product or service lifecycle.",
         },
@@ -605,19 +370,19 @@ const FrameworkSection: React.FC = () => {
     },
     {
       id: "fw-partnership",
-      icon: <PartnershipLeadIcon />,
+      icon: <ImgIcon src={imgPartnership} alt="Partnership" />,
       label: "Partnership : Building Strategic Networks",
       description:
         'The outermost layer of the model represents "Partnership." This acknowledges the importance of building strategic alliances to drive growth and innovation.',
       variant: "partnership" as LayoutVariant,
       points: [
         {
-          icon: <NetworkIcon />,
+          icon: <ImgIcon src={imgNetwork} alt="Network" />,
           title: "Network",
           body: "DIGITALFABRIC advocates for the creation of a broad network of partners and collaborators to unlock new opportunities for innovation and expansion. A strong network allows businesses to tap into diverse expertise and resources.",
         },
         {
-          icon: <CollaborationIcon />,
+          icon: <ImgIcon src={imgCollaboration} alt="Collaboration" />,
           title: "Collaboration",
           body: "Collaboration is crucial in today's interconnected business landscape. By fostering collaboration between internal teams and external partners, DIGITALFABRIC enables organizations to co-create value and expand their market reach.",
         },

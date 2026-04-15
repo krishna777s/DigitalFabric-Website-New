@@ -240,7 +240,7 @@ export default function VideoSection() {
             {" "}GROUP OF COMPANIES.
           </h2>
           <p
-            className="m-0 max-w-[74ch] leading-[1.4]"
+            className="m-0 max-w-[85ch] leading-[1.5]"
             style={{ color: "#ffffff", fontSize: "0.95rem" }}
           >
             DIGITALFABRIC is a next-generation enterprise consulting and digital
