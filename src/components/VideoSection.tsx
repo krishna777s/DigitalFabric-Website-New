@@ -233,8 +233,7 @@ export default function VideoSection() {
         {/* Copy block */}
         <div className="max-w-[min(1040px,100%)]">
           <h2
-            className="m-0 mb-6 font-serif leading-[1.02] tracking-[-0.03em]"
-            style={{ fontSize: "clamp(2rem,2.85vw,3.35rem)" }}
+            className="m-0 mb-6 font-serif leading-[1.02] tracking-[-0.03em] text-[1.55rem] md:text-[clamp(2rem,2.85vw,3.35rem)]"
           >
             DIGITALFABRIC
             <Sup m="®" />
@@ -256,12 +255,12 @@ export default function VideoSection() {
 
       {/* ══ FEATURE: left panel + right media ═══════════════════════════════ */}
       <div
-        className="grid transition-all duration-700 ease-in-out"
+        className="flex flex-col lg:grid transition-all duration-700 ease-in-out"
         style={{
           gridTemplateColumns: isExpanded
             ? "0fr 1fr"
             : "minmax(320px,0.92fr) minmax(360px,1.08fr)",
-          minHeight: "clamp(620px,52vw,780px)",
+          minHeight: "clamp(500px,52vw,780px)",
         }}
       >
 
@@ -302,9 +301,8 @@ export default function VideoSection() {
 
           {/* Heading */}
           <h3
-            className="mx-auto mt-10 mb-[18px] w-full text-center font-serif leading-[1.2] tracking-[-0.02em]"
+            className="mx-auto mt-6 md:mt-10 mb-[18px] w-full text-center font-serif leading-[1.2] tracking-[-0.02em] text-[1.25rem] md:text-[clamp(1.4rem,2vw,2.4rem)]"
             style={{
-              fontSize: "clamp(1.4rem,2vw,2.4rem)",
               maxWidth: 360,
               color: active.panelText,
               wordBreak: "break-word",
@@ -549,11 +547,11 @@ export default function VideoSection() {
               className="cursor-pointer border-0 bg-transparent p-0 text-center"
               style={{ color: "#ffffff" }}
             >
-              <span className="block font-serif text-[1.1rem] font-bold leading-[1.05]">
+              <span className="block font-serif text-[0.92rem] font-bold leading-[1.05]">
                 <BrandTitle title={b.brandTitle} />
               </span>
               <span
-                className="mt-[10px] block font-serif text-[0.82rem] leading-[1.25]"
+                className="mt-[6px] block font-serif text-[0.7rem] leading-[1.25]"
                 style={{ color: "rgba(243,246,248,0.82)" }}
               >
                 {b.brandDescription}

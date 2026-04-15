@@ -85,17 +85,17 @@ const Hero = () => {
             {/* DARK MASK FOR LEGIBILITY */}
             <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-700" />
 
-            <div className="absolute bottom-6 left-6 right-6 lg:max-w-[90%] bg-white/10 backdrop-blur-xl border border-white/20 p-6 py-10 shadow-2xl">
+            <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 lg:max-w-[90%] bg-white/10 backdrop-blur-xl border border-white/20 p-4 md:p-6 py-8 md:py-10 shadow-2xl">
 
-              <h2 className="text-white text-3xl md:text-4xl font-serif leading-tight">
+              <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-serif leading-tight">
                 Enterprise Consulting
               </h2>
 
-              <p className="text-white/90 mt-3 text-[13px] leading-relaxed line-clamp-2">
+              <p className="text-white/90 mt-2 md:mt-3 text-[12px] md:text-[13px] leading-relaxed line-clamp-2 md:line-clamp-none">
                 Strategically guiding enterprises through transformation with a future-ready consulting framework
               </p>
 
-              <button className="mt-5 flex items-center gap-3 w-fit bg-white text-black px-4 py-1.5 rounded-full text-xs font-semibold">
+              <button className="mt-3 md:mt-5 flex items-center gap-3 w-fit bg-white text-black px-3 md:px-4 py-1.5 rounded-full text-[10px] md:text-xs font-semibold">
                 Explore More
                 <Arrow />
               </button>
@@ -158,7 +158,7 @@ const Hero = () => {
             </p>
 
             {/* SMALL CARDS */}
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-0">
 
               {[{
                 img: marketingImg,

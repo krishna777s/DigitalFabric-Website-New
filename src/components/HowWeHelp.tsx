@@ -33,7 +33,7 @@ export default function HowWeHelp() {
         [@media(max-width:1560px)]:w-[min(100%,calc(100%-120px))] [@media(max-width:1560px)]:pt-10 [@media(max-width:1560px)]:pb-[30px]
         [@media(max-width:1280px)]:w-[min(100%,calc(100%-72px))] [@media(max-width:1280px)]:pt-[34px] [@media(max-width:1280px)]:pb-6
         [@media(max-width:980px)]:w-[min(100%,calc(100%-40px))] [@media(max-width:980px)]:pt-8 [@media(max-width:980px)]:pb-6
-        [@media(max-width:640px)]:pt-[32px] [@media(max-width:640px)]:pb-6"
+        [@media(max-width:640px)]:w-[calc(100%-24px)] [@media(max-width:640px)]:pt-[32px] [@media(max-width:640px)]:pb-6"
       >
 
 

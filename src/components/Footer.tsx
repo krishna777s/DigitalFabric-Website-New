@@ -22,7 +22,7 @@ function Footer() {
           [@media(max-width:1400px)]:px-8 [@media(max-width:1400px)]:pt-6 [@media(max-width:1400px)]:pb-[88px] [@media(max-width:1400px)]:gap-10
           [@media(max-width:1100px)]:pb-10
           [@media(max-width:1024px)]:grid-cols-2 [@media(max-width:1024px)]:gap-7 [@media(max-width:1024px)]:px-5 [@media(max-width:1024px)]:pt-6 [@media(max-width:1024px)]:pb-[60px]
-          [@media(max-width:640px)]:grid-cols-1 [@media(max-width:640px)]:px-3 [@media(max-width:640px)]:pt-6 [@media(max-width:640px)]:pb-11 [@media(max-width:640px)]:gap-[22px]"
+          [@media(max-width:640px)]:grid-cols-1 [@media(max-width:640px)]:px-6 [@media(max-width:640px)]:pt-10 [@media(max-width:640px)]:pb-11 [@media(max-width:640px)]:gap-10"
       >
         <div
           className="footer-brand pt-[120px]
@@ -33,15 +33,15 @@ function Footer() {
           <img
             src={logo}
             alt="DigitalFabric"
-            className="footer-brand-logo block w-full max-w-[450px] h-auto mb-[18px]
-              [@media(max-width:1400px)]:max-w-[360px]
-              [@media(max-width:1024px)]:max-w-[320px] [@media(max-width:1024px)]:mb-3.5
-              [@media(max-width:640px)]:max-w-[250px]"
+            className="footer-brand-logo block w-full max-w-[360px] h-auto mb-[18px]
+              [@media(max-width:1400px)]:max-w-[340px]
+              [@media(max-width:1024px)]:max-w-[280px] [@media(max-width:1024px)]:mb-3
+              [@media(max-width:640px)]:max-w-[200px]"
           />
 
-          <div className="footer-brand-text font-serif text-[clamp(3rem,4vw,4.5rem)] leading-[0.86] -tracking-[0.035em] [text-shadow:0_1px_0_rgba(255,255,255,0.18)]
-            [@media(max-width:1024px)]:text-[clamp(2.4rem,4vw,3.6rem)]
-            [@media(max-width:640px)]:text-[2.1rem] [@media(max-width:640px)]:leading-[0.92]"
+          <div className="footer-brand-text font-serif text-[clamp(2.4rem,4vw,3.8rem)] leading-[0.86] -tracking-[0.035em] [text-shadow:0_1px_0_rgba(255,255,255,0.18)]
+            [@media(max-width:1024px)]:text-[clamp(2rem,4vw,3.2rem)]
+            [@media(max-width:640px)]:text-[1.8rem] [@media(max-width:640px)]:leading-[0.92]"
             aria-label="DigitalFabric Group"
           >
             {/* <span className="block">
@@ -102,9 +102,9 @@ function Footer() {
             <button
               type="submit"
               aria-label="Submit email"
-              className="border-0 bg-[#c6a77a] text-[#0f1111] grid place-items-center text-[2.1rem] cursor-pointer
-                [@media(max-width:1024px)]:text-[1.7rem]
-                [@media(max-width:640px)]:text-[1.45rem]"
+              className="border-0 bg-[#0B527B] text-white grid place-items-center text-[1.8rem] cursor-pointer
+                [@media(max-width:1024px)]:text-[1.5rem]
+                [@media(max-width:640px)]:text-[1.3rem]"
             >
               <span aria-hidden="true">→</span>
             </button>

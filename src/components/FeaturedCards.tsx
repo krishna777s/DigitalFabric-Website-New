@@ -25,7 +25,7 @@ const FeaturedCards = () => {
       <div className="max-w-[1500px] mx-auto px-6">
 
         {/* GRID */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(260px,0.92fr)_minmax(250px,0.88fr)_minmax(0,1.6fr)] items-start">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-[minmax(260px,0.92fr)_minmax(250px,0.88fr)_minmax(0,1.6fr)] items-start">
 
 
           {/* LEFT CARD */}
@@ -108,7 +108,7 @@ const FeaturedCards = () => {
                 Towards Enterprise 3.0.
               </h3>
 
-              <p className="text-white/90 text-[12px] mt-2 line-clamp-2 leading-relaxed">
+              <p className="text-white/90 text-[12px] mt-2 line-clamp-3 leading-relaxed">
                 Enterprise 3.0 is a pivotal phase in digital transformation, integrating AI, IoT, and cloud computing to reshape businesses.
               </p>
 

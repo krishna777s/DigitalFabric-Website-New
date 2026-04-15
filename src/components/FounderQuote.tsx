@@ -138,7 +138,7 @@ export default function FounderSection() {
     <section
       ref={sectionRef}
       // Set to 85vh max or explicitly contained to fit inside a single screen scroll perfectly like an artboard.
-      className="relative w-full overflow-hidden bg-black border-t border-[#333] lg:h-[60vh] lg:min-h-[480px] lg:max-h-[800px]"
+      className="relative w-full overflow-x-hidden bg-black border-t border-[#333] lg:h-[60vh] lg:min-h-[480px] lg:max-h-[800px] min-h-[700px] lg:min-h-0"
       style={{ fontFamily: "'Abhaya Libre', serif" }}
       aria-label="About DigitalFabric leadership"
     >
@@ -149,7 +149,7 @@ export default function FounderSection() {
           LEFT COLUMN: Portrait (Transparent background to allow lines to pass behind) -> 42% WIDTH
           ------------------------------------------------------------------ 
         */}
-        <div className="relative w-full lg:w-[42%] h-[400px] lg:h-full bg-transparent flex flex-col justify-end items-center z-20">
+        <div className="relative w-full lg:w-[42%] h-[450px] lg:h-full bg-transparent flex flex-col justify-end items-center z-20">
 
           {/* Image strictly contained */}
           <img
@@ -187,7 +187,7 @@ export default function FounderSection() {
             To reduce gap, change gap-[10%] to gap-[5%] or gap-0.
             To move it left behind the image, keep your -ml styling (e.g. -ml-52).
           */}
-          <div className="absolute inset-0 z-0 -ml-52 flex w-full h-full pointer-events-none justify-start px-0 gap-[4%]">
+          <div className="absolute inset-0 z-0 -ml-52 hidden lg:flex w-full h-full pointer-events-none justify-start px-0 gap-[4%]">
             <div className="w-[28%] h-full bg-[#1c2e38]"></div>
             <div className="w-[28%] h-full bg-[#1c2e38]"></div>
             <div className="w-[28%] h-full bg-[#1c2e38]"></div>
@@ -199,8 +199,8 @@ export default function FounderSection() {
             {/* Main Quote */}
             <h2
               className={`
-                m-0 mb-10
-                text-[clamp(1.5rem,2.5vw,2.5rem)]
+                m-0 mb-8 md:mb-10
+                text-[1.4rem] md:text-[clamp(1.5rem,2.5vw,2.5rem)]
                 font-bold leading-[1.15] tracking-tight
                 text-white
                 transition-[transform,opacity,filter]
@@ -226,19 +226,20 @@ export default function FounderSection() {
                     key={card.key}
                     className={`
                       flex-1 flex flex-col items-center justify-center text-center
-                      min-h-[120px] px-3 py-6
+                      min-h-[110px] md:min-h-[120px] px-4 py-5 md:py-6
                       bg-white rounded-[16px]
                       transform transition-transform hover:scale-105 duration-300
+                      mx-auto w-[min(100%,320px)] sm:w-auto
                       ${inView ? 'card-animate-' + (i + 1) : 'card-hidden'}
                     `}
                   >
                     <strong
-                      className="font-bold text-[clamp(1.2rem,1.8vw,1.5rem)] tracking-tight mb-2"
+                      className="font-bold text-[1.2rem] md:text-[clamp(1.2rem,1.8vw,1.5rem)] tracking-tight mb-1"
                       style={{ color: titleColor }}
                     >
                       {card.label}
                     </strong>
-                    <span className="block text-[clamp(0.85rem,1.1vw,0.9rem)] font-normal text-black leading-snug w-[85%]">
+                    <span className="block text-[0.85rem] md:text-[clamp(0.85rem,1.1vw,0.9rem)] font-normal text-black leading-snug w-full px-2">
                       {card.description}
                     </span>
                   </li>
