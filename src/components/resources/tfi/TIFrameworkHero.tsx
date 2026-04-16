@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import tiFrameworkHero from "@/assets/ti- hero bg.jpg";
+import heroVideo from "@/assets/0_Abstract_Blue_3840x2160.mp4";
 
 const TIFrameworkHero = () => {
   const [isInView, setIsInView] = useState(false);
@@ -23,11 +23,20 @@ const TIFrameworkHero = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative flex items-end overflow-hidden bg-center bg-no-repeat bg-cover min-h-[calc(100vh-78px)]"
-      style={{
-        backgroundImage: `linear-gradient(180deg, rgba(10, 18, 42, 0.30) 0%, rgba(10, 18, 42, 0.40) 52%, rgba(8, 14, 34, 0.58) 100%), url("${tiFrameworkHero}")`,
-      }}
+      className="relative flex items-end overflow-hidden bg-black min-h-[calc(100vh-78px)]"
     >
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-60"
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(10,18,42,0.30)_0%,rgba(10,18,42,0.40)_52%,rgba(8,14,34,0.58)_100%)] opacity-80" />
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.015)_22%,rgba(5,12,30,0.08)_100%),radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_18%,rgba(255,255,255,0)_38%)] backdrop-blur-[0px]" />
 
       <div className="relative z-10 w-[min(100%,980px)] pt-0 pb-[96px] pl-[66px] max-[1100px]:w-[min(100%,820px)] max-[1100px]:px-7 max-[1100px]:pb-[72px] max-[640px]:px-[18px] max-[640px]:pb-[44px]">

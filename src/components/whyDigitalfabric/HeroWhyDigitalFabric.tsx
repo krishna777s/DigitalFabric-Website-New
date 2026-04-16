@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import bgPattern from "@/assets/copygamie blue bg.jpg"
+import dfVideo from "@/assets/Why DIGITALFABRIC.mov";
 import questionImg from "@/assets/why df hero.png";
 
 const HeroWhyDigitalFabric: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [backgroundOffset, setBackgroundOffset] = useState(0);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -24,37 +23,25 @@ const HeroWhyDigitalFabric: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const updateBackgroundOffset = () => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      const offset = Math.max(-40, Math.min(140, -rect.top * 0.18));
-      setBackgroundOffset(offset);
-    };
-
-    updateBackgroundOffset();
-    window.addEventListener("scroll", updateBackgroundOffset, { passive: true });
-    window.addEventListener("resize", updateBackgroundOffset);
-
-    return () => {
-      window.removeEventListener("scroll", updateBackgroundOffset);
-      window.removeEventListener("resize", updateBackgroundOffset);
-    };
-  }, []);
-
   return (
     <section
       ref={sectionRef}
       className="relative min-h-[84vh] overflow-hidden text-[#f4f3ef] bg-[#0a0f1f]"
     >
-      <div
-        className="absolute inset-0 w-full h-full bg-no-repeat bg-cover brightness-[1.0] pointer-events-none"
-        style={{
-          backgroundImage: `url('${bgPattern}')`,
-          backgroundPosition: `center calc(0px + ${backgroundOffset}px)`,
-        }}
-      />
-      <div className="absolute inset-0 bg-[#081229]/70 mix-blend-multiply pointer-events-none" />
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover scale-[1.01]"
+      >
+        <source src={dfVideo} type="video/quicktime" />
+        <source src={dfVideo} type="video/mp4" />
+      </video>
+
+      {/* Overlays for legibility */}
+      <div className="absolute inset-0 bg-[#081229]/60 mix-blend-multiply pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#030919] via-[#081229]/80 to-transparent pointer-events-none" />
 
       {/* Inner grid */}

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import AshwinImg from '@/assets/Ashwin founder page.png'
+import AshwinImg from '@/assets/Ashwin founder quote page.png'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -138,7 +138,7 @@ export default function FounderSection() {
     <section
       ref={sectionRef}
       // Set to 85vh max or explicitly contained to fit inside a single screen scroll perfectly like an artboard.
-      className="relative w-full overflow-x-hidden bg-black border-t border-[#333] lg:h-[60vh] lg:min-h-[480px] lg:max-h-[800px] min-h-[700px] lg:min-h-0"
+      className="relative w-full overflow-x-hidden bg-black border-t border-[#333] lg:h-[70vh] lg:min-h-[480px] lg:max-h-[800px] min-h-[700px] lg:min-h-0"
       style={{ fontFamily: "'Abhaya Libre', serif" }}
       aria-label="About DigitalFabric leadership"
     >
@@ -152,27 +152,16 @@ export default function FounderSection() {
         <div className="relative w-full lg:w-[42%] h-[450px] lg:h-full bg-transparent flex flex-col justify-end items-center z-20">
 
           {/* Image strictly contained */}
+          {/* Image strictly contained - aligned to bottom since it has its own built-in banner */}
           <img
             className={`
-              absolute bottom-[60px] w-[90%] left-0 right-0 mx-auto h-[90%] object-contain object-bottom
+              absolute bottom-0 w-[72%]  h-auto max-h-full object-contain object-bottom
               transition-all duration-1000 delay-300 pointer-events-auto
               ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}
             `}
             src={AshwinImg}
             alt="Ashwin Gaidhani"
           />
-
-          {/* Teal Banner Overlay at absolute bottom */}
-          <div className="absolute bottom-0 w-full bg-[#087DA0] text-center pt-5 pb-6 px-4 z-30 pointer-events-auto">
-            <h3 className="text-white text-3xl font-bold mb-1 tracking-wide">
-              Ashwin Gaidhani
-            </h3>
-            <p className="text-white text-[0.85rem] leading-[1.3] tracking-wider">
-              Founder & CEO, DIGITALFABRIC<sup className="text-[0.6em] relative top-[-0.3em]">®</sup> GROUP
-              <br />
-              Distinguished Analyst Leading Major Studies at ISG
-            </p>
-          </div>
         </div>
 
         {/* 

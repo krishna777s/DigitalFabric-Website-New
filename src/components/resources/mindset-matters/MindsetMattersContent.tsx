@@ -26,14 +26,78 @@ const categories: Category[] = [
 ];
 
 const chartsData = [
-  { id: 1, category: "Sourcing Strategy & Frameworks", src: img1, alt: "Work Sourcing Trajectory" },
-  { id: 2, category: "Technology Fundamentals", src: img2, alt: "Digital Infrastructure Demand" },
-  { id: 3, category: "Corporate Governance Frameworks", src: img3, alt: "Governance is Purpose and Practice" },
-  { id: 4, category: "Sustainable Development in IT Industry", src: img4, alt: "Sustainable By Design" },
-  { id: 5, category: "Technology Fundamentals", src: img5, alt: "What is a Product" },
-  { id: 6, category: "Sustainable Development in IT Industry", src: img6, alt: "Green Framework" },
-  { id: 7, category: "Sustainable Development in IT Industry", src: img7, alt: "Sustainability at Core" },
-  { id: 8, category: "History of Technology", src: img8, alt: "The Journey So Far" }
+  { 
+    id: 1, 
+    category: "Sourcing Strategy & Frameworks", 
+    src: img1, 
+    alt: "Work Sourcing Trajectory",
+    title: "THE SOURCING EVOLUTION",
+    description: "Trajectory of Sourcing Work and Service Integrated Frameworks.",
+    copyright: "© 2019 Ashwin Gaidhani"
+  },
+  { 
+    id: 2, 
+    category: "Technology Fundamentals", 
+    src: img2, 
+    alt: "Digital Infrastructure Demand",
+    title: "DIGITAL INFRASTRUCTURE DEMAND",
+    description: "Demand for Skilled Resources in the Digital Infrastructure Industry.",
+    copyright: "© 2022 Ashwin Gaidhani"
+  },
+  { 
+    id: 3, 
+    category: "Corporate Governance Frameworks", 
+    src: img3, 
+    alt: "Governance is Purpose and Practice",
+    title: "GOVERNANCE IS THE PURPOSE AND PRACTICE",
+    description: "A comprehensive Governance Framework for ESG, Risk, and Compliance management.",
+    copyright: "© 2024 Ashwin Gaidhani"
+  },
+  { 
+    id: 4, 
+    category: "Sustainable Development in IT Industry", 
+    src: img4, 
+    alt: "Sustainable By Design",
+    title: "SUSTAINABLE BY DESIGN",
+    description: "Sustainable Development and Eco-friendly IT Architecture Framework.",
+    copyright: "© 2024 Ashwin Gaidhani"
+  },
+  { 
+    id: 5, 
+    category: "Technology Fundamentals", 
+    src: img5, 
+    alt: "What is a Product",
+    title: "FUNDAMENTALS: WHAT IS A PRODUCT?",
+    description: "Deconstructing the fundamental components of a Digital Product.",
+    copyright: "© 2022 Ashwin Gaidhani"
+  },
+  { 
+    id: 6, 
+    category: "Sustainable Development in IT Industry", 
+    src: img6, 
+    alt: "Green Framework",
+    title: "GREEN IT FRAMEWORK",
+    description: "Framework for managing Environmental Impact and Sustainability in IT operations.",
+    copyright: "© 2024 Ashwin Gaidhani"
+  },
+  { 
+    id: 7, 
+    category: "Sustainable Development in IT Industry", 
+    src: img7, 
+    alt: "Sustainability at Core",
+    title: "EMBEDDING SUSTAINABILITY AT CORE",
+    description: "Integrated strategy for placing sustainability at the heart of business value.",
+    copyright: "© 2024 Ashwin Gaidhani"
+  },
+  { 
+    id: 8, 
+    category: "History of Technology", 
+    src: img8, 
+    alt: "The Journey So Far",
+    title: "THE JOURNEY SO FAR - AND BEYOND",
+    description: "Historical trajectory of IT evolution and its future transformation path.",
+    copyright: "© 2020 Ashwin Gaidhani"
+  }
 ];
 
 const MindsetMattersContent = () => {
@@ -88,14 +152,32 @@ const MindsetMattersContent = () => {
             {filteredCharts.map((chart, index) => (
               <div 
                 key={chart.id} 
-                className="w-full flex items-center justify-center p-8 max-[640px]:p-4 border-b border-[#ffffff10] last:border-b-0 animate-[fadeInUp_0.6s_ease-out_forwards] opacity-0 translate-y-8"
+                className="w-full flex flex-col items-center py-16 px-12 max-[640px]:p-8 border-b border-[#ffffff10] last:border-b-0 animate-[fadeInUp_0.6s_ease-out_forwards] opacity-0 translate-y-8"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <img 
-                  src={chart.src} 
-                  alt={chart.alt} 
-                  className="w-full max-w-[900px] h-auto object-contain drop-shadow-2xl"
-                />
+                {/* ABOVE Image */}
+                <h3 className="w-full text-left font-serif text-[clamp(1.2rem,1.8vw,1.6rem)] text-[#5ac8fa] font-bold mb-8 tracking-wide">
+                  {chart.title}
+                </h3>
+
+                {/* IMAGE */}
+                <div className="w-full flex justify-center bg-black/30 p-4 rounded-lg border border-white/5 shadow-2xl">
+                  <img 
+                    src={chart.src} 
+                    alt={chart.alt} 
+                    className="w-full max-w-[900px] h-auto object-contain transition-transform duration-500 hover:scale-[1.02]"
+                  />
+                </div>
+
+                {/* BELOW Image */}
+                <div className="w-full mt-8 text-left">
+                  <p className="font-sans text-[clamp(1rem,1.4vw,1.15rem)] text-[#cfd4e6] leading-relaxed mb-3">
+                    {chart.description}
+                  </p>
+                  <span className="font-sans text-[0.85rem] text-[#ffffff60] uppercase tracking-widest block font-medium">
+                    {chart.copyright}
+                  </span>
+                </div>
               </div>
             ))}
 

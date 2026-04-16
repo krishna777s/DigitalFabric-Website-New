@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import aiswitchHero from "@/assets/AISWITCH.jpeg";
+import aiswitchVideo from "@/assets/GettyImages-1251181415.mov";
 
 const AISWITCHFrameworkHero = () => {
   const [isInView, setIsInView] = useState(false);
@@ -24,11 +24,22 @@ const AISWITCHFrameworkHero = () => {
     <section
       ref={sectionRef}
       className={`relative flex items-end overflow-hidden bg-center bg-no-repeat bg-cover min-h-[calc(100vh-78px)] ${isInView ? "in-view" : ""}`}
-      style={{
-        backgroundImage: `linear-gradient(180deg, rgba(5, 10, 28, 0.1) 0%, rgba(7, 13, 34, 0.3) 60%, rgba(4, 8, 20, 0.45) 100%), url(${aiswitchHero})`,
-      }}
     >
-      {/* Background Overlay pseudo-element made much lighter */}
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover scale-[1.01]"
+      >
+        <source src={aiswitchVideo} type="video/quicktime" />
+        <source src={aiswitchVideo} type="video/mp4" />
+      </video>
+
+      {/* Background Overlays for legibility */}
+      <div className="absolute inset-0 pointer-events-none bg-black/20" />
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(5,10,28,0.1)_0%,rgba(7,13,34,0.3)_60%,rgba(4,8,20,0.45)_100%)]" />
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(90deg,rgba(5,9,26,0.35)_0%,rgba(7,12,29,0.15)_32%,transparent_62%,transparent_100%)]" />
 
       <div className="relative z-10 w-[min(100%,1100px)] pt-0 pb-[124px] px-[58px] max-[1100px]:pb-[96px] max-[1100px]:px-[34px] max-[640px]:pb-[58px] max-[640px]:px-[18px]">
