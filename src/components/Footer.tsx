@@ -1,15 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '@/assets/DFG-Blue.png'
+import logo from '@/assets/DF group logo-Blue.png'
 
-const menuItems = [
-  { text: 'Why DIGITALFABRIC', superscript: true, path: '/why-digital-fabric' },
-  { text: 'Services', path: '/services' },
-  { text: 'Knowledge Area', path: '#' },
-  { text: 'Featured Insights', path: '/insights' },
-  { text: 'Success Stories', path: '#' },
-  { text: 'Opportunities', path: '#' },
-]
 
 function Footer() {
   return (
@@ -44,41 +36,28 @@ function Footer() {
             [@media(max-width:640px)]:text-[1.8rem] [@media(max-width:640px)]:leading-[0.92]"
             aria-label="DigitalFabric Group"
           >
-            {/* <span className="block">
-              DIGITALFABRIC<sup className="text-[0.6em]">®</sup>
-            </span>
-            <span className="block">GROUP</span> */}
           </div>
         </div>
 
-        <div className="footer-menu">
+        <div className="footer-contact pt-[120px] [@media(max-width:1400px)]:pt-20 [@media(max-width:1100px)]:pt-0 flex flex-col items-start">
           <h2 className="font-serif text-[clamp(2.35rem,2.7vw,3.25rem)] font-normal leading-none mb-7 text-black
             [@media(max-width:1024px)]:text-[clamp(1.8rem,3vw,2.4rem)] [@media(max-width:1024px)]:mb-[18px]
             [@media(max-width:640px)]:text-[1.6rem] [@media(max-width:640px)]:mb-3.5"
           >
-            Menu
+            Get in touch
           </h2>
-          <nav aria-label="Footer menu">
-            <ul className="list-none p-0 m-0">
-              {menuItems.map((item) => (
-                <li key={item.text} className="[&:not(:first-child)]:mt-7 [@media(max-width:640px)]:[&:not(:first-child)]:mt-3.5 [@media(max-width:1024px)]:[&:not(:first-child)]:mt-[18px]">
-                  <Link to={item.path} className="text-black no-underline font-serif text-[1.1rem] leading-[1.35] [@media(max-width:1024px)]:text-[1rem] [@media(max-width:640px)]:text-[0.9rem]">
-                    {item.text.includes('DIGITALFABRIC') && item.superscript ? (
-                      <>
-                        {item.text}
-                        <span className="inline-block translate-y-[0.1em] text-[1.2em] font-bold ml-[2px]">®</span>
-                      </>
-                    ) : (
-                      item.text
-                    )}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center bg-[#0B527B] text-white font-serif text-[1.2rem] px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#084263] border-none cursor-pointer no-underline
+            [@media(max-width:1024px)]:text-[1.1rem] [@media(max-width:1024px)]:px-6 [@media(max-width:1024px)]:py-3
+            [@media(max-width:640px)]:text-[1rem] [@media(max-width:640px)]:px-5 [@media(max-width:640px)]:py-2.5"
+          >
+            Contact Us
+            <span aria-hidden="true" className="ml-3 text-[1.2em]">→</span>
+          </Link>
         </div>
 
-        <div className="footer-subscribe">
+        <div className="footer-subscribe pt-[120px] [@media(max-width:1400px)]:pt-20 [@media(max-width:1100px)]:pt-0">
           <h2 className="font-serif text-[clamp(2.35rem,2.7vw,3.25rem)] font-normal leading-none mb-7 text-black
             [@media(max-width:1024px)]:text-[clamp(1.8rem,3vw,2.4rem)] [@media(max-width:1024px)]:mb-[18px]
             [@media(max-width:640px)]:text-[1.6rem] [@media(max-width:640px)]:mb-3.5"
@@ -109,9 +88,9 @@ function Footer() {
               <span aria-hidden="true">→</span>
             </button>
           </form>
-          <a href="/" className="footer-message-link inline-block mt-4 text-black no-underline font-serif text-[0.95rem] opacity-90 [@media(max-width:640px)]:text-[0.9rem] [@media(max-width:640px)]:mt-3 hover:underline">
+          <Link to="/contact" className="footer-message-link inline-block mt-4 text-black no-underline font-serif text-[0.95rem] opacity-90 [@media(max-width:640px)]:text-[0.9rem] [@media(max-width:640px)]:mt-3 hover:underline">
             *Send Message
-          </a>
+          </Link>
         </div>
       </div>
 

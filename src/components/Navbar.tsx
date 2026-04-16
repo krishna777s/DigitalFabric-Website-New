@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/DFG-Blue.png";
+import logo from "@/assets/DF group logo-Blue.png";
 import ResourcesMenu from "@/components/resources/ResourcesMenu";
 
 const navItems = [

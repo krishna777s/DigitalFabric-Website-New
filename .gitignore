@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Large Unused Media
+*.mov
+src/assets/0_Abstract_Blue_3840x2160.mp4
+src/assets/0_Cubes_Shapes_3840x2160.mp4
+

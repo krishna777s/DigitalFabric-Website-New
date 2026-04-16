@@ -228,26 +228,24 @@ export default function VideoSection() {
     >
 
       {/* ══ HEADER ══════════════════════════════════════════════════════════ */}
-      <div className="mb-[clamp(16px,2.6vw,42px)] flex flex-wrap items-start justify-between gap-[clamp(20px,2vw,32px)]">
+      <div className="mb-[clamp(24px,3vw,42px)] mx-auto w-full max-w-[1400px]">
 
         {/* Copy block */}
-        <div className="max-w-[min(1040px,100%)]">
+        <div className="w-full">
           <h2
-            className="m-0 mb-6 font-serif leading-[1.02] tracking-[-0.03em] text-[1.55rem] md:text-[clamp(2rem,2.85vw,3.35rem)]"
+            className="m-0 mb-6 font-serif leading-[1.02] text-center tracking-[-0.03em] text-[1.8rem] md:text-[clamp(2.5rem,3.5vw,4.5rem)]"
           >
             DIGITALFABRIC
             <Sup m="®" />
-            {" "}GROUP OF COMPANIES.
+            {" "}GROUP OF COMPANIES
           </h2>
           <p
-            className="m-0 max-w-[85ch] leading-[1.5]"
-            style={{ color: "#ffffff", fontSize: "0.95rem" }}
+            className="m-0 max-w-[120ch] leading-[1.6] text-left"
+            style={{ color: "#ffffff", fontSize: "1.5rem" }}
           >
-            DIGITALFABRIC is a next-generation enterprise consulting and digital
-            transformation group that helps organizations become AI-driven,
-            scalable, and future-ready. It combines strategy, technology, and
-            execution to drive efficient, innovation-led growth in a rapidly
-            evolving digital landscape.
+            DIGITALFABRIC<Sup m="®" /> Group comprises of independent entities that drive new-generation digital business transformation,
+            AI consulting, and design firm. We integrate strategy, technology, and design to enable B2B and B2C businesses
+            to achieve pragmatic, innovation-led growth in an increasingly dynamic digital landscape.
           </p>
         </div>
 
@@ -255,12 +253,12 @@ export default function VideoSection() {
 
       {/* ══ FEATURE: left panel + right media ═══════════════════════════════ */}
       <div
-        className="flex flex-col lg:grid transition-all duration-700 ease-in-out"
+        className="mx-auto max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:grid transition-all duration-700 ease-in-out bg-black/10"
         style={{
           gridTemplateColumns: isExpanded
             ? "0fr 1fr"
             : "minmax(320px,0.92fr) minmax(360px,1.08fr)",
-          minHeight: "clamp(500px,52vw,780px)",
+          minHeight: "clamp(400px,40vw,550px)",
         }}
       >
 
@@ -270,8 +268,8 @@ export default function VideoSection() {
           style={{
             background: active.panelBg,
             color: active.panelText,
-            padding: isExpanded ? "0" : "80px clamp(20px,1.9vw,26px) clamp(24px,2.2vw,30px)",
-            minHeight: isExpanded ? "0" : "clamp(620px,52vw,780px)",
+            padding: isExpanded ? "0" : "60px clamp(20px,1.9vw,26px) clamp(24px,2.2vw,30px)",
+            minHeight: isExpanded ? "0" : "clamp(400px,40vw,550px)",
             width: isExpanded ? "0" : "auto",
           }}
         >
@@ -333,12 +331,12 @@ export default function VideoSection() {
         <div
           key={active.key}
           aria-label={`${active.brandTitle} featured media`}
-          className="relative overflow-hidden bg-cover bg-center group/video"
+          className="relative overflow-hidden bg-cover bg-center group/video bg-black/20"
           onMouseEnter={() => setShowControls(true)}
           onMouseLeave={() => setShowControls(false)}
           style={{
             backgroundImage: active.videoSrc ? undefined : `url(${active.media})`,
-            minHeight: "clamp(620px,52vw,780px)",
+            minHeight: "clamp(400px,40vw,550px)",
           }}
         >
           {active.videoSrc ? (
@@ -484,7 +482,7 @@ export default function VideoSection() {
       {/* ══ PROGRESS LINES (desktop) ═════════════════════════════════════════ */}
       <div
         aria-hidden="true"
-        className="mt-10 mb-6 grid grid-cols-5 gap-7 max-[640px]:hidden"
+        className="mx-auto max-w-[1400px] mt-10 mb-6 grid grid-cols-5 gap-7 max-[640px]:hidden px-2"
       >
         {showcaseBrands.map((b) => (
           <span
@@ -496,7 +494,7 @@ export default function VideoSection() {
       </div>
 
       {/* ══ BRAND TABS (desktop) ═════════════════════════════════════════════ */}
-      <div className="grid grid-cols-5 items-start gap-[26px] max-[640px]:hidden">
+      <div className="mx-auto max-w-[1400px] grid grid-cols-5 items-start gap-[26px] max-[640px]:hidden px-2">
         {showcaseBrands.map((b) => (
           <button
             key={b.key}
@@ -533,7 +531,7 @@ export default function VideoSection() {
       </div>
 
       {/* ══ BRAND TABS (mobile ≤640px) ═══════════════════════════════════════ */}
-      <div className="hidden grid-cols-2 gap-[18px] pt-[18px] max-[640px]:grid">
+      <div className="mx-auto max-w-[1400px] hidden grid-cols-2 gap-[18px] pt-[18px] max-[640px]:grid px-2">
         {showcaseBrands.map((b) => (
           <div key={b.key} className="grid gap-3">
             <span

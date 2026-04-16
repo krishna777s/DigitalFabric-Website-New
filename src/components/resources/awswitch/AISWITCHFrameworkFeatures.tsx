@@ -41,7 +41,7 @@ const AISWITCHFrameworkFeatures = () => {
     if (!section) return;
 
     const items = section.querySelectorAll<HTMLElement>('.feature-item');
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -59,14 +59,14 @@ const AISWITCHFrameworkFeatures = () => {
   }, []);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
       className="bg-[#0b101c] px-[58px] py-32 max-[1100px]:px-[34px] max-[1100px]:py-20 max-[640px]:px-[18px] max-[640px]:py-16"
     >
       <div className="max-w-7xl mx-auto flex gap-12 max-[900px]:flex-col relative items-start">
-        
+
         {/* Sticky Heading Left Column */}
-        <div className="w-[45%] max-[900px]:w-full sticky top-[140px] max-[900px]:static max-[900px]:mb-12">
+        <div className="w-[45%] max-[900px]:w-full sticky top-[350px] max-[900px]:static max-[900px]:mb-12">
           <h2 className="m-0 font-serif font-bold text-white leading-[1.05] -tracking-[0.03em] text-[clamp(2.5rem,4.5vw,4.2rem)] max-[640px]:text-[2.2rem] feature-item opacity-0 translate-y-12 transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0">
             In Your AI Journey,<br />We Are Your...
           </h2>
@@ -75,15 +75,15 @@ const AISWITCHFrameworkFeatures = () => {
         {/* Scrolling Features Right Column */}
         <div className="w-[55%] max-[900px]:w-full flex flex-col gap-[72px] max-[640px]:gap-[48px]">
           {features.map((feat, i) => (
-            <div 
-              key={feat.title} 
-              className="feature-item grid grid-cols-[80px_minmax(0,1fr)] max-[640px]:grid-cols-[56px_minmax(0,1fr)] gap-6 max-[640px]:gap-4 border-b border-[#ffffff14] pb-10 max-[640px]:pb-8 last:border-b-0 last:pb-0 opacity-0 translate-y-12 transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0"
+            <div
+              key={feat.title}
+              className="feature-item grid grid-cols-[80px_minmax(0,1fr)] max-[640px]:grid-cols-[56px_minmax(0,1fr)] gap-6 max-[640px]:gap-4 border-b border-[#ffffff14] pb-10 max-[640px]:pb-8 last:border-b-0 last:pb-0 opacity-0 translate-y-12 transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0 hover:scale-[1.03] hover:translate-x-2 transition-all duration-[400ms] transform-gpu cursor-default group"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               <div className="flex items-start justify-center pt-1.5">
-                <img 
-                  src={feat.icon} 
-                  alt={`${feat.title} icon`} 
+                <img
+                  src={feat.icon}
+                  alt={`${feat.title} icon`}
                   className="w-full h-auto object-contain drop-shadow-[0_0_8px_rgba(45,212,255,0.4)] mix-blend-screen"
                 />
               </div>

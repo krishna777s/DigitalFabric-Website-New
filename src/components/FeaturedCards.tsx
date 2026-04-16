@@ -1,4 +1,4 @@
-import digitalFabricImg from "@/assets/digitalfabric-in.jpg";
+import digitalFabricImg from "@/assets/DIGITALFABRIC.jpg";
 import researchImg from "@/assets/research-fabric.jpg";
 import featureImg from "@/assets/Marketing that drives real growth.jpeg";
 

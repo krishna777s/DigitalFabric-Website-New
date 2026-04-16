@@ -1,6 +1,6 @@
 import EnterpriseStrategy from "../assets/Enterprise Strategy.jpg"
 import AiDigitalEnginnering from "../assets/AI&Digital Engineering.jpeg"
-import ConsultingAdvisory from "../assets/Consulting & Advisory.jpeg"
+import ConsultingAdvisory from "../assets/Consulting & Advisory.jpg"
 
 const helpCards = [
   {
