@@ -31,6 +31,7 @@ const AISWITCHFrameworkHero = () => {
         muted
         loop
         playsInline
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover scale-[1.01]"
       >
         <source src={aiswitchVideo} type="video/quicktime" />
@@ -39,7 +40,7 @@ const AISWITCHFrameworkHero = () => {
 
       {/* Background Overlays for legibility */}
       <div className="absolute inset-0 pointer-events-none bg-black/20" />
-      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(5,10,28,0.1)_0%,rgba(7,13,34,0.3)_60%,rgba(4,8,20,0.45)_100%)]" />
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(5,10,28,0.1)_0%,rgba(7,13,34,0.3)_60%,rgba(4,8,20,0.45)100%)]" />
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(90deg,rgba(5,9,26,0.35)_0%,rgba(7,12,29,0.15)_32%,transparent_62%,transparent_100%)]" />
 
       <div className="relative z-10 w-[min(100%,1100px)] pt-0 pb-[124px] px-[58px] max-[1100px]:pb-[96px] max-[1100px]:px-[34px] max-[640px]:pb-[58px] max-[640px]:px-[18px]">
@@ -52,7 +53,9 @@ const AISWITCHFrameworkHero = () => {
           The DIGITALFABRIC
           <span className="inline-block translate-y-[0.2em] relative top-[-0.2em] text-[1.em] font-normal ml-[3px]">®</span>
           <br />
-          AISWITCH Framework
+          AISWITCH
+          <span className="inline-block translate-y-[0.2em] relative top-[-0.38em] text-[0.55em] font-normal ml-[2px]">™</span>
+          {" "}Framework
         </h1>
       </div>
     </section>

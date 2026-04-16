@@ -70,6 +70,9 @@ const AISWITCHFrameworkFeatures = () => {
           <h2 className="m-0 font-serif font-bold text-white leading-[1.05] -tracking-[0.03em] text-[clamp(2.5rem,4.5vw,4.2rem)] max-[640px]:text-[2.2rem] feature-item opacity-0 translate-y-12 transition-all duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0">
             In Your AI Journey,<br />We Are Your...
           </h2>
+          <p className="mt-6 text-[#94a3b8] text-[clamp(1rem,1.3vw,1.4rem)] leading-relaxed font-serif max-w-[380px]">
+            The AISWITCH<sup className="text-[0.6em] relative top-[-0.4em] ml-[2px]">™</sup> Framework provides independent management pillars to guide your enterprise through the complexities of AI evolution.
+          </p>
         </div>
 
         {/* Scrolling Features Right Column */}
@@ -91,7 +94,7 @@ const AISWITCHFrameworkFeatures = () => {
                 <h3 className="m-0 mb-4 max-[640px]:mb-2 font-sans font-bold text-[#ffffff] text-[clamp(1.15rem,1.4vw,1.3rem)] leading-tight tracking-wide">
                   {feat.title}
                 </h3>
-                <p className="m-0 font-sans font-light text-[#cfd4e6] text-[clamp(0.95rem,1.15vw,1.1rem)] leading-[1.5] max-[640px]:text-[0.95rem]">
+                <p className="m-0 font-sans font-light text-[#cfd4e6] text-[clamp(1.1rem,1.35vw,1.45rem)] leading-[1.6] max-[640px]:text-[1rem] text-wrap-pretty">
                   {feat.description}
                 </p>
               </div>

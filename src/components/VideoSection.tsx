@@ -240,7 +240,7 @@ export default function VideoSection() {
             {" "}GROUP OF COMPANIES
           </h2>
           <p
-            className="m-0 max-w-[120ch] leading-[1.6] text-left"
+            className="m-0 max-w-[120ch] leading-[1.6] text-center"
             style={{ color: "#ffffff", fontSize: "1.5rem" }}
           >
             DIGITALFABRIC<Sup m="®" /> Group comprises of independent entities that drive new-generation digital business transformation,

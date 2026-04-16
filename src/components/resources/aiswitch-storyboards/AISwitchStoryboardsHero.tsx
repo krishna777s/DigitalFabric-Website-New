@@ -10,6 +10,7 @@ const AISwitchStoryboardsHero = () => {
         muted
         loop
         playsInline
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover opacity-80"
       >
         <source src={heroVideo} type="video/mp4" />
@@ -22,7 +23,7 @@ const AISwitchStoryboardsHero = () => {
         
         <div className="animate-ti-title max-w-[800px]">
           <span className="block font-sans font-medium tracking-[0.1em] text-[#e0e5ff] text-[clamp(0.85rem,1.2vw,1.1rem)] uppercase mb-4 max-[640px]:mb-3">
-            AISWITCH RESOURCES
+            AISWITCH<sup className="text-[0.6em] relative top-[-0.4em] ml-[2px]">™</sup> RESOURCES
           </span>
           <h1 className="m-0 font-serif font-bold text-white text-[clamp(2.6rem,4.5vw,4.2rem)] leading-[1.05] -tracking-[0.03em] max-[640px]:text-[2.4rem] mt-2">
             Insights From Globally Renowned AI Research Practice Leaders

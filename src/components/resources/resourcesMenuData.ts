@@ -23,11 +23,11 @@ export const resourceColumns: ResourceMenuColumn[] = [
     title: "AI Resources",
     items: [
       {
-        label: "AISWITCH Framework",
+        label: "AISWITCH(TM) Framework",
         featured: true,
         to: "/resources/aiswitch-framework",
       },
-      { label: "AISWITCH Storyboards", to: "/resources/aiswitch-storyboards" },
+      { label: "AISWITCH(TM) Storyboards", to: "/resources/aiswitch-storyboards" },
       { label: "White Papers" },
     ],
   },

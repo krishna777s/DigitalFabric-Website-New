@@ -199,8 +199,7 @@ export default function FounderSection() {
             >
               Don&apos;t take the path of transformation.<br className="hidden md:block" />
               Take transformation along every path.<br className="hidden md:block" />
-              For that you&apos;ll need to combine three<br className="hidden md:block" />
-              elements:
+              For that you&apos;ll need to combine three elements:
             </h2>
 
             {/* Cards Flex Container */}

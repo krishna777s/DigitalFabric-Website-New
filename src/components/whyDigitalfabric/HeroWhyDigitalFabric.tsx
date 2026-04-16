@@ -68,8 +68,7 @@ const HeroWhyDigitalFabric: React.FC = () => {
           <p
             className="max-w-[520px] mt-7 text-[1.4rem] leading-relaxed max-[640px]:mt-6"
           >
-            This segment is related to the derived ideology of
-            DIGITALFABRIC<span className="text-[1.2em] font-normal font-sans align-top relative top-[0.2em] leading-none">®</span> from various technology and business
+            This segment is related to the derived ideology of DIGITALFABRIC<span className="text-[1.2em] font-normal font-sans align-top relative top-[0.2em] leading-none">®</span> from various technology and business
             domains to assist enterprises in scaling the digital business
             transformation initiative.
           </p>

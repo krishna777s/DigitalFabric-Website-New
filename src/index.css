@@ -239,3 +239,15 @@
     }
   }
 }
+
+/* Global Typography Optimizations */
+p, h1, h2, h3, h4, h5, h6 {
+  text-wrap: pretty;
+}
+h1, h2, h3 {
+  text-wrap: balance;
+}
+p {
+  font-size: clamp(1rem, 1.25vw, 1.35rem);
+  line-height: 1.6;
+}

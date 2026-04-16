@@ -15,8 +15,8 @@ const mobileResourceLinks = [
   { label: "Featured Insights", path: "/insights" },
   { label: "ISG Studies and Brochures", path: "/isg-studies-and-brochures" },
   { label: "MINDSETMATTERS(TM)", path: "/resources/mindset-matters" },
-  { label: "AISWITCH Framework", path: "/resources/aiswitch-framework" },
-  { label: "AISWITCH Storyboards", path: "/resources/aiswitch-storyboards" },
+  { label: "AISWITCH(TM) Framework", path: "/resources/aiswitch-framework" },
+  { label: "AISWITCH(TM) Storyboards", path: "/resources/aiswitch-storyboards" },
   { label: "White Papers", path: "#" },
   { label: "Copygamie Framework", path: "/copygamie-framework-free-use" },
   { label: "Success Stories", path: "/marketing-success-stories" },
@@ -105,7 +105,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3 flex-shrink-0 ml-auto">
           <a
             href="#"
-            className="hidden md:block text-[14px] font-medium text-black hover:text-black/70 transition whitespace-nowrap"
+            className="hidden md:block text-[15px] font-medium text-black hover:text-black/70 transition whitespace-nowrap"
           >
             Subscribe
           </a>

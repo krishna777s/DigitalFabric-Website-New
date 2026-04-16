@@ -10,6 +10,7 @@ const MindsetMattersHero = () => {
         muted
         loop
         playsInline
+        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover opacity-60"
       >
         <source src={heroVideo} type="video/quicktime" />
@@ -22,7 +23,7 @@ const MindsetMattersHero = () => {
           <span className="block font-sans font-medium tracking-[0.1em] text-[#e0e5ff] text-[clamp(0.85rem,1.2vw,1.1rem)] uppercase mb-4 max-[640px]:mb-3">
             DIGITALFABRIC&reg; RESOURCES
           </span>
-          <h1 className="m-0 font-serif font-bold text-white text-[clamp(2.5rem,4.5vw,4.2rem)] leading-[1.1] -tracking-[0.03em] max-[640px]:text-[2.2rem]">
+           <h1 className="m-0 font-serif font-bold text-white text-[clamp(2.5rem,4.5vw,4.2rem)] leading-[1.1] -tracking-[0.03em] max-[640px]:text-[2.2rem] text-wrap-balance">
             MINDSETMATTERS&trade;: Original Thought Leadership Charts & Visuals
           </h1>
         </div>
