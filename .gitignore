@@ -24,7 +24,8 @@ dist-ssr
 *.sw?
 
 # Large Unused Media
-*.mov
-src/assets/0_Abstract_Blue_3840x2160.mp4
-src/assets/0_Cubes_Shapes_3840x2160.mp4
+# (Now tracked by Git LFS, so we un-ignore them)
+# *.mov
+# src/assets/0_Abstract_Blue_3840x2160.mp4
+# src/assets/0_Cubes_Shapes_3840x2160.mp4
 
