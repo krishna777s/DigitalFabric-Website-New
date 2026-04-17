@@ -29,11 +29,10 @@ const helpCards = [
 export default function HowWeHelp() {
   return (
     <section className="bg-[#0B3F60] text-[#f7f5f0]" aria-label="How we help clients">
-      <div className="help-section w-[min(1100px,calc(100%-32px))] mx-auto px-0 pt-[46px] pb-[80px]
-        [@media(max-width:1560px)]:w-[min(100%,calc(100%-120px))] [@media(max-width:1560px)]:pt-10 [@media(max-width:1560px)]:pb-[60px]
-        [@media(max-width:1280px)]:w-[min(100%,calc(100%-72px))] [@media(max-width:1280px)]:pt-[34px] [@media(max-width:1280px)]:pb-12
-        [@media(max-width:980px)]:w-[min(100%,calc(100%-40px))] [@media(max-width:980px)]:pt-8 [@media(max-width:980px)]:pb-10
-        [@media(max-width:640px)]:w-[calc(100%-24px)] [@media(max-width:640px)]:pt-[32px] [@media(max-width:640px)]:pb-10"
+      <div className="help-section w-full mx-auto px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px] pt-[32px] pb-[48px]
+        [@media(max-width:1280px)]:pt-[24px] [@media(max-width:1280px)]:pb-10
+        [@media(max-width:980px)]:pt-6 [@media(max-width:980px)]:pb-8
+        [@media(max-width:640px)]:pt-[20px] [@media(max-width:640px)]:pb-8"
       >
 
 

@@ -222,7 +222,7 @@ export default function VideoSection() {
   return (
     <section
       aria-label="DigitalFabric group showcase"
-      className="mx-auto w-full text-white pt-32 px-4 sm:px-4 md:px-64 lg:px-6"
+      className="mx-auto w-full text-white pt-32 px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px]"
       style={{
         background: "linear-gradient(135deg,#0b3f60 0%,#12698e 45%,#4ec9f3 100%)",
         paddingBottom: "24px",
@@ -230,7 +230,7 @@ export default function VideoSection() {
     >
 
       {/* ══ HEADER ══════════════════════════════════════════════════════════ */}
-      <div className="mb-[clamp(24px,3vw,42px)] mx-auto w-full max-w-[1400px]">
+      <div className="mb-[clamp(24px,3vw,42px)] mx-auto w-full max-w-[1200px]">
 
         {/* Copy block */}
         <div className="w-full">

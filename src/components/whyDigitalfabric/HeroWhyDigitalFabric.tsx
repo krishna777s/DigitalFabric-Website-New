@@ -44,7 +44,7 @@ const HeroWhyDigitalFabric: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-[#030919] via-[#081229]/80 to-transparent pointer-events-none" />
 
       {/* Inner grid */}
-      <div className="relative z-[2] w-full max-w-[1760px] mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-[48px] grid grid-cols-[1.06fr_0.94fr] gap-[44px] items-center max-[1024px]:grid-cols-1 max-[1024px]:gap-8">
+      <div className="relative z-[2] w-full px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px] py-[48px] grid grid-cols-[1.06fr_0.94fr] gap-[44px] items-center max-[1024px]:grid-cols-1 max-[1024px]:gap-8">
 
         {/* LEFT – copy */}
         <div

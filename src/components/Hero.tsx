@@ -69,7 +69,7 @@ const Hero = () => {
 
   return (
     <section className="bg-[#092f47] pt-12 pb-6">
-      <div className="max-w-[1500px] mx-auto px-6">
+      <div className="w-full px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px]">
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6">
 

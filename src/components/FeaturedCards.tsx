@@ -22,7 +22,7 @@ const Arrow = () => (
 const FeaturedCards = () => {
   return (
     <section className="bg-[#092f47] pt-0 pb-6">
-      <div className="max-w-[1500px] mx-auto px-6">
+      <div className="w-full px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px]">
 
         {/* GRID */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-[minmax(260px,0.92fr)_minmax(250px,0.88fr)_minmax(0,1.6fr)] items-start">

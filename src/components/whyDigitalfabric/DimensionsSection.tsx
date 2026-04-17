@@ -33,7 +33,7 @@ const DimensionsSection: React.FC = () => {
       }}
     >
       {/* Shell */}
-      <div className="w-full max-w-[1760px] mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-16 pb-12 max-[760px]:py-10 max-[760px]:pb-8">
+      <div className="w-full px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px] py-16 pb-12 max-[760px]:py-10 max-[760px]:pb-8">
 
         {/* Copy */}
         <div className="max-w-[1200px] max-[1120px]:max-w-none">

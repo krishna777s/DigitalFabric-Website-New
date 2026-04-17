@@ -144,7 +144,7 @@ export default function FounderSection() {
     >
 
       {/* Container to restrict maximum width to standard Figma bounds if desired, or let it span full width safely */}
-      <div className="w-full h-full flex flex-col lg:flex-row max-w-[1700px] mx-auto relative">        {/* 
+      <div className="w-full h-full flex flex-col lg:flex-row px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px] relative">        {/* 
           ------------------------------------------------------------------ 
           LEFT COLUMN: Portrait (Transparent background to allow lines to pass behind) -> 42% WIDTH
           ------------------------------------------------------------------ 
@@ -169,7 +169,7 @@ export default function FounderSection() {
           RIGHT COLUMN: Text, Cards, and exactly 3 vertical Stripes -> 58%
           ------------------------------------------------------------------ 
         */}
-        <div className="relative w-full lg:w-[58%] h-full bg-transparent flex flex-col justify-center px-8 lg:px-[5%] py-12 lg:py-0 z-10">
+        <div className="relative w-full lg:w-[58%] h-full bg-transparent flex flex-col justify-center px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px] py-12 lg:py-0 z-10">
 
           {/* 
             Vertical Stripes Background:
@@ -183,22 +183,22 @@ export default function FounderSection() {
           </div>
 
           {/* Content Wrapper */}
-          <div className="relative z-10 w-full max-w-[750px] mx-auto">
+          <div className="relative z-10 w-full max-w-[950px] mx-auto">
 
             {/* Main Quote */}
             <h2
               className={`
                 m-0 mb-8 md:mb-10
-                text-[clamp(1.5rem,4vw,2.5rem)]
-                font-serif font-bold leading-[1.15] tracking-tight
+                text-[clamp(1.2rem,2.2vw,1.9rem)]
+                font-serif font-bold leading-[1.12] tracking-tight
                 text-white
                 transition-[transform,opacity,filter]
                 duration-[450ms]
                 ${inView ? 'heading-animate' : 'heading-hidden'}
               `}
             >
-              Don&apos;t take the path of transformation.<br className="hidden md:block" />
-              Take transformation along every path.<br className="hidden md:block" />
+              Don&apos;t take the path of transformation.<br />
+              Take transformation along every path.<br />
               For that you&apos;ll need to combine three elements:
             </h2>
 

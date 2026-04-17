@@ -71,14 +71,14 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 z-50">
 
       {/* ═══════════════ HEADER BAR ═══════════════ */}
-      <header className="bg-white text-black h-[74px] sm:h-[84px] md:h-[104px] flex items-center justify-between px-4 sm:px-8 md:px-10 lg:px-12 border-b border-black/10 shadow-sm transition-all duration-300">
+      <header className="bg-white text-black h-[68px] sm:h-[78px] md:h-[88px] flex items-center justify-between px-4 sm:px-8 md:px-10 lg:px-12 border-b border-black/10 shadow-sm transition-all duration-300">
 
 
         {/* LEFT: Logo + Desktop Nav */}
         <div className="flex items-center gap-5 min-w-0 overflow-hidden">
 
           {/* Logo — smaller on mobile, original size on desktop */}
-          <Link to="/" onClick={() => handleNavClick("/")} className="flex items-center flex-shrink-0 ml-1 md:ml-3 transition-transform hover:scale-[1.02]">
+          <Link to="/" onClick={() => handleNavClick("/")} className="flex items-center flex-shrink-0 transition-transform hover:scale-[1.02]">
             <img
               src={logo}
               alt="DigitalFabric"
@@ -134,7 +134,7 @@ const Navbar = () => {
 
           {/* Hamburger button — only on mobile */}
           <button
-            className="md:hidden mr-3 flex items-center justify-center w-10 h-10 text-black rounded-lg hover:bg-black/5 transition"
+            className="md:hidden flex items-center justify-center w-10 h-10 text-black rounded-lg hover:bg-black/5 transition"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
@@ -156,14 +156,14 @@ const Navbar = () => {
       {/* Backdrop */}
       {mobileOpen && (
         <div
-          className="md:hidden fixed inset-0 top-[78px] bg-black/20 z-[55]"
+          className="md:hidden fixed inset-0 top-[60px] bg-black/20 z-[55]"
           onClick={closeMobile}
         />
       )}
 
       {/* Slide panel */}
       <div
-        className={`md:hidden fixed top-[78px] left-0 right-0 bottom-0 bg-white z-[60] overflow-y-auto
+        className={`md:hidden fixed top-[60px] left-0 right-0 bottom-0 bg-white z-[60] overflow-y-auto
           transform transition-transform duration-300 ease-in-out
           ${mobileOpen ? "translate-x-0" : "-translate-x-full"}`}
       >

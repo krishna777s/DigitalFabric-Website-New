@@ -403,10 +403,7 @@ const FrameworkSection: React.FC = () => {
         className="relative bg-[#090f2b] text-white pb-6 max-[980px]:pb-5 max-[640px]:pb-4"
       >
         <div
-          className="w-full mx-auto px-6 sm:px-12 md:px-16 lg:px-24"
-          style={{
-            maxWidth: "1760px",
-          }}
+          className="w-full mx-auto px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px]"
         >
           {frameworks.map((fw) => (
             <FrameworkCard
