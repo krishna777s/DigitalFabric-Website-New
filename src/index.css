@@ -62,12 +62,12 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
     font-family: 'Abhaya Libre', serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Abhaya Libre', Georgia, serif;
+    font-family: 'Abhaya Libre', serif;
   }
 }
 
@@ -248,6 +248,6 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 p {
-  font-size: clamp(1rem, 1.25vw, 1.35rem);
+  font-size: clamp(1rem, 1.35vw, 1.5rem);
   line-height: 1.6;
 }

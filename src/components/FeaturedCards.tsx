@@ -44,11 +44,11 @@ const FeaturedCards = () => {
             {/* CONTENT */}
             <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-xl border border-white/20 p-5">
 
-              <h3 className="text-white text-lg md:text-xl font-serif">
+              <h3 className="text-white text-[clamp(1.2rem,1.8vw,1.6rem)] font-serif">
                 DIGITALFABRIC.IN
               </h3>
 
-              <p className="text-white/90 text-[12px] mt-2 line-clamp-2 leading-relaxed">
+              <p className="text-white/90 text-[clamp(0.95rem,1.1vw,1.1rem)] mt-2 line-clamp-2 leading-relaxed font-serif">
                 Building future-ready enterprises through sustainability, resiliency, and agility.
               </p>
 
@@ -74,11 +74,11 @@ const FeaturedCards = () => {
 
             <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-xl border border-white/30 p-5">
 
-              <h3 className="text-white text-lg md:text-xl font-serif">
+              <h3 className="text-white text-[clamp(1.2rem,1.8vw,1.6rem)] font-serif">
                 RESEARCHFABRIC
               </h3>
 
-              <p className="text-white/90 text-[12px] mt-2 line-clamp-2 leading-relaxed">
+              <p className="text-white/90 text-[clamp(0.95rem,1.1vw,1.1rem)] mt-2 line-clamp-2 leading-relaxed font-serif">
                 Bridging technology and business to accelerate enterprise transformation
               </p>
 
@@ -104,11 +104,11 @@ const FeaturedCards = () => {
 
             <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 p-5">
 
-              <h3 className="text-white text-xl md:text-2xl font-serif">
+              <h3 className="text-white text-[clamp(1.35rem,2vw,1.8rem)] font-serif">
                 Towards Enterprise 3.0.
               </h3>
 
-              <p className="text-white/90 text-[12px] mt-2 line-clamp-3 leading-relaxed">
+              <p className="text-white/90 text-[clamp(0.95rem,1.1vw,1.1rem)] mt-2 line-clamp-3 leading-relaxed font-serif">
                 Enterprise 3.0 is a pivotal phase in digital transformation, integrating AI, IoT, and cloud computing to reshape businesses.
               </p>
 
@@ -123,7 +123,7 @@ const FeaturedCards = () => {
         </div>
 
         {/* BOTTOM TEXT */}
-        <p className="mt-2 text-center text-white/70 text-sm">
+        <p className="mt-2 text-center text-white/70 text-[clamp(0.9rem,1.1vw,1.1rem)] font-serif">
           All these companies operate under the DIGITALFABRIC GROUP, unified by a shared vision of enterprise transformation and innovation.
         </p>
 

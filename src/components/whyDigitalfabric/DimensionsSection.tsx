@@ -33,24 +33,23 @@ const DimensionsSection: React.FC = () => {
       }}
     >
       {/* Shell */}
-      <div className="w-full max-w-[1760px] mx-auto px-12 py-10 pb-7 max-[1380px]:px-8 max-[760px]:px-[18px] max-[760px]:py-[26px] max-[760px]:pb-[18px]">
+      <div className="w-full max-w-[1760px] mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-16 pb-12 max-[760px]:py-10 max-[760px]:pb-8">
 
         {/* Copy */}
         <div className="max-w-[1200px] max-[1120px]:max-w-none">
           <p
             className="m-0 text-[#1a2348] leading-[1.42] font-serif"
             style={{
-              fontSize: "clamp(1rem, 1.2vw, 1.45rem)",
+              fontSize: "clamp(1rem, 1.4vw, 1.5rem)",
             }}
           >
             DIGITALFABRIC<span className="inline-block translate-y-[0.2em] text-[1.5em] font-black ml-[2px]">®</span> provides a comprehensive framework that aligns
-            various organizational elements to drive success in a digital-first
-            environment.
+            various organizational elements to drive success in a digital-first environment.
           </p>
           <p
             className="mt-[18px] m-0 text-[#1a2348] leading-[1.42] max-[760px]:text-[0.94rem] max-[760px]:leading-[1.5] font-serif"
             style={{
-              fontSize: "clamp(1rem, 1.2vw, 1.45rem)",
+              fontSize: "clamp(1rem, 1.4vw, 1.5rem)",
             }}
           >
             This model integrates key aspects such as <strong className="font-bold">People</strong>,{" "}
@@ -65,7 +64,7 @@ const DimensionsSection: React.FC = () => {
 
         {/* Layout grid */}
         <div
-          className="grid grid-cols-2 gap-7 items-start mt-[34px] max-[1120px]:grid-cols-1 max-[1120px]:gap-5 max-[760px]:mt-[26px]"
+          className="grid grid-cols-2 gap-12 items-start mt-[48px] max-[1120px]:grid-cols-1 max-[1120px]:gap-12 max-[760px]:mt-10"
         >
           {/* Partnership image */}
           <div className="flex justify-center items-start">

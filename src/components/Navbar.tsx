@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/DF group logo-Blue.png";
 import ResourcesMenu from "@/components/resources/ResourcesMenu";
 
@@ -22,11 +22,31 @@ const mobileResourceLinks = [
   { label: "Success Stories", path: "/marketing-success-stories" },
 ];
 
+const renderLabel = (text: string) => {
+  if (text.includes("(TM)")) {
+    const [main, ...rest] = text.split("(TM)");
+    return (
+      <>
+        {main}<sup className="text-[0.55em] align-top relative top-[0.14em] ml-0.5 font-medium">™</sup>{rest.join("") || ""}
+      </>
+    );
+  }
+  return text;
+};
+
 const Navbar = () => {
   const [resourcesOpen, setResourcesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
   const resourcesRef = useRef<HTMLLIElement | null>(null);
+  const location = useLocation();
+
+  const handleNavClick = (path: string) => {
+    if (location.pathname === path) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    setMobileOpen(false);
+  };
 
   // Close desktop Resources dropdown when clicking outside
   useEffect(() => {
@@ -51,17 +71,18 @@ const Navbar = () => {
     <div className="fixed top-0 left-0 right-0 z-50">
 
       {/* ═══════════════ HEADER BAR ═══════════════ */}
-      <header className="bg-white text-black h-[78px] flex items-center justify-between px-[12px] md:px-[32px] border-b border-black/10 shadow-sm">
+      <header className="bg-white text-black h-[74px] sm:h-[84px] md:h-[104px] flex items-center justify-between px-4 sm:px-8 md:px-10 lg:px-12 border-b border-black/10 shadow-sm transition-all duration-300">
+
 
         {/* LEFT: Logo + Desktop Nav */}
         <div className="flex items-center gap-5 min-w-0 overflow-hidden">
 
           {/* Logo — smaller on mobile, original size on desktop */}
-          <Link to="/" className="flex items-center flex-shrink-0">
+          <Link to="/" onClick={() => handleNavClick("/")} className="flex items-center flex-shrink-0 ml-1 md:ml-3 transition-transform hover:scale-[1.02]">
             <img
               src={logo}
               alt="DigitalFabric"
-              className="w-[88px] md:w-[140px] h-auto"
+              className="w-[84px] sm:w-[104px] md:w-[144px] h-auto"
             />
           </Link>
 
@@ -74,10 +95,10 @@ const Navbar = () => {
                     <li key={item.name} ref={resourcesRef}>
                       <button
                         onClick={() => setResourcesOpen(!resourcesOpen)}
-                        className="px-3 py-2 text-[15px] transition flex items-center gap-1 font-semibold text-black hover:text-black/70"
+                        className="px-3 py-2 text-[15.5px] md:text-[17px] transition flex items-center gap-1.5 font-semibold text-black hover:text-black/70"
                       >
                         {item.name}
-                        <span className={`text-[10px] opacity-80 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`}>▼</span>
+                        <span className={`text-[12px] md:text-[14px] opacity-80 transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`}>▼</span>
                       </button>
                       {resourcesOpen && (
                         <ResourcesMenu onNavigate={() => setResourcesOpen(false)} />
@@ -89,10 +110,11 @@ const Navbar = () => {
                   <li key={item.name} className="relative">
                     <Link
                       to={item.path}
-                      className="px-3 py-2 text-[15px] text-black hover:text-black/70 transition flex items-center gap-1 font-semibold"
+                      onClick={() => handleNavClick(item.path)}
+                      className="px-3 py-2 text-[15.5px] md:text-[17px] text-black hover:text-black/70 transition flex items-center gap-1.5 font-semibold"
                     >
                       {item.name}
-                      <span className="text-[10px] opacity-80">▼</span>
+                      <span className="text-[12px] md:text-[14px] opacity-80">▼</span>
                     </Link>
                   </li>
                 );
@@ -105,7 +127,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3 flex-shrink-0 ml-auto">
           <a
             href="#"
-            className="hidden md:block text-[15px] font-medium text-black hover:text-black/70 transition whitespace-nowrap"
+            className="hidden md:block text-[15.5px] md:text-[17px] font-medium text-black hover:text-[#0B527B] transition whitespace-nowrap"
           >
             Subscribe
           </a>
@@ -169,7 +191,7 @@ const Navbar = () => {
                             className="text-[0.9rem] text-black/70 font-medium hover:text-black transition"
                             onClick={closeMobile}
                           >
-                            {sub.label}
+                            {renderLabel(sub.label)}
                           </Link>
                         ))}
                       </div>
@@ -179,7 +201,7 @@ const Navbar = () => {
                   <Link
                     to={item.path}
                     className="flex items-center py-4 text-[1rem] font-semibold text-black hover:text-black/70 transition"
-                    onClick={closeMobile}
+                    onClick={() => handleNavClick(item.path)}
                   >
                     {item.name}
                   </Link>
@@ -202,7 +224,7 @@ const Navbar = () => {
           {/* Footer inside mobile menu */}
           <div className="mt-10 pt-6 border-t border-black/10 text-center">
             <img src={logo} alt="DigitalFabric" className="w-[110px] mx-auto opacity-60 mb-2" />
-            <p className="text-[0.72rem] text-black/40">© 2022 DIGITALFABRIC®. All Rights Reserved.</p>
+            <p className="text-[0.72rem] text-black/40">© 2022 DIGITALFABRIC<sup className="text-[0.65em] align-top relative top-[0.12em] ml-0.5">®</sup>. All Rights Reserved.</p>
           </div>
         </nav>
       </div>

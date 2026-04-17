@@ -105,17 +105,22 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
         padding: "58px 0 0",
         ...(isExtended
           ? {
-            marginInline: `calc(${sidePad} * -1)`,
-            paddingInline: sidePad,
+            marginInline: "calc(var(--side-pad) * -1)",
+            paddingInline: "var(--side-pad)",
             background: variantBg[variant],
           }
           : {}),
       }}
     >
+      <style>{`
+        :root { --side-pad: 70px; }
+        @media (max-width: 1024px) { :root { --side-pad: 48px; } }
+        @media (max-width: 640px) { :root { --side-pad: 24px; } }
+      `}</style>
       {/* Copy block */}
       <div
         className="flex flex-col items-center text-center mx-auto"
-        style={{ width: "min(100%, 980px)", maxWidth: "980px" }}
+        style={{ width: "min(100%, 1180px)", maxWidth: "1180px" }}
       >
         {/* Lead icon */}
         <span
@@ -131,10 +136,10 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
 
         {/* Description */}
         <p
-          className="m-0 text-center leading-[1.42] text-[rgba(234,236,245,0.82)] font-serif"
+          className="m-0 text-center leading-[1.6] text-[rgba(234,236,245,0.85)] font-serif"
           style={{
-            maxWidth: "980px",
-            fontSize: "clamp(0.98rem, 1.4vw, 1.22rem)",
+            maxWidth: "1080px",
+            fontSize: "clamp(1rem, 1.4vw, 1.5rem)",
           }}
         >
           {description}
@@ -143,8 +148,8 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
 
       {/* Points grid */}
       <div
-        className="mx-auto w-full grid grid-cols-2 gap-[18px] max-[980px]:grid-cols-1 max-[640px]:gap-[22px]"
-        style={{ maxWidth: "1080px" }}
+        className="mx-auto w-full grid grid-cols-2 gap-[24px] max-[1100px]:grid-cols-1 max-[640px]:gap-[22px]"
+        style={{ maxWidth: "1280px" }}
       >
         {points.map((pt, i) => (
           <PointCard key={i} icon={pt.icon} title={pt.title} body={pt.body} index={i} layoutId={layoutId} />
@@ -168,7 +173,7 @@ const BadgePill: React.FC<{ label: string; layoutId: string }> = ({ label }) => 
     style={{
       maxWidth: "100%",
       width: "max-content",
-      fontSize: "clamp(1.85rem, 3.2vw, 2.6rem)",
+      fontSize: "clamp(1.5rem, 3vw, 2.2rem)",
       textShadow: "0 2px 4px rgba(0,0,0,0.3)",
     }}
   >
@@ -218,9 +223,9 @@ const PointCard: React.FC<PointCardProps> = ({ icon, title, body }) => (
     </span>
 
     <p
-      className="m-0 leading-[1.5] text-[rgba(234,236,245,0.78)] font-serif"
+      className="m-0 leading-[1.6] text-[rgba(234,236,245,0.85)] font-serif"
       style={{
-        fontSize: "clamp(0.9rem, 1.08vw, 1.02rem)",
+        fontSize: "clamp(1rem, 1.35vw, 1.3rem)",
       }}
     >
       <strong className="text-white font-bold">{title}:</strong> {body}
@@ -398,10 +403,9 @@ const FrameworkSection: React.FC = () => {
         className="relative bg-[#090f2b] text-white pb-6 max-[980px]:pb-5 max-[640px]:pb-4"
       >
         <div
-          className="w-full mx-auto"
+          className="w-full mx-auto px-6 sm:px-12 md:px-16 lg:px-24"
           style={{
             maxWidth: "1760px",
-            padding: "0 70px 0",
           }}
         >
           {frameworks.map((fw) => (

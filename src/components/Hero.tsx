@@ -88,11 +88,11 @@ const Hero = () => {
 
             <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 lg:max-w-[90%] bg-white/10 backdrop-blur-xl border border-white/20 p-4 md:p-6 py-8 md:py-10 shadow-2xl">
 
-              <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-serif leading-tight">
+              <h2 className="text-white text-[clamp(1.75rem,4vw,3.125rem)] font-serif leading-tight">
                 Enterprise Consulting
               </h2>
 
-              <p className="text-white/90 mt-2 md:mt-3 text-[12px] md:text-[13px] leading-relaxed line-clamp-2 md:line-clamp-none">
+              <p className="text-white/90 mt-2 md:mt-3 text-[clamp(1rem,1.35vw,1.35rem)] leading-relaxed line-clamp-2 md:line-clamp-none font-serif">
                 Strategically guiding enterprises through transformation with a future-ready consulting framework
               </p>
 
@@ -137,7 +137,7 @@ const Hero = () => {
                   )}
                 </span>
 
-                <p className="mt-3 text-sm max-w-xs text-white">
+                <p className="mt-3 text-[clamp(0.95rem,1.2vw,1.1rem)] max-w-xs text-white font-serif">
                   {currentItem.title}
                   {currentItem.label.includes("Why Digital Fabric") ? (
                     <Link to="/why-digital-fabric" className="underline ml-1 hover:text-white/80 transition-colors">Know more</Link>
@@ -154,7 +154,7 @@ const Hero = () => {
               </div>
             </div>
 
-            <p className="text-white/80 text-center text-sm px-4">
+            <p className="text-white/80 text-center text-[clamp(1rem,1.3vw,1.15rem)] px-4 font-serif">
               Game-changing work. People-powered growth. At DIGITALFABRIC GROUP, we help you think bigger, build stronger, and expand opportunity for all.
             </p>
 
@@ -185,11 +185,11 @@ const Hero = () => {
 
                   <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-md border border-white/20 p-4">
 
-                    <h3 className="text-white text-lg font-serif">
+                    <h3 className="text-white text-[clamp(1.2rem,1.8vw,1.5rem)] font-serif">
                       {item.title}
                     </h3>
 
-                    <p className="text-white/90 text-[11px] mt-2 leading-snug line-clamp-2">
+                    <p className="text-white/90 text-[clamp(0.95rem,1.1vw,1.1rem)] mt-2 leading-relaxed line-clamp-3 font-serif">
                       {item.desc}
                     </p>
 

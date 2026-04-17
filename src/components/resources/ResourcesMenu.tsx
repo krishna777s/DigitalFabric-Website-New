@@ -1,11 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { resourceColumns } from "./resourcesMenuData";
 
 type ResourcesMenuProps = {
   onNavigate?: () => void;
 };
 
+const renderLabel = (text: string) => {
+  if (text.includes("(TM)")) {
+    const [main, ...rest] = text.split("(TM)");
+    return (
+      <>
+        {main}<sup className="text-[1.2em] align-top relative top-[0.6em] ml-0.4 font-medium">™</sup>{rest.join("") || ""}
+      </>
+    );
+  }
+  return text;
+};
+
 export default function ResourcesMenu({ onNavigate }: ResourcesMenuProps) {
+  const location = useLocation();
+
+  const handleLinkClick = (to: string) => {
+    if (location.pathname === to) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+    if (onNavigate) onNavigate();
+  };
   return (
     <div className="absolute top-[calc(100%+18px)] right-[clamp(28px,4vw,78px)] w-[min(1238px,calc(100vw-96px))] border border-black/10 bg-white shadow-[0_24px_48px_rgba(0,0,0,0.12)] backdrop-blur-[18px] z-50 overflow-hidden">
       {/* Accent Line */}
@@ -17,7 +37,7 @@ export default function ResourcesMenu({ onNavigate }: ResourcesMenuProps) {
             <h3 className="m-0 mb-7 font-sans text-base font-bold text-black uppercase tracking-wide">
               {column.title}
             </h3>
-            
+
             <ul className="m-0 p-0 list-none space-y-[22px]">
               {column.items.map((resource) => (
                 <li key={resource.label}>
@@ -27,12 +47,12 @@ export default function ResourcesMenu({ onNavigate }: ResourcesMenuProps) {
                       className={`inline-flex items-start gap-2.5 p-0 font-sans text-[0.96rem] leading-[1.45] transition-colors
                         ${resource.featured ? "text-[#0B527B] font-bold" : "text-black/80 hover:text-black"}
                       `}
-                      onClick={onNavigate}
+                      onClick={() => handleLinkClick(resource.to!)}
                     >
                       {resource.featured && (
                         <span className="text-[#0B527B] text-[1.65rem] leading-[0.8] -translate-y-px" aria-hidden="true">*</span>
                       )}
-                      <span>{resource.label}</span>
+                      <span>{renderLabel(resource.label)}</span>
                     </Link>
                   ) : (
                     <button
@@ -43,7 +63,7 @@ export default function ResourcesMenu({ onNavigate }: ResourcesMenuProps) {
                       {resource.featured && (
                         <span className="text-[#0B527B] text-[1.65rem] leading-[0.8] -translate-y-px" aria-hidden="true">*</span>
                       )}
-                      <span>{resource.label}</span>
+                      <span>{renderLabel(resource.label)}</span>
                     </button>
                   )}
                 </li>

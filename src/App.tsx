@@ -15,11 +15,14 @@ import Insights from "./pages/Insights";
 import ISGStudies from "./pages/ISGStudies";
 import MindsetMatters from "./pages/MindsetMatters";
 
+import ScrollToTop from "./components/ScrollToTop";
+
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

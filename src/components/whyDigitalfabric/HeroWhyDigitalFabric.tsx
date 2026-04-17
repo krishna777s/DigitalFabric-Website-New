@@ -26,7 +26,7 @@ const HeroWhyDigitalFabric: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[84vh] overflow-hidden text-[#f4f3ef] bg-[#0a0f1f]"
+      className="relative min-h-[calc(100vh-78px)] flex items-center overflow-hidden text-[#f4f3ef] bg-[#0a0f1f]"
     >
       {/* Video Background */}
       <video
@@ -45,7 +45,7 @@ const HeroWhyDigitalFabric: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-[#030919] via-[#081229]/80 to-transparent pointer-events-none" />
 
       {/* Inner grid */}
-      <div className="relative z-[2] w-full max-w-[1760px] mx-auto px-[88px] py-[48px] pb-[44px] grid grid-cols-[1.06fr_0.94fr] gap-[44px] items-center max-[1024px]:grid-cols-1 max-[1024px]:gap-8 max-[1024px]:px-10 max-[640px]:px-5">
+      <div className="relative z-[2] w-full max-w-[1760px] mx-auto px-6 sm:px-12 md:px-16 lg:px-24 py-[48px] grid grid-cols-[1.06fr_0.94fr] gap-[44px] items-center max-[1024px]:grid-cols-1 max-[1024px]:gap-8">
 
         {/* LEFT – copy */}
         <div
@@ -59,16 +59,17 @@ const HeroWhyDigitalFabric: React.FC = () => {
           }}
         >
           <h1
-            className="font-serif text-[3.5rem] font-bold mb-[30px] whitespace-nowrap max-[640px]:whitespace-normal flex items-start"
-            style={{ fontFamily: "Georgia, serif" }}
+            className="font-serif text-[clamp(1.75rem,4.5vw,3.125rem)] font-bold mb-[30px] whitespace-nowrap max-[640px]:whitespace-normal flex items-start"
+            style={{ fontFamily: "'Abhaya Libre', serif" }}
           >
-            Why DIGITALFABRIC<span className="text-[0.9em] font-normal font-sans ml-[2px] leading-none mt-[14px]">®</span>?
+            Why DIGITALFABRIC<span className="text-[0.9em] font-normal font-serif ml-[2px] leading-none mt-[14px]">®</span>?
           </h1>
 
           <p
-            className="max-w-[520px] mt-7 text-[1.4rem] leading-relaxed max-[640px]:mt-6"
+            className="max-w-[750px] mt-7 text-[clamp(1.125rem,1.5vw,1.5rem)] leading-relaxed max-[640px]:mt-6 font-serif"
           >
-            This segment is related to the derived ideology of DIGITALFABRIC<span className="text-[1.2em] font-normal font-sans align-top relative top-[0.2em] leading-none">®</span> from various technology and business
+            This segment is related to the derived ideology of
+            DIGITALFABRIC<span className="text-[1.2em] font-normal font-serif align-top relative top-[0.2em] leading-none">®</span> from various technology and business
             domains to assist enterprises in scaling the digital business
             transformation initiative.
           </p>

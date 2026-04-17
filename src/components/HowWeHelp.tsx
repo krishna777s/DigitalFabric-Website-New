@@ -37,11 +37,11 @@ export default function HowWeHelp() {
       >
 
 
-        <h2 className="help-heading w-[min(760px,100%)] mx-auto mb-[46px] text-center font-serif text-[clamp(1.9rem,3vw,3rem)] font-normal leading-[1.08]
-          [@media(max-width:1560px)]:w-[min(700px,100%)] [@media(max-width:1560px)]:mb-[38px] [@media(max-width:1560px)]:text-[clamp(1.7rem,2.4vw,2.5rem)]
-          [@media(max-width:1280px)]:w-[min(620px,100%)] [@media(max-width:1280px)]:mb-[30px] [@media(max-width:1280px)]:text-[clamp(1.55rem,2.1vw,2.15rem)]
-          [@media(max-width:980px)]:w-[min(720px,100%)] [@media(max-width:980px)]:mb-10 [@media(max-width:980px)]:text-[clamp(1.95rem,4vw,2.8rem)]
-          [@media(max-width:640px)]:mb-6 [@media(max-width:640px)]:text-[1.7rem]"
+        <h2 className="help-heading w-[min(820px,100%)] mx-auto mb-[46px] text-center font-serif text-[clamp(1.75rem,4.5vw,3.125rem)] font-normal leading-[1.08]
+          [@media(max-width:1560px)]:w-[min(700px,100%)] [@media(max-width:1560px)]:mb-[38px]
+          [@media(max-width:1280px)]:w-[min(620px,100%)] [@media(max-width:1280px)]:mb-[30px]
+          [@media(max-width:980px)]:w-[min(720px,100%)] [@media(max-width:980px)]:mb-10
+          [@media(max-width:640px)]:mb-6 [@media(max-width:640px)]:text-[1.85rem]"
         >
           Turning strategy, technology, and innovation into measurable business
           outcomes.
@@ -75,9 +75,7 @@ export default function HowWeHelp() {
                 group-hover:bg-white group-hover:pt-[14px]"
               >
                 <div className="help-card-title-row flex items-start justify-between gap-3.5 px-0">
-                  <h3 className="help-card-title m-0 font-serif text-[clamp(1.65rem,2.1vw,2.2rem)] font-normal leading-[1.05] -tracking-[0.03em] whitespace-pre-line
-                    [@media(max-width:1560px)]:text-[clamp(1.45rem,1.8vw,1.95rem)]
-                    [@media(max-width:1280px)]:text-[clamp(1.25rem,1.6vw,1.75rem)]
+                  <h3 className="help-card-title m-0 font-serif text-[clamp(1.35rem,2.1vw,1.9rem)] font-normal leading-[1.05] -tracking-[0.03em] whitespace-pre-line
                     [@media(max-width:640px)]:text-[1.75rem]"
                   >
                     {card.title}
@@ -90,11 +88,10 @@ export default function HowWeHelp() {
                     &#8250;
                   </span>
                 </div>
-                <p className="help-card-description max-w-full mt-2.5 m-0 font-serif text-[0.95rem] leading-[1.3] text-[rgba(243,247,250,0.94)]
+                <p className="help-card-description max-w-full mt-2.5 m-0 font-serif text-[clamp(1rem,1.3vw,1.15rem)] leading-[1.4] text-[rgba(243,247,250,0.94)]
                   transition-colors duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)]
                   group-hover:text-black
-                  [@media(max-width:1560px)]:text-[0.9rem]
-                  [@media(max-width:1280px)]:mt-2 [@media(max-width:1280px)]:text-[0.85rem]"
+                  [@media(max-width:1280px)]:mt-2"
                 >
                   {card.description}
                 </p>

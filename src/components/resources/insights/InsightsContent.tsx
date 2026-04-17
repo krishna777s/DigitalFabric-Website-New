@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import caseStudyImg from "@/assets/insight case study.png";
 import marketInsightImg from "@/assets/featured market insights.jpg";
-import ashwinImg from "@/assets/insights ashwin img.jpeg";
+import ashwinImg from "@/assets/ISG Ashwin Gaidhani.jpg";
 
 const insights = [
   {
@@ -26,7 +26,7 @@ const InsightsContent = () => {
     if (!section) return;
 
     const cards = section.querySelectorAll<HTMLElement>('.insight-card');
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -46,18 +46,18 @@ const InsightsContent = () => {
   return (
     <section ref={sectionRef} className="bg-[#ffffff] w-full px-[58px] py-32 max-[1100px]:px-[34px] max-[1100px]:py-20 max-[640px]:px-[18px] max-[640px]:py-16">
       <div className="max-w-[1300px] mx-auto grid grid-cols-[1fr_1fr_1fr] max-[900px]:grid-cols-2 max-[640px]:grid-cols-1 gap-12 items-stretch">
-        
+
         {insights.map((insight, index) => (
-          <article 
-            key={index} 
+          <article
+            key={index}
             className="insight-card group relative flex flex-col bg-[#080d1a] shadow-xl hover:-translate-y-2 transition-all duration-300 opacity-0 translate-y-12 transition-all duration-[800ms] ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0"
             style={{ transitionDelay: `${index * 150}ms` }}
           >
             {/* Top Image Portion */}
             <div className="relative w-full h-[220px] overflow-hidden bg-[#030612]">
-              <img 
-                src={insight.image} 
-                alt={insight.title} 
+              <img
+                src={insight.image}
+                alt={insight.title}
                 className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute top-4 right-4 bg-white text-[#0a1122] font-sans text-[0.7rem] font-bold tracking-wider px-4 py-1.5 rounded-full shadow-md uppercase">
@@ -77,7 +77,7 @@ const InsightsContent = () => {
                   {insight.title}
                 </a>
               </h3>
-              
+
               <div className="mt-auto font-sans font-medium text-[#5ac8fa] text-xs uppercase tracking-widest pt-4 group-hover:text-[#88d8fb] transition-colors">
                 READ MORE &raquo;
               </div>
@@ -86,16 +86,18 @@ const InsightsContent = () => {
         ))}
 
         {/* Third Column: Static Text Block */}
-        <div 
+        <div
           className="insight-card opacity-0 translate-x-12 transition-all duration-[800ms] ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-x-0"
           style={{ transitionDelay: `300ms` }}
         >
-          <div className="p-8 max-[900px]:p-4 max-[900px]:text-center h-full flex flex-col justify-center">
-            <h2 className="m-0 font-serif font-bold text-[#081229] leading-[1.15] text-[clamp(2.5rem,4vw,3.5rem)] mb-8">
-              For More Insights, Visit The Consulting Website
+          <div className="p-8 max-[900px]:p-4 h-full flex flex-col items-start justify-center text-left">
+            <h2 className="m-0 font-serif font-bold text-[#081229] leading-[1.2] text-[clamp(1.7rem,2.7vw,2.7rem)] max-[640px]:text-[1.9rem]">
+              For More Insights,
+              <br />
+              <span className="whitespace-nowrap max-[1100px]:whitespace-normal">Visit The Consulting Website</span>
             </h2>
-            <div className="text-[#081229] max-[900px]:mx-auto transition-transform duration-300 hover:translate-x-2 cursor-pointer">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <div className="mt-8 ml-auto text-[#081229] transition-transform duration-300 hover:translate-x-2 cursor-pointer">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>

@@ -135,13 +135,17 @@ const MindsetMattersContent = () => {
             <button
               key={index}
               onClick={() => setActiveCategory(cat)}
-              className={`text-left font-sans text-[1.05rem] leading-[1.4] transition-colors duration-300 pr-6 ${
+              className={`text-left font-sans text-[clamp(1.15rem,1.4vw,1.35rem)] leading-[1.3] transition-all duration-300 pr-6 animate-fade-in-up opacity-0 ${
                 activeCategory === cat 
-                  ? "text-[#5ac8fa] font-semibold" 
-                  : "text-white hover:text-[#5ac8fa]"
+                  ? "text-[#5ac8fa] font-extrabold translate-x-3" 
+                  : "text-white hover:text-[#5ac8fa] hover:translate-x-1"
               }`}
+              style={{ animationDelay: `${index * 0.12}s` }}
             >
-              {cat}
+              <div className="flex items-center gap-2">
+                {activeCategory === cat && <span className="text-[#5ac8fa] text-xs">▶</span>}
+                {cat}
+              </div>
             </button>
           ))}
         </aside>

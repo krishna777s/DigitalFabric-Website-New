@@ -8,15 +8,15 @@ import checklistIcon from "@/assets/TIF process and checklist.png";
 const businessTransformationDimensions = [
   {
     title: "Governance",
-    description: "focuses on strategic oversight, ensuring decisions are in line with organizational goals.",
+    description: "Focuses on strategic oversight, ensuring decisions are in line with organizational goals.",
   },
   {
     title: "Conformance",
-    description: "emphasizes adherence to industry standards and regulations, safeguarding operational integrity.",
+    description: "Emphasizes adherence to industry standards and regulations, safeguarding operational\u00A0integrity.",
   },
   {
     title: "Performance",
-    description: "prioritizes operational efficiency and effectiveness, driving business success.",
+    description: "Prioritizes operational efficiency and effectiveness, driving business success.",
   },
 ];
 
@@ -102,18 +102,18 @@ const TIFrameworkBlueprint = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#151d33] text-[#f5f6fb] grid grid-cols-[minmax(280px,0.88fr)_minmax(0,1.52fr)] max-[1180px]:grid-cols-1 gap-12 max-[1180px]:gap-8 px-[56px] py-[52px] max-[1180px]:px-7 max-[1180px]:py-[42px] max-[640px]:px-[18px] max-[640px]:py-8">
-      <div className="flex items-center will-change-[transform,opacity,filter] ti-blueprint-intro-base">
-        <h2 className="m-0 max-w-[540px] max-[1180px]:max-w-[760px] font-serif text-[clamp(1.32rem,2.05vw,2rem)] max-[640px]:text-[clamp(1.12rem,5.6vw,1.45rem)] font-bold leading-[1.08] -tracking-[0.04em] text-[#f5f6fb]">
-          Integrated Blueprint for Business Transformation: Success Factors, Design Elements, and Control Mechanisms
+    <section ref={sectionRef} className="bg-[#151d33] text-[#f5f6fb] flex flex-col items-center gap-12 max-[1180px]:gap-8 px-[56px] py-[52px] max-[1180px]:px-7 max-[1180px]:py-[42px] max-[640px]:px-[18px] max-[640px]:py-8">
+      <div className="w-full text-center will-change-[transform,opacity,filter] ti-blueprint-intro-base">
+        <h2 className="m-0 mx-auto max-w-[1000px] font-serif text-[clamp(1.5rem,2.5vw,2.4rem)] max-[640px]:text-[clamp(1.2rem,5.6vw,1.6rem)] font-bold leading-[1.1] -tracking-[0.03em] text-[#f5f6fb]">
+          Integrated Blueprint for Business Transformation: Success Factors,<br className="max-[1180px]:hidden" /> Design Elements, and Control Mechanisms
         </h2>
       </div>
 
-      <div className="grid grid-cols-[repeat(2,minmax(180px,236px))] max-[820px]:grid-cols-1 gap-2.5 content-start justify-start">
+      <div className="grid grid-cols-4 max-[1180px]:grid-cols-2 max-[640px]:grid-cols-1 gap-4 w-full max-w-[1300px] justify-center">
         {items.map(({ title, description, iconSrc }, i) => (
-          <article 
-            key={title} 
-            className="ti-blueprint-card-base group grid grid-cols-[42px_minmax(0,1fr)] max-[820px]:grid-cols-[40px_minmax(0,1fr)] max-[640px]:grid-cols-[36px_minmax(0,1fr)] gap-2.5 max-[640px]:gap-2 min-h-[140px] max-[820px]:min-h-0 max-w-[236px] p-3 max-[640px]:p-2.5 border border-white/70 bg-white/[0.02] rounded-2xl will-change-[transform,opacity,filter]"
+          <article
+            key={title}
+            className="ti-blueprint-card-base group grid grid-cols-1 gap-3 min-h-[160px] max-[820px]:min-h-0 w-full p-4 border border-white/70 bg-white/[0.02] hover:bg-white/[0.08] hover:border-white hover:-translate-y-1.5 transition-all duration-300 rounded-2xl will-change-[transform,opacity,filter]"
             style={{ transitionDelay: `${60 + i * 70}ms` }}
           >
             <div className="flex items-center justify-center pt-1 w-8 h-8 max-[640px]:w-7 max-[640px]:h-7" aria-hidden="true">
@@ -121,51 +121,51 @@ const TIFrameworkBlueprint = () => {
             </div>
 
             <div className="ti-blueprint-copy">
-              <h3 className="m-0 mb-2 max-[640px]:mb-1.5 font-sans text-[clamp(0.82rem,0.94vw,0.98rem)] font-bold leading-tight text-white">{title}</h3>
-              <p className="m-0 max-w-[170px] font-sans text-[clamp(0.72rem,0.82vw,0.84rem)] font-normal leading-[1.22] text-[#f1f5fb]">{description}</p>
+              <h3 className="m-0 mb-2 font-sans text-[clamp(1rem,1.4vw,1.3rem)] font-bold leading-tight text-white">{title}</h3>
+              <p className="m-0 font-sans text-[clamp(1rem,1.25vw,1.2rem)] font-normal leading-[1.5] text-[#f1f5fb]">{description}</p>
             </div>
           </article>
         ))}
       </div>
 
-      <section className="col-span-full grid grid-cols-[minmax(260px,0.84fr)_minmax(280px,1fr)] max-[1180px]:grid-cols-1 gap-[34px] max-[1180px]:gap-5 max-[820px]:gap-4 items-center mt-4 max-[1180px]:mt-2.5 max-[640px]:mt-1.5 p-[22px_22px_18px] max-[1180px]:p-[18px_18px_14px] max-[820px]:p-[16px_16px_14px] max-[640px]:p-[14px_14px_12px] bg-[radial-gradient(circle_at_top_left,rgba(37,214,255,0.14),transparent_34%),linear-gradient(135deg,rgba(11,20,54,0.98),rgba(21,29,51,0.94))] border border-[#25d6ff24] rounded-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_12px_24px_rgba(3,8,22,0.14)] will-change-[transform,opacity,filter] ti-blueprint-feature-base" aria-label="Business transformation dimensions">
+      <section className="w-full grid grid-cols-[380px_1fr] max-[1180px]:grid-cols-1 gap-10 max-[1180px]:gap-6 max-[820px]:gap-4 items-center mt-4 max-[1180px]:mt-2.5 max-[640px]:mt-1.5 p-[32px_42px_28px] max-[1180px]:p-[24px_24px_20px] max-[640px]:p-[18px_18px_16px] bg-[radial-gradient(circle_at_top_left,rgba(37,214,255,0.14),transparent_34%),linear-gradient(135deg,rgba(11,20,54,0.98),rgba(21,29,51,0.94))] border border-[#25d6ff24] rounded-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_12px_24px_rgba(3,8,22,0.14)] will-change-[transform,opacity,filter] ti-blueprint-feature-base" aria-label="Business transformation dimensions">
         <div className="max-w-[420px]">
           <div className="inline-flex w-[54px] h-[54px] max-[820px]:w-[46px] max-[820px]:h-[46px] max-[640px]:w-10 max-[640px]:h-10 mb-3 max-[820px]:mb-2.5 max-[640px]:mb-2 ti-blueprint-feature-icon-base" aria-hidden="true">
-             <img src={bxIcon} alt="" className="w-full h-full object-contain drop-shadow" />
+            <img src={bxIcon} alt="" className="w-full h-full object-contain drop-shadow" />
           </div>
 
           <h3 className="m-0 max-w-[320px] max-[820px]:max-w-[280px] max-[640px]:max-w-[220px] font-serif text-[clamp(1.68rem,3vw,2.9rem)] max-[820px]:text-[clamp(1.45rem,6.5vw,2.2rem)] max-[640px]:text-[clamp(1.2rem,7vw,1.7rem)] font-bold leading-[1.08] -tracking-[0.05em] text-white ti-blueprint-feature-title-base">BX (Business Transformation) Dimensions</h3>
-          <p className="mt-3.5 max-[820px]:mt-3 max-[640px]:mt-2.5 max-w-[360px] font-sans text-[clamp(0.9rem,1.18vw,1.08rem)] max-[820px]:text-[clamp(0.9rem,3vw,1rem)] max-[640px]:text-[0.84rem] leading-[1.38] max-[640px]:leading-[1.34] text-[#f5f6fbdf] ti-blueprint-feature-desc-base">
+          <p className="mt-3.5 max-[820px]:mt-3 max-[640px]:mt-2.5 max-w-[440px] font-sans text-[clamp(1.3rem,1.3vw,1.25rem)] max-[820px]:text-[clamp(0.95rem,3vw,1.1rem)] max-[640px]:text-[0.95rem] leading-[1.3] text-[#f5f6fbdf] text-wrap:pretty ti-blueprint-feature-desc-base">
             Three core areas that shape the success factors, driving holistic business transformation.
           </p>
         </div>
 
-        <ol className="m-0 pl-6 max-[820px]:pl-5 max-[640px]:pl-[18px] font-sans text-[clamp(0.84rem,1vw,1rem)] max-[820px]:text-[0.9rem] max-[640px]:text-[0.8rem] leading-[1.46] max-[820px]:leading-[1.42] max-[640px]:leading-[1.34] text-[#f5f6fbdf] ti-blueprint-feature-list-base">
+        <ol className="m-0 grid grid-cols-2 max-[760px]:grid-cols-1 gap-x-8 gap-y-4 font-sans text-[clamp(1.3rem,1.25vw,1.2rem)] leading-[1.5] text-[#f5f6fbdf] ti-blueprint-feature-list-base">
           {businessTransformationDimensions.map(({ title, description }) => (
-            <li key={title} className="[&:not(:first-child)]:mt-1.5 max-[640px]:[&:not(:first-child)]:mt-[5px]">
-              <strong className="text-white font-extrabold">{title}</strong> {description}
+            <li key={title} className="list-disc ml-4">
+              <strong className="text-white font-extrabold">{title}:</strong> {description}
             </li>
           ))}
         </ol>
       </section>
 
-      <section className="col-span-full grid grid-cols-[minmax(260px,0.84fr)_minmax(280px,1fr)] max-[1180px]:grid-cols-1 gap-[34px] max-[1180px]:gap-5 max-[820px]:gap-4 items-center mt-1 p-[22px_22px_18px] max-[1180px]:p-[18px_18px_14px] max-[820px]:p-[16px_16px_14px] max-[640px]:p-[14px_14px_12px] bg-[radial-gradient(circle_at_top_right,rgba(53,214,255,0.18),transparent_32%),linear-gradient(90deg,#122052_0%,#1e4670_58%,#2a93bd_100%)] border border-[#68dcff2e] rounded-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_12px_24px_rgba(3,8,22,0.14)] will-change-[transform,opacity,filter] ti-blueprint-feature-base" aria-label="Work design constituents">
+      <section className="w-full grid grid-cols-[380px_1fr] max-[1180px]:grid-cols-1 gap-10 max-[1180px]:gap-6 max-[820px]:gap-4 items-center mt-1 p-[32px_42px_28px] max-[1180px]:p-[24px_24px_20px] max-[640px]:p-[18px_18px_16px] bg-[radial-gradient(circle_at_top_right,rgba(53,214,255,0.18),transparent_32%),linear-gradient(90deg,#122052_0%,#1e4670_58%,#2a93bd_100%)] border border-[#68dcff2e] rounded-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_12px_24px_rgba(3,8,22,0.14)] will-change-[transform,opacity,filter] ti-blueprint-feature-base" aria-label="Work design constituents">
         <div className="max-w-[420px]">
           <div className="inline-flex w-[54px] h-[54px] max-[820px]:w-[46px] max-[820px]:h-[46px] max-[640px]:w-10 max-[640px]:h-10 mb-3 max-[820px]:mb-2.5 max-[640px]:mb-2 ti-blueprint-feature-icon-base" aria-hidden="true">
             <img src={workDesignIcon} alt="" className="w-full h-full object-contain drop-shadow" />
           </div>
 
           <h3 className="m-0 max-w-[340px] max-[820px]:max-w-[320px] max-[640px]:max-w-[220px] font-serif text-[clamp(1.68rem,3vw,2.9rem)] max-[820px]:text-[clamp(1.45rem,6.5vw,2.2rem)] max-[640px]:text-[clamp(1.2rem,7vw,1.7rem)] font-bold leading-[1.08] -tracking-[0.05em] text-white ti-blueprint-feature-title-base">Work Design Constituents</h3>
-          <p className="mt-3.5 max-[820px]:mt-3 max-[640px]:mt-2.5 max-w-[360px] font-sans text-[clamp(0.9rem,1.18vw,1.08rem)] max-[820px]:text-[clamp(0.9rem,3vw,1rem)] max-[640px]:text-[0.84rem] leading-[1.38] max-[640px]:leading-[1.34] text-[#f5f6fbdf] ti-blueprint-feature-desc-base">
+          <p className="mt-3.5 max-[820px]:mt-3 max-[640px]:mt-2.5 max-w-[360px] font-sans text-[clamp(1.3rem,1.3vw,1.25rem)] max-[820px]:text-[clamp(0.95rem,3vw,1.1rem)] max-[640px]:text-[0.95rem] leading-[1.5] text-[#f5f6fbdf] ti-blueprint-feature-desc-base">
             A framework composed of five key elements that define how work is structured and executed.
           </p>
         </div>
 
-        <ol className="m-0 pl-[26px] max-[820px]:pl-5 max-[640px]:pl-[18px] font-sans text-[clamp(0.84rem,1vw,1rem)] max-[820px]:text-[0.9rem] max-[640px]:text-[0.8rem] leading-[1.46] max-[820px]:leading-[1.42] max-[640px]:leading-[1.34] text-[#f5f6fbdf] ti-blueprint-feature-list-base">
+        <ol className="m-0 grid grid-cols-2 max-[760px]:grid-cols-1 gap-x-8 gap-y-3 font-sans text-[clamp(1.3rem,1.25vw,1.2rem)] leading-[1.5] text-[#f5f6fbdf] ti-blueprint-feature-list-base">
           {workDesignConstituents.map((item) => {
             const [title, description] = item.split(": ");
             return (
-              <li key={item} className="[&:not(:first-child)]:mt-1.5 max-[640px]:[&:not(:first-child)]:mt-[5px]">
+              <li key={item} className="list-disc ml-4">
                 <strong className="text-white font-extrabold">{title}:</strong> {description}
               </li>
             );
@@ -173,33 +173,33 @@ const TIFrameworkBlueprint = () => {
         </ol>
       </section>
 
-      <section className="col-span-full grid grid-cols-[minmax(260px,0.84fr)_minmax(280px,1fr)] max-[1180px]:grid-cols-1 gap-[34px] max-[1180px]:gap-5 max-[820px]:gap-4 items-center mt-1 p-[22px_22px_18px] max-[1180px]:p-[18px_18px_14px] max-[820px]:p-[16px_16px_14px] max-[640px]:p-[14px_14px_12px] bg-[radial-gradient(circle_at_top_left,rgba(37,214,255,0.1),transparent_28%),linear-gradient(180deg,rgba(12,19,58,0.98),rgba(17,23,69,0.95))] border border-[#54d7ff1f] rounded-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_12px_24px_rgba(3,8,22,0.14)] will-change-[transform,opacity,filter] ti-blueprint-feature-base" aria-label="Work design attributes">
+      <section className="w-full grid grid-cols-[380px_1fr] max-[1180px]:grid-cols-1 gap-10 max-[1180px]:gap-6 max-[820px]:gap-4 items-center mt-1 p-[32px_42px_28px] max-[1180px]:p-[24px_24px_20px] max-[640px]:p-[18px_18px_16px] bg-[radial-gradient(circle_at_top_left,rgba(37,214,255,0.1),transparent_28%),linear-gradient(180deg,rgba(12,19,58,0.98),rgba(17,23,69,0.95))] border border-[#54d7ff1f] rounded-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_12px_24px_rgba(3,8,22,0.14)] will-change-[transform,opacity,filter] ti-blueprint-feature-base" aria-label="Work design attributes">
         <div className="max-w-[420px]">
           <div className="inline-flex w-[54px] h-[54px] max-[820px]:w-[46px] max-[820px]:h-[46px] max-[640px]:w-10 max-[640px]:h-10 mb-3 max-[820px]:mb-2.5 max-[640px]:mb-2 ti-blueprint-feature-icon-base" aria-hidden="true">
             <img src={attributesIcon} alt="" className="w-full h-full object-contain drop-shadow" />
           </div>
 
           <h3 className="m-0 max-w-[300px] max-[820px]:max-w-[320px] max-[640px]:max-w-[220px] font-serif text-[clamp(1.68rem,3vw,2.9rem)] max-[820px]:text-[clamp(1.45rem,6.5vw,2.2rem)] max-[640px]:text-[clamp(1.2rem,7vw,1.7rem)] font-bold leading-[1.08] -tracking-[0.05em] text-white ti-blueprint-feature-title-base">Work Design Attributes</h3>
-          <p className="mt-3.5 max-[820px]:mt-3 max-[640px]:mt-2.5 max-w-[340px] font-sans text-[clamp(0.9rem,1.18vw,1.08rem)] max-[820px]:text-[clamp(0.9rem,3vw,1rem)] max-[640px]:text-[0.84rem] leading-[1.38] max-[640px]:leading-[1.34] text-[#f5f6fbdf] ti-blueprint-feature-desc-base">
+          <p className="mt-3.5 max-[820px]:mt-3 max-[640px]:mt-2.5 max-w-[340px] font-sans text-[clamp(1.3rem,1.3vw,1.25rem)] max-[820px]:text-[clamp(0.95rem,3vw,1.1rem)] max-[640px]:text-[0.95rem] leading-[1.5] text-[#f5f6fbdf] ti-blueprint-feature-desc-base">
             Ten critical aspects that support and enhance the work design constituents for optimal outcomes.
           </p>
         </div>
 
-        <ol className="m-0 pl-[26px] max-[820px]:pl-5 max-[640px]:pl-[18px] font-sans text-[clamp(0.84rem,1vw,1rem)] max-[820px]:text-[0.9rem] max-[640px]:text-[0.8rem] leading-[1.46] max-[820px]:leading-[1.42] max-[640px]:leading-[1.34] text-[#f5f6fbdf] ti-blueprint-feature-list-base" style={{ columns: 1 }}>
+        <ol className="m-0 grid grid-cols-2 max-[760px]:grid-cols-1 gap-x-8 gap-y-2.5 font-sans text-[clamp(1.3rem,1.25vw,1.2rem)] leading-[1.5] text-[#f5f6fbdf] ti-blueprint-feature-list-base">
           {workDesignAttributes.map((item) => (
-            <li key={item} className="[&:not(:first-child)]:mt-1.5 max-[640px]:[&:not(:first-child)]:mt-[5px]">{item}</li>
+            <li key={item} className="list-disc ml-4">{item}</li>
           ))}
         </ol>
       </section>
 
-      <section className="col-span-full grid grid-cols-[minmax(260px,0.84fr)_minmax(280px,1fr)] max-[1180px]:grid-cols-1 gap-[34px] max-[1180px]:gap-5 max-[820px]:gap-4 items-center mt-1 p-[22px_22px_18px] max-[1180px]:p-[18px_18px_14px] max-[820px]:p-[16px_16px_14px] max-[640px]:p-[14px_14px_12px] bg-[radial-gradient(circle_at_top_right,rgba(52,205,255,0.18),transparent_28%),linear-gradient(90deg,#122052_0%,#1d4670_55%,#2e9ec6_100%)] border border-[#58dbff29] rounded-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_12px_24px_rgba(3,8,22,0.14)] will-change-[transform,opacity,filter] ti-blueprint-feature-base" aria-label="Attribute processes and checklists">
+      <section className="w-full grid grid-cols-[380px_1fr] max-[1180px]:grid-cols-1 gap-10 max-[1180px]:gap-6 max-[820px]:gap-4 items-center mt-1 p-[32px_42px_28px] max-[1180px]:p-[24px_24px_20px] max-[640px]:p-[18px_18px_16px] bg-[radial-gradient(circle_at_top_right,rgba(52,205,255,0.18),transparent_28%),linear-gradient(90deg,#122052_0%,#1d4670_55%,#2e9ec6_100%)] border border-[#58dbff29] rounded-[22px] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_12px_24px_rgba(3,8,22,0.14)] will-change-[transform,opacity,filter] ti-blueprint-feature-base" aria-label="Attribute processes and checklists">
         <div className="max-w-[420px]">
           <div className="inline-flex w-[54px] h-[54px] max-[820px]:w-[46px] max-[820px]:h-[46px] max-[640px]:w-10 max-[640px]:h-10 mb-3 max-[820px]:mb-2.5 max-[640px]:mb-2 ti-blueprint-feature-icon-base" aria-hidden="true">
-             <img src={checklistIcon} alt="" className="w-full h-full object-contain drop-shadow" />
+            <img src={checklistIcon} alt="" className="w-full h-full object-contain drop-shadow" />
           </div>
 
           <h3 className="m-0 max-w-[340px] max-[640px]:max-w-[220px] font-serif text-[clamp(1.68rem,3vw,2.9rem)] max-[820px]:text-[clamp(1.45rem,6.5vw,2.2rem)] max-[640px]:text-[clamp(1.2rem,7vw,1.7rem)] font-bold leading-[1.08] -tracking-[0.05em] text-white ti-blueprint-feature-title-base">Attribute Processes & Checklists</h3>
-          <p className="mt-3.5 max-[820px]:mt-3 max-[640px]:mt-2.5 max-w-[360px] font-sans text-[clamp(0.9rem,1.18vw,1.08rem)] max-[820px]:text-[clamp(0.9rem,3vw,1rem)] max-[640px]:text-[0.84rem] leading-[1.38] max-[640px]:leading-[1.34] text-[#f5f6fbdf] ti-blueprint-feature-desc-base">
+          <p className="mt-3.5 max-[820px]:mt-3 max-[640px]:mt-2.5 max-w-[360px] font-sans text-[clamp(1.3rem,1.3vw,1.25rem)] max-[820px]:text-[clamp(0.95rem,3vw,1.1rem)] max-[640px]:text-[0.95rem] leading-[1.5] text-[#f5f6fbdf] ti-blueprint-feature-desc-base">
             Ten structured processes and 25 checklist controls to ensure thorough oversight and execution efficiency.
           </p>
         </div>

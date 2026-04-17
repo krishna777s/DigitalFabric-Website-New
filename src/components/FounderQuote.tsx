@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import AshwinImg from '@/assets/Ashwin founder quote page.png'
+import AshwinImg from '@/assets/founder page image updated final.jpg'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -189,8 +189,8 @@ export default function FounderSection() {
             <h2
               className={`
                 m-0 mb-8 md:mb-10
-                text-[1.4rem] md:text-[clamp(1.5rem,2.5vw,2.5rem)]
-                font-bold leading-[1.15] tracking-tight
+                text-[clamp(1.5rem,4vw,2.5rem)]
+                font-serif font-bold leading-[1.15] tracking-tight
                 text-white
                 transition-[transform,opacity,filter]
                 duration-[450ms]
@@ -222,13 +222,13 @@ export default function FounderSection() {
                     `}
                   >
                     <strong
-                      className="font-bold text-[1.2rem] md:text-[clamp(1.2rem,1.8vw,1.5rem)] tracking-tight mb-1"
+                      className="font-serif font-bold text-[clamp(1.125rem,1.8vw,1.5rem)] tracking-tight mb-1"
                       style={{ color: titleColor }}
                     >
                       {card.label}
                     </strong>
-                    <span className="block text-[0.85rem] md:text-[clamp(0.85rem,1.1vw,0.9rem)] font-normal text-black leading-snug w-full px-2">
-                      {card.description}
+                    <span className="block text-[clamp(0.95rem,1.1vw,1.1rem)] font-serif font-normal text-black leading-snug w-full px-2">
+                       {card.description}
                     </span>
                   </li>
                 )

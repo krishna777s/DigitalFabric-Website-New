@@ -9,12 +9,12 @@ function Footer() {
       <div
         className="footer-main mx-auto w-full max-w-[1780px] 
           grid grid-cols-[minmax(360px,1.15fr)_minmax(220px,0.62fr)_minmax(420px,1fr)] 
-          gap-16 items-start px-[92px] pt-6 pb-[120px]
-          [@media(max-width:1400px)]:grid-cols-[minmax(280px,1fr)_minmax(200px,0.62fr)_minmax(320px,0.92fr)]
-          [@media(max-width:1400px)]:px-8 [@media(max-width:1400px)]:pt-6 [@media(max-width:1400px)]:pb-[88px] [@media(max-width:1400px)]:gap-10
-          [@media(max-width:1100px)]:pb-10
-          [@media(max-width:1024px)]:grid-cols-2 [@media(max-width:1024px)]:gap-7 [@media(max-width:1024px)]:px-5 [@media(max-width:1024px)]:pt-6 [@media(max-width:1024px)]:pb-[60px]
-          [@media(max-width:640px)]:grid-cols-1 [@media(max-width:640px)]:px-6 [@media(max-width:640px)]:pt-10 [@media(max-width:640px)]:pb-11 [@media(max-width:640px)]:gap-10"
+          gap-16 items-start px-4 sm:px-10 md:px-14 lg:px-16 pt-6 pb-[120px]
+          max-[1400px]:grid-cols-[minmax(280px,1fr)_minmax(200px,0.62fr)_minmax(320px,0.92fr)]
+          max-[1400px]:pb-[88px] max-[1400px]:gap-10
+          max-[1100px]:pb-10
+          max-[1024px]:grid-cols-2 max-[1024px]:gap-7 max-[1024px]:pb-[60px]
+          max-[640px]:grid-cols-1 max-[640px]:pt-10 max-[640px]:pb-11 max-[640px]:gap-10"
       >
         <div
           className="footer-brand pt-[120px]
@@ -95,11 +95,11 @@ function Footer() {
       </div>
 
       <div
-        className="footer-meta mx-auto w-full max-w-[1780px] px-[92px] py-[44px] pb-[54px] border-t border-black/10 flex justify-between gap-6
-          [@media(max-width:1400px)]:max-w-[calc(100%-48px)] [@media(max-width:1400px)]:px-8 [@media(max-width:1400px)]:py-8 [@media(max-width:1400px)]:pb-10
-          [@media(max-width:1100px)]:px-7 [@media(max-width:1100px)]:py-7 [@media(max-width:1100px)]:pb-9
-          [@media(max-width:1024px)]:max-w-[calc(100%-32px)] [@media(max-width:1024px)]:px-5 [@media(max-width:1024px)]:py-6 [@media(max-width:1024px)]:pb-8 [@media(max-width:1024px)]:flex-col [@media(max-width:1024px)]:items-start [@media(max-width:1024px)]:gap-2.5
-          [@media(max-width:640px)]:max-w-[calc(100%-24px)] [@media(max-width:640px)]:px-3 [@media(max-width:640px)]:py-[18px] [@media(max-width:640px)]:pb-[26px] [@media(max-width:640px)]:gap-2"
+        className="footer-meta mx-auto w-full max-w-[1780px] px-4 sm:px-8 md:px-10 lg:px-12 py-[44px] pb-[54px] border-t border-black/10 flex justify-between gap-6
+          max-[1400px]:max-w-[calc(100%-48px)] max-[1400px]:py-8 max-[1400px]:pb-10
+          max-[1100px]:py-7 max-[1100px]:pb-9
+          max-[1024px]:max-w-[calc(100%-32px)] max-[1024px]:py-6 max-[1024px]:pb-8 max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:gap-2.5
+          max-[640px]:max-w-[calc(100%-24px)] max-[640px]:py-[18px] max-[640px]:pb-[26px] max-[640px]:gap-2"
       >
         <p className="m-0 text-black font-serif text-[0.94rem] leading-[1.3] [@media(max-width:640px)]:text-[0.9rem]">
           © 2022 DIGITALFABRIC<span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[4px]">®</span>, All Rights Reserved

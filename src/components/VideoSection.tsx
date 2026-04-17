@@ -9,6 +9,8 @@ import ResearchShow from "@/assets/Research FAbricshow.jpg";
 import ConsultingVideo from "@/assets/DIGITALFABRIC CONSULTING.mp4";
 import ImagenieVideo from "@/assets/Imagenie_video.mp4";
 import ProsightVideo from "@/assets/Prosight_video.mp4";
+import DF_Video from "@/assets/DF video.mp4";
+import ResearchVideo from "@/assets/Researchfabric video.mp4";
 
 import DigitalFabricLogo from "@/assets/Digital Fabric logo.jpg";
 import ImagenieLogo from "@/assets/Imageine logo.png";
@@ -29,6 +31,7 @@ const showcaseBrands = [
     panelText: "#f7f6f2",
     progressColor: "#4cc9ff",
     media: DigitalFabricShow,
+    videoSrc: DF_Video,
     logoVariant: "framework",
     logoImage: DigitalFabricLogo,
     logoAlt: "DigitalFabric logo",
@@ -42,7 +45,7 @@ const showcaseBrands = [
     brandTitle: "IMAGENIE",
     brandSubtitle: "DESIGNING DESIRES",
     brandDescription: "Creative Design Agency",
-    panelBg: "#cc7c00",
+    panelBg: "#A96700",
     panelText: "#000000",
     progressColor: "#4cc9ff",
     media: ImagenieShow,
@@ -100,6 +103,7 @@ const showcaseBrands = [
     panelText: "#000000",
     progressColor: "#4cc9ff",
     media: ResearchShow,
+    videoSrc: ResearchVideo,
     logoVariant: "research",
     logoImage: ResearchFabricLogo,
     logoAlt: "Research Fabric logo",
@@ -218,12 +222,10 @@ export default function VideoSection() {
   return (
     <section
       aria-label="DigitalFabric group showcase"
-      className="mx-auto w-[min(calc(100%-8px),100%)] text-white pt-24"
+      className="mx-auto w-full text-white pt-32 px-4 sm:px-4 md:px-64 lg:px-6"
       style={{
         background: "linear-gradient(135deg,#0b3f60 0%,#12698e 45%,#4ec9f3 100%)",
         paddingBottom: "24px",
-        paddingLeft: "clamp(12px,2vw,32px)",
-        paddingRight: "clamp(12px,2vw,32px)",
       }}
     >
 

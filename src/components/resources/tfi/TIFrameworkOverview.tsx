@@ -44,12 +44,12 @@ const TIFrameworkOverview = () => {
         ref={sectionRef}
         className="bg-white text-[#071745] grid grid-cols-[minmax(0,1fr)_minmax(280px,0.72fr)] max-[1100px]:grid-cols-1 gap-8 items-center px-[56px] pt-12 pb-7 max-[1100px]:px-7 max-[1100px]:pt-10 max-[1100px]:pb-7 max-[640px]:px-[18px] max-[640px]:pt-7 max-[640px]:pb-[22px]"
       >
-        <div 
+        <div
           className={`will-change-[transform,opacity] opacity-0 -translate-x-[72px]
             ${isInView ? "animate-ti-overview-copy" : ""}
           `}
         >
-          <p className="m-0 font-sans text-[clamp(0.92rem,1.35vw,1.16rem)] leading-[1.3] text-[#05164c] max-[640px]:text-base max-[640px]:leading-[1.42]">
+          <p className="m-0 font-sans text-[clamp(1.3rem,1.35vw,1.16rem)] leading-[1.3] text-[#05164c] max-[640px]:text-base max-[640px]:leading-[1.42]">
             The TI (Technology Innovation) Framework integrates three critical
             dimensions: <strong className="font-extrabold text-[#05164c]">Governance</strong>, <strong className="font-extrabold text-[#05164c]">Conformance</strong>,
             and <strong className="font-extrabold text-[#05164c]">Performance</strong>. These pillars are supported by three
@@ -58,7 +58,7 @@ const TIFrameworkOverview = () => {
             workforce, workflows, and technology for optimal outcomes.
           </p>
 
-          <p className="mt-[18px] font-sans text-[clamp(0.92rem,1.35vw,1.16rem)] leading-[1.3] text-[#05164c] max-[640px]:text-base max-[640px]:leading-[1.42]">
+          <p className="mt-[18px] font-sans text-[clamp(1.3rem,1.35vw,1.16rem)] leading-[1.3] text-[#05164c] max-[640px]:text-base max-[640px]:leading-[1.42]">
             At the core of the framework lies <strong className="font-extrabold text-[#05164c]">Digital Edge</strong>, which
             symbolizes the competitive advantage gained through the optimal
             integration of these elements. This holistic approach empowers
@@ -68,15 +68,15 @@ const TIFrameworkOverview = () => {
           </p>
         </div>
 
-        <div 
+        <div
           className={`relative w-full max-[1100px]:max-w-[540px] max-[1100px]:mx-auto will-change-[transform,opacity] opacity-0 translate-x-[72px] flex items-center justify-center
             ${isInView ? "animate-ti-overview-diagram" : ""}
           `}
         >
-          <img 
-            src={digitalEdgeImg} 
-            alt="Digital Edge" 
-            className="w-full h-auto object-contain drop-shadow-xl" 
+          <img
+            src={digitalEdgeImg}
+            alt="Digital Edge"
+            className="w-full h-auto object-contain drop-shadow-xl"
           />
         </div>
       </section>
