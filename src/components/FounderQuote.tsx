@@ -137,8 +137,8 @@ export default function FounderSection() {
   return (
     <section
       ref={sectionRef}
-      // Set to 85vh max or explicitly contained to fit inside a single screen scroll perfectly like an artboard.
-      className="relative w-full overflow-x-hidden bg-black border-t border-[#333] lg:h-[70vh] lg:min-h-[480px] lg:max-h-[800px] min-h-[700px] lg:min-h-0"
+      // Compact section to fit inside a single screen scroll perfectly.
+      className="relative w-full overflow-x-hidden bg-black border-t border-[#333] lg:h-[60vh] lg:min-h-[420px] lg:max-h-[680px] min-h-[550px]"
       style={{ fontFamily: "'Abhaya Libre', serif" }}
       aria-label="About DigitalFabric leadership"
     >
