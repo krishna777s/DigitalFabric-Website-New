@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import dfVideo from "@/assets/Why DIGITALFABRIC.mov";
-import questionImg from "@/assets/why df hero.png";
 
 const HeroWhyDigitalFabric: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -26,7 +25,7 @@ const HeroWhyDigitalFabric: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[calc(100vh-78px)] flex items-center overflow-hidden text-[#f4f3ef] bg-[#0a0f1f]"
+      className="relative min-h-[calc(120vh-78px)] flex items-center overflow-hidden text-[#f4f3ef] bg-[#0a0f1f]"
     >
       {/* Video Background */}
       <video
@@ -76,25 +75,7 @@ const HeroWhyDigitalFabric: React.FC = () => {
         </div>
 
         {/* RIGHT – art */}
-        <div
-          className="relative w-full max-w-[700px] min-h-[560px] flex items-center justify-center max-[1024px]:w-full max-[1024px]:min-h-[340px] max-[640px]:min-h-[240px]"
-        >
-          <img
-            src={questionImg}
-            alt="Question"
-            className="w-full max-w-[260px] max-[720px]:max-w-[300px] max-[640px]:max-w-[200px] h-auto object-contain"
-            style={{
-              opacity: isVisible ? 1 : 0,
-              transform: isVisible
-                ? "translateY(0)"
-                : "translateY(-40px)",
-              transition:
-                "opacity 860ms cubic-bezier(0.22,1,0.36,1), transform 860ms cubic-bezier(0.22,1,0.36,1)",
-              transitionDelay: "100ms",
-              willChange: "transform, opacity",
-            }}
-          />
-        </div>
+
       </div>
     </section>
   );

@@ -43,7 +43,7 @@ const TIFrameworkHero = () => {
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(10,18,42,0.30)_0%,rgba(10,18,42,0.40)_52%,rgba(8,14,34,0.58)_100%)] opacity-80" />
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(255,255,255,0.05)_0%,rgba(255,255,255,0.015)_22%,rgba(5,12,30,0.08)_100%),radial-gradient(circle_at_18%_22%,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0.03)_18%,rgba(255,255,255,0)_38%)] backdrop-blur-[0px]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 md:px-16 lg:px-24 pt-0 pb-[124px] max-[1100px]:pb-[96px]">
+      <div className="relative z-10 w-full px-[18px] sm:px-[32px] md:px-[56px] lg:px-[56px] pt-0 pb-[124px] max-[1100px]:pb-[96px]">
         <h1
           className={`m-0 font-serif font-bold leading-[1.05] -tracking-[0.045em] text-white will-change-[transform,opacity]
             opacity-0 -translate-y-[72px]

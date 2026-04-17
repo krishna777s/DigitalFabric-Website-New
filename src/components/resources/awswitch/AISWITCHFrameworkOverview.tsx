@@ -25,9 +25,9 @@ const AISWITCHFrameworkOverview = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#59ceeb] text-[#1a1c32] px-[24px] py-28 max-[1100px]:px-[16px] max-[1100px]:py-16 max-[640px]:py-14"
+      className="bg-[#59ceeb] text-[#1a1c32] px-[18px] sm:px-[32px] md:px-[56px] lg:px-[56px] py-28 max-[640px]:py-14"
     >
-      <div className="max-w-[1400px] mx-auto grid grid-cols-[0.85fr_1.15fr] max-[900px]:grid-cols-1 gap-12 items-center justify-start">
+      <div className="w-full grid grid-cols-[0.85fr_1.15fr] max-[900px]:grid-cols-1 gap-12 items-center justify-start">
         <div
           data-inview={isInView}
           className="opacity-0 -translate-x-24 transition-all duration-[1000ms] ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-x-0 text-left"

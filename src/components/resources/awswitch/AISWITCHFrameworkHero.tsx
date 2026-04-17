@@ -43,7 +43,7 @@ const AISWITCHFrameworkHero = () => {
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(180deg,rgba(5,10,28,0.1)_0%,rgba(7,13,34,0.3)_60%,rgba(4,8,20,0.45)100%)]" />
       <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(90deg,rgba(5,9,26,0.35)_0%,rgba(7,12,29,0.15)_32%,transparent_62%,transparent_100%)]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full pt-0 pb-[124px] px-6 sm:px-12 md:px-16 lg:px-24">
+      <div className="relative z-10 w-full pt-0 pb-[124px] px-[18px] sm:px-[32px] md:px-[56px] lg:px-[56px]">
         <h1
           className={`m-0 max-w-[20ch] font-serif font-bold leading-none -tracking-[0.05em] text-white [text-shadow:0_14px_34px_rgba(0,0,0,0.12)] will-change-[transform,opacity,filter] transition-all duration-[1050ms] ease-[cubic-bezier(0.22,1,0.36,1)] 
             ${isInView ? "opacity-100 translate-y-0 scale-100 blur-0" : "opacity-0 translate-y-14 scale-[0.96] blur-[10px]"}

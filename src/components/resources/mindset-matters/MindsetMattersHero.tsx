@@ -21,7 +21,7 @@ const MindsetMattersHero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-[#030919] via-[#081229]/40 to-transparent" />
 
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 md:px-16 lg:px-24 py-16">
+      <div className="relative z-10 w-full px-[18px] sm:px-[32px] md:px-[56px] lg:px-[56px] py-16">
         <div className="animate-ti-title flex flex-col justify-center max-w-[850px]">
           <span className="block font-serif font-medium tracking-[0.1em] text-[#e0e5ff] text-[clamp(0.9rem,1.2vw,1.1rem)] uppercase mb-4 max-[640px]:mb-3">
             DIGITALFABRIC<sup className="text-[1.3em] align-top relative top-[0.6em] ml-0.2 font-medium">®</sup> RESOURCES

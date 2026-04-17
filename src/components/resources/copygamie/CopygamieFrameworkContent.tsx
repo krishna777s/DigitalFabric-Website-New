@@ -25,9 +25,9 @@ const CopygamieFrameworkContent = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#101426] pt-28 pb-10 px-[58px] max-[1100px]:px-[34px] max-[640px]:px-[18px]"
+      className="bg-[#101426] pt-28 pb-10 px-[18px] sm:px-[32px] md:px-[56px] lg:px-[56px]"
     >
-      <div className="max-w-7xl mx-auto flex flex-col gap-16 max-[900px]:gap-12">
+      <div className="w-full flex flex-col gap-16 max-[900px]:gap-12">
 
         {/* Top Split: Text & Diagram */}
         <div className="grid grid-cols-[1fr_1.15fr] max-[900px]:grid-cols-1 gap-16 max-[900px]:gap-10 items-start">
