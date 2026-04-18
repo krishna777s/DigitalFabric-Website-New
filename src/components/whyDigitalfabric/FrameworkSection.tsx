@@ -59,6 +59,7 @@ const variantBg: Record<LayoutVariant, string> = {
 };
 
 /* ─── Reusable layout card ───────────────────────────────────── */
+/* ─── Reusable layout card ───────────────────────────────────── */
 const FrameworkCard: React.FC<FrameworkCardProps> = ({
   icon,
   label,
@@ -81,7 +82,7 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
           el.removeAttribute("data-visible");
         }
       },
-      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" }
     );
 
     observer.observe(el);
@@ -89,71 +90,58 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
   }, []);
 
   const isExtended = variant !== "default";
-  const sidePad = "70px";
-
+  
   return (
     <div
       ref={layoutRef}
       id={layoutId}
       data-variant={variant}
-      className="framework-layout-card group"
+      className={`framework-layout-card group relative w-full ${isExtended ? 'py-16 md:py-24' : 'py-12 md:py-16'}`}
       style={{
-        display: "grid",
-        gridTemplateColumns: "1fr",
-        gap: "34px",
-        alignItems: "start",
-        padding: "58px 0 0",
-        ...(isExtended
-          ? {
-            marginInline: "calc(var(--side-pad) * -1)",
-            paddingInline: "var(--side-pad)",
-            background: variantBg[variant],
-          }
-          : {}),
+        background: isExtended ? variantBg[variant] : "transparent",
       }}
     >
-      <style>{`
-        :root { --side-pad: 70px; }
-        @media (max-width: 1024px) { :root { --side-pad: 48px; } }
-        @media (max-width: 640px) { :root { --side-pad: 24px; } }
-      `}</style>
-      {/* Copy block */}
-      <div
-        className="flex flex-col items-center text-center mx-auto"
-        style={{ width: "min(100%, 1180px)", maxWidth: "1180px" }}
-      >
-        {/* Lead icon */}
-        <span
-          className="inline-flex text-[#25d8ff]"
-          style={{ width: 120, height: 120 }}
-          aria-hidden="true"
+      {/* Inner Container with Padding */}
+      <div className="w-full mx-auto px-[20px] sm:px-[36px] md:px-[60px] layout-inner">
+        
+        {/* Copy block */}
+        <div
+          className="flex flex-col items-center text-center mx-auto mb-12 md:mb-16"
+          style={{ width: "min(100%, 1100px)" }}
         >
-          {icon}
-        </span>
+          {/* Lead icon */}
+          <div
+            className="flex items-center justify-center text-[#25d8ff] mb-6"
+            style={{ width: "clamp(80px, 12vw, 120px)", height: "clamp(80px, 12vw, 120px)" }}
+            aria-hidden="true"
+          >
+            {icon}
+          </div>
 
-        {/* Badge */}
-        <BadgePill label={label} layoutId={layoutId} />
+          {/* Badge */}
+          <BadgePill label={label} layoutId={layoutId} />
 
-        {/* Description */}
-        <p
-          className="m-0 text-center leading-[1.6] text-[rgba(234,236,245,0.85)] font-serif"
-          style={{
-            maxWidth: "1080px",
-            fontSize: "clamp(1rem, 1.4vw, 1.5rem)",
-          }}
+          {/* Description */}
+          <p
+            className="m-0 text-center leading-[1.6] text-[rgba(234,236,245,0.9)] font-serif"
+            style={{
+              maxWidth: "960px",
+              fontSize: "clamp(1.1rem, 1.6vw, 1.45rem)",
+            }}
+          >
+            {description}
+          </p>
+        </div>
+
+        {/* Points grid */}
+        <div
+          className="mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8"
+          style={{ maxWidth: "1240px" }}
         >
-          {description}
-        </p>
-      </div>
-
-      {/* Points grid */}
-      <div
-        className="mx-auto w-full grid grid-cols-2 gap-[24px] max-[1100px]:grid-cols-1 max-[640px]:gap-[22px]"
-        style={{ maxWidth: "1280px" }}
-      >
-        {points.map((pt, i) => (
-          <PointCard key={i} icon={pt.icon} title={pt.title} body={pt.body} index={i} layoutId={layoutId} />
-        ))}
+          {points.map((pt, i) => (
+            <PointCard key={i} icon={pt.icon} title={pt.title} body={pt.body} index={i} layoutId={layoutId} />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -163,18 +151,15 @@ const FrameworkCard: React.FC<FrameworkCardProps> = ({
 const BadgePill: React.FC<{ label: string; layoutId: string }> = ({ label }) => (
   <h3
     className="
-      flex items-center justify-center gap-[14px]
-      mt-[24px] mb-[26px]
-      text-[#d8f4ff] font-serif font-normal tracking-[-0.01em] leading-tight
-      transition-all duration-[260ms] ease
-      cursor-default
+      flex items-center justify-center text-center
+      mb-6 md:mb-8
+      text-[#d8f4ff] font-serif font-bold tracking-tight
+      transition-all duration-300 ease
       badge-pill
     "
     style={{
-      maxWidth: "100%",
-      width: "max-content",
-      fontSize: "clamp(1.5rem, 3vw, 2.2rem)",
-      textShadow: "0 2px 4px rgba(0,0,0,0.3)",
+      fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+      textShadow: "0 2px 8px rgba(0,0,0,0.4)",
     }}
   >
     {label}
@@ -194,41 +179,39 @@ const PointCard: React.FC<PointCardProps> = ({ icon, title, body }) => (
   <article
     className="
       point-card
-      grid items-start
-      rounded-[20px] cursor-pointer relative isolate
-      transition-all duration-[260ms] ease
-      hover:-translate-y-3 hover:scale-[1.02]
+      flex flex-col sm:grid
+      rounded-[24px] cursor-default relative isolate
+      transition-all duration-[300ms] ease-out
+      hover:scale-[1.01] hover:shadow-2xl
     "
     style={{
-      gridTemplateColumns: "68px minmax(0,1fr)",
-      gap: 16,
-      padding: "18px 20px",
-      border: "1px solid rgba(92,215,255,0.18)",
+      gridTemplateColumns: "clamp(60px, 8vw, 80px) 1fr",
+      gap: "clamp(16px, 3vw, 24px)",
+      padding: "clamp(20px, 4vw, 32px)",
+      border: "1px solid rgba(92,215,255,0.15)",
       background:
-        "linear-gradient(180deg,rgba(74,210,255,0.34) 0%,rgba(74,210,255,0.24) 22%,rgba(53,178,255,0.12) 58%,rgba(23,94,186,0.03) 100%)",
-      boxShadow:
-        "inset 0 1px 0 rgba(255,255,255,0.08), 0 18px 38px rgba(5,10,28,0.18)",
-      backdropFilter: "blur(8px)",
-      WebkitBackdropFilter: "blur(8px)",
-      animation: "frameworkBoxGlow 3.8s ease-in-out infinite",
+        "linear-gradient(180deg, rgba(74,210,255,0.1) 0%, rgba(74,210,255,0.05) 100%)",
+      boxShadow: "0 10px 30px -10px rgba(0,0,0,0.3)",
+      backdropFilter: "blur(12px)",
+      WebkitBackdropFilter: "blur(12px)",
       opacity: 0,
     }}
   >
-    <span
-      className="inline-flex text-[#25d8ff] transition-transform duration-[260ms] ease"
-      style={{ width: 68, height: 68 }}
+    <div
+      className="inline-flex text-[#25d8ff] mb-4 sm:mb-0"
+      style={{ width: "clamp(60px, 8vw, 72px)", height: "clamp(60px, 8vw, 72px)" }}
       aria-hidden="true"
     >
       {icon}
-    </span>
+    </div>
 
     <p
-      className="m-0 leading-[1.6] text-[rgba(234,236,245,0.85)] font-serif"
+      className="m-0 leading-relaxed text-[rgba(234,236,245,0.9)] font-serif"
       style={{
-        fontSize: "clamp(1rem, 1.35vw, 1.3rem)",
+        fontSize: "clamp(1rem, 1.4vw, 1.25rem)",
       }}
     >
-      <strong className="text-white font-bold">{title}:</strong> {body}
+      <strong className="text-white font-bold block mb-1 sm:inline sm:mb-0">{title}:</strong> {body}
     </p>
   </article>
 );
@@ -237,15 +220,11 @@ const PointCard: React.FC<PointCardProps> = ({ icon, title, body }) => (
 const FrameworkSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
 
-  /* Intersection observer for each layout card – drives badge + point animations */
   useEffect(() => {
     if (!sectionRef.current) return;
 
     const cards = Array.from(
       sectionRef.current.querySelectorAll<HTMLElement>(".framework-layout-card")
-    );
-    const pointCards = Array.from(
-      sectionRef.current.querySelectorAll<HTMLElement>(".point-card")
     );
 
     const observer = new IntersectionObserver(
@@ -258,35 +237,41 @@ const FrameworkSection: React.FC = () => {
           if (entry.isIntersecting) {
             badges.forEach((b) => {
               b.style.opacity = "1";
-              b.style.transform = "translateY(0) scale(1)";
+              b.style.transform = "translateY(0)";
             });
             points.forEach((p, i) => {
               p.style.opacity = "1";
-              p.style.transform = "translateX(0)";
-              p.style.transitionDelay = i === 1 ? "120ms" : "0ms";
+              p.style.transform = "translateY(0)";
+              p.style.transitionDelay = `${i * 100}ms`;
             });
           } else {
             badges.forEach((b) => {
               b.style.opacity = "0";
-              b.style.transform = "translateY(18px) scale(0.96)";
+              b.style.transform = "translateY(20px)";
             });
-            points.forEach((p, i) => {
+            points.forEach((p) => {
               p.style.opacity = "0";
-              p.style.transform = i === 0 ? "translateX(-72px)" : "translateX(72px)";
+              p.style.transform = "translateY(30px)";
             });
           }
         });
       },
-      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -5% 0px" }
     );
 
-    cards.forEach((c) => observer.observe(c));
-
-    // Set initial states
-    pointCards.forEach((p, i) => {
-      p.style.opacity = "0";
-      p.style.transition =
-        "transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease, background 260ms ease, opacity 720ms cubic-bezier(0.22,1,0.36,1)";
+    cards.forEach((c) => {
+      observer.observe(c);
+      // Initial states
+      const points = c.querySelectorAll<HTMLElement>(".point-card");
+      points.forEach(p => {
+        p.style.transition = "opacity 800ms cubic-bezier(0.22, 1, 0.36, 1), transform 800ms cubic-bezier(0.22, 1, 0.36, 1)";
+        p.style.transform = "translateY(30px)";
+      });
+      const badges = c.querySelectorAll<HTMLElement>(".badge-pill");
+      badges.forEach(b => {
+        b.style.transition = "opacity 600ms cubic-bezier(0.22, 1, 0.36, 1), transform 600ms cubic-bezier(0.22, 1, 0.36, 1)";
+        b.style.transform = "translateY(20px)";
+      });
     });
 
     return () => observer.disconnect();
@@ -400,11 +385,9 @@ const FrameworkSection: React.FC = () => {
       <style>{glowKeyframes}</style>
       <section
         ref={sectionRef}
-        className="relative bg-[#090f2b] text-white pb-6 max-[980px]:pb-5 max-[640px]:pb-4"
+        className="relative bg-[#090f2b] text-white overflow-hidden pb-12"
       >
-        <div
-          className="w-full mx-auto px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px]"
-        >
+        <div className="w-full">
           {frameworks.map((fw) => (
             <FrameworkCard
               key={fw.id}

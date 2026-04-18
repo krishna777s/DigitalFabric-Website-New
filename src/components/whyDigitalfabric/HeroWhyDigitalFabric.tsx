@@ -25,7 +25,7 @@ const HeroWhyDigitalFabric: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[calc(120vh-78px)] flex items-center overflow-hidden text-[#f4f3ef] bg-[#0a0f1f]"
+      className="relative min-h-[70vh] md:min-h-[calc(100vh-78px)] lg:min-h-[calc(110vh-78px)] flex items-center overflow-hidden text-[#f4f3ef] bg-[#0a0f1f]"
     >
       {/* Video Background */}
       <video
@@ -44,38 +44,37 @@ const HeroWhyDigitalFabric: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-[#030919] via-[#081229]/80 to-transparent pointer-events-none" />
 
       {/* Inner grid */}
-      <div className="relative z-[2] w-full px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px] py-[48px] grid grid-cols-[1.06fr_0.94fr] gap-[44px] items-center max-[1024px]:grid-cols-1 max-[1024px]:gap-8">
+      <div className="relative z-[2] w-full px-[20px] sm:px-[36px] md:px-[60px] py-[60px] md:py-[80px] grid grid-cols-1 lg:grid-cols-[1.06fr_0.94fr] gap-[40px] items-center">
 
         {/* LEFT – copy */}
         <div
-          className="self-center"
+          className="self-center max-w-[800px]"
           style={{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(-72px)",
+            transform: isVisible ? "translateY(0)" : "translateY(40px)",
             transition:
-              "opacity 760ms cubic-bezier(0.22,1,0.36,1), transform 760ms cubic-bezier(0.22,1,0.36,1)",
+              "opacity 800ms cubic-bezier(0.22,1,0.36,1), transform 800ms cubic-bezier(0.22,1,0.36,1)",
             willChange: "transform, opacity",
           }}
         >
           <h1
-            className="font-serif text-[clamp(1.75rem,4.5vw,3.125rem)] font-bold mb-[30px] whitespace-nowrap max-[640px]:whitespace-normal flex items-start"
+            className="font-serif text-[clamp(2rem,6vw,3.5rem)] font-bold mb-[24px] leading-[1.15] flex items-start flex-wrap"
             style={{ fontFamily: "'Abhaya Libre', serif" }}
           >
-            Why DIGITALFABRIC<span className="text-[0.9em] font-normal font-serif ml-[2px] leading-none mt-[14px]">®</span>?
+            Why DIGITALFABRIC<span className="text-[0.6em] font-normal font-serif ml-[4px] leading-none mt-[8px] md:mt-[12px]">®</span>?
           </h1>
 
           <p
-            className="max-w-[750px] mt-7 text-[clamp(1.125rem,1.5vw,1.5rem)] leading-relaxed max-[640px]:mt-6 font-serif"
+            className="max-w-[700px] mt-6 text-[clamp(1.1rem,2vw,1.5rem)] leading-relaxed font-serif opacity-90"
           >
             This segment is related to the derived ideology of
-            DIGITALFABRIC<span className="text-[1.2em] font-normal font-serif align-top relative top-[0.2em] leading-none">®</span> from various technology and business
+            DIGITALFABRIC<span className="text-[1.1em] font-normal font-serif align-top relative top-[0.1em] leading-none">®</span> from various technology and business
             domains to assist enterprises in scaling the digital business
             transformation initiative.
           </p>
         </div>
 
-        {/* RIGHT – art */}
-
+        {/* RIGHT – art (Empty for now to match current layout) */}
       </div>
     </section>
   );

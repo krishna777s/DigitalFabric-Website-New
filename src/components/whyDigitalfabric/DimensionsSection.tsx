@@ -26,30 +26,30 @@ const DimensionsSection: React.FC = () => {
   return (
     <section
       ref={sectionRef}
-      className="text-[#18234d]"
+      className="text-[#18234d] overflow-hidden"
       style={{
         background:
           "linear-gradient(180deg, #eef8ff 0%, #dceefe 48%, #c6ddf5 100%)",
       }}
     >
       {/* Shell */}
-      <div className="w-full px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px] py-16 pb-12 max-[760px]:py-10 max-[760px]:pb-8">
+      <div className="w-full px-[20px] sm:px-[36px] md:px-[60px] py-16 md:py-24">
 
         {/* Copy */}
-        <div className="max-w-[1200px] max-[1120px]:max-w-none">
+        <div className="max-w-[1200px] mx-auto lg:mx-0">
           <p
-            className="m-0 text-[#1a2348] leading-[1.42] font-serif"
+            className="m-0 text-[#1a2348] leading-[1.4] font-serif"
             style={{
-              fontSize: "clamp(1rem, 1.4vw, 1.5rem)",
+              fontSize: "clamp(1.125rem, 1.8vw, 1.625rem)",
             }}
           >
-            DIGITALFABRIC<span className="inline-block translate-y-[0.2em] text-[1.5em] font-black ml-[2px]">®</span> provides a comprehensive framework that aligns
+            DIGITALFABRIC<span className="inline-block translate-y-[0.2em] text-[1.4em] font-black ml-[4px]">®</span> provides a comprehensive framework that aligns
             various organizational elements to drive success in a digital-first environment.
           </p>
           <p
-            className="mt-[18px] m-0 text-[#1a2348] leading-[1.42] max-[760px]:text-[0.94rem] max-[760px]:leading-[1.5] font-serif"
+            className="mt-6 md:mt-8 m-0 text-[#1a2348] leading-[1.5] font-serif opacity-90"
             style={{
-              fontSize: "clamp(1rem, 1.4vw, 1.5rem)",
+              fontSize: "clamp(1rem, 1.5vw, 1.35rem)",
             }}
           >
             This model integrates key aspects such as <strong className="font-bold">People</strong>,{" "}
@@ -64,20 +64,21 @@ const DimensionsSection: React.FC = () => {
 
         {/* Layout grid */}
         <div
-          className="grid grid-cols-2 gap-12 items-start mt-[48px] max-[1120px]:grid-cols-1 max-[1120px]:gap-12 max-[760px]:mt-10"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mt-12 md:mt-20"
         >
           {/* Partnership image */}
           <div className="flex justify-center items-start">
             <img
               src={partnershipGraphic}
               alt="Partnership framework"
-              className="block h-auto max-[760px]:max-w-[420px]"
+              className="block h-auto"
               style={{
                 width: "min(100%, 620px)",
+                maxWidth: "100%",
                 opacity: isVisible ? 1 : 0,
-                transform: isVisible ? "translateX(0)" : "translateX(-120px)",
+                transform: isVisible ? "translateX(0)" : "translateX(-40px)",
                 transition:
-                  "transform 800ms cubic-bezier(0.22,1,0.36,1), opacity 800ms cubic-bezier(0.22,1,0.36,1)",
+                  "transform 1000ms cubic-bezier(0.22,1,0.36,1), opacity 1000ms cubic-bezier(0.22,1,0.36,1)",
                 willChange: "transform, opacity",
               }}
             />
@@ -88,14 +89,15 @@ const DimensionsSection: React.FC = () => {
             <img
               src={dimensionsGraphic}
               alt="DIGITALFABRIC dimensions framework"
-              className="block h-auto max-[760px]:max-w-[360px]"
+              className="block h-auto"
               style={{
                 width: "min(100%, 520px)",
+                maxWidth: "100%",
                 opacity: isVisible ? 1 : 0,
-                transform: isVisible ? "translateX(0)" : "translateX(120px)",
+                transform: isVisible ? "translateX(0)" : "translateX(40px)",
                 transition:
-                  "transform 860ms cubic-bezier(0.22,1,0.36,1), opacity 860ms cubic-bezier(0.22,1,0.36,1)",
-                transitionDelay: "80ms",
+                  "transform 1000ms cubic-bezier(0.22,1,0.36,1), opacity 1000ms cubic-bezier(0.22,1,0.36,1)",
+                transitionDelay: "150ms",
                 willChange: "transform, opacity",
               }}
             />
