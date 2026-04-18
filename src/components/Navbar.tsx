@@ -78,7 +78,7 @@ const Navbar = () => {
         <div className="flex items-center gap-5 min-w-0 overflow-hidden">
 
           {/* Logo — smaller on mobile, original size on desktop */}
-          <Link to="/" onClick={() => handleNavClick("/")} className="flex items-center flex-shrink-0 transition-transform hover:scale-[1.02]">
+          <Link to="/" onClick={() => handleNavClick("/")} className="flex items-center ml-4 flex-shrink-0 transition-transform hover:scale-[1.02]">
             <img
               src={logo}
               alt="DigitalFabric"
