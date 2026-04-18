@@ -227,15 +227,15 @@ export default function VideoSection() {
   return (
     <section
       aria-label="DigitalFabric group showcase"
-      className={`mx-auto w-full text-white transition-all duration-700 ease-in-out ${isExpanded ? 'pt-24 p-0' : 'pt-32 px-[20px] sm:px-[36px] md:px-[60px]'}`}
+      className="mx-auto w-full text-white pt-32 px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px]"
       style={{
         background: "linear-gradient(135deg,#0b3f60 0%,#12698e 45%,#4ec9f3 100%)",
-        paddingBottom: isExpanded ? "0" : "24px",
+        paddingBottom: "24px",
       }}
     >
 
       {/* ══ HEADER ══════════════════════════════════════════════════════════ */}
-      <div className={`mb-[clamp(24px,3vw,42px)] mx-auto w-full max-w-[1200px] transition-all duration-500 ${isExpanded ? 'px-6 opacity-80 scale-95' : 'opacity-100 scale-100'}`}>
+      <div className="mb-[clamp(24px,3vw,42px)] mx-auto w-full max-w-[1200px]">
 
         {/* Copy block */}
         <div className="w-full">
@@ -260,12 +260,12 @@ export default function VideoSection() {
 
       {/* ══ FEATURE: left panel + right media ═══════════════════════════════ */}
       <div
-        className={`mx-auto rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:grid transition-all duration-700 ease-in-out bg-black/10 ${isExpanded ? 'max-w-none w-full !rounded-none shadow-none' : 'max-w-[1400px]'}`}
+        className="mx-auto max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:grid transition-all duration-700 ease-in-out bg-black/10"
         style={{
           gridTemplateColumns: isExpanded
             ? "0fr 1fr"
-            : "minmax(320px,0.92fr) minmax(360px,1.08fr)",
-          minHeight: isExpanded ? "calc(100vh - 200px)" : "clamp(400px,40vw,550px)",
+            : "1fr 1fr",
+          minHeight: "clamp(400px,40vw,550px)",
         }}
       >
 
@@ -282,9 +282,9 @@ export default function VideoSection() {
         >
           {/* Logo area */}
           <div className="mb-7 flex min-h-[128px] w-full flex-col items-center justify-center">
-            <a
-              href={active.websiteUrl}
-              target="_blank"
+            <a 
+              href={active.websiteUrl} 
+              target="_blank" 
               rel="noopener noreferrer"
               className="block hover:opacity-80 transition-all duration-300 transform hover:scale-[1.02]"
               aria-label={`Visit ${active.brandTitle} website`}
@@ -343,9 +343,9 @@ export default function VideoSection() {
 
           {/* Learn More Action */}
           <div className="mt-auto pt-8 w-full flex flex-col items-center">
-            <div
-              className="w-16 h-[1px] mb-6"
-              style={{ backgroundColor: `${active.panelText}44` }}
+            <div 
+              className="w-16 h-[1px] mb-6" 
+              style={{ backgroundColor: `${active.panelText}44` }} 
             />
             <a
               href={active.websiteUrl}
@@ -355,8 +355,8 @@ export default function VideoSection() {
               style={{ color: active.panelText }}
             >
               <span className="font-serif font-bold text-[0.95rem] tracking-[0.05em] uppercase">Learn More</span>
-              <svg
-                viewBox="0 0 24 24"
+              <svg 
+                viewBox="0 0 24 24" 
                 className="w-4 h-4 fill-current transform transition-transform duration-300 group-hover/btn:translate-x-1.5"
                 style={{ fill: active.panelText }}
               >
@@ -375,7 +375,7 @@ export default function VideoSection() {
           onMouseLeave={() => setShowControls(false)}
           style={{
             backgroundImage: active.videoSrc ? undefined : `url(${active.media})`,
-            minHeight: isExpanded ? "calc(100vh - 200px)" : "clamp(400px,40vw,550px)",
+            minHeight: "clamp(400px,40vw,550px)",
           }}
         >
           {active.videoSrc ? (
@@ -518,87 +518,85 @@ export default function VideoSection() {
         </div>
       </div>
 
-      {/* ══ PROGRESS LINES / BRAND TABS ═══════════════════════════════════════ */}
-      {!isExpanded && (
-        <>
-          <div
-            aria-hidden="true"
-            className="mx-auto max-w-[1400px] mt-10 mb-6 grid grid-cols-5 gap-7 max-[640px]:hidden px-2"
+      {/* ══ PROGRESS LINES (desktop) ═════════════════════════════════════════ */}
+      <div
+        aria-hidden="true"
+        className="mx-auto max-w-[1400px] mt-10 mb-6 grid grid-cols-5 gap-7 max-[640px]:hidden px-2"
+      >
+        {showcaseBrands.map((b) => (
+          <span
+            key={b.key}
+            className="h-[6px] rounded-full transition-colors duration-500"
+            style={{ background: b.key === activeKey ? b.progressColor : "#d9d9d9" }}
+          />
+        ))}
+      </div>
+
+      {/* ══ BRAND TABS (desktop) ═════════════════════════════════════════════ */}
+      <div className="mx-auto max-w-[1400px] grid grid-cols-5 items-start gap-[26px] max-[640px]:hidden px-2">
+        {showcaseBrands.map((b) => (
+          <button
+            key={b.key}
+            type="button"
+            onClick={() => setActiveKey(b.key)}
+            className="cursor-pointer border-0 bg-transparent p-0 text-center transition-transform duration-200 hover:-translate-y-[2px]"
+            style={{ color: "#ffffff" }}
           >
-            {showcaseBrands.map((b) => (
+            <span
+              className="block font-serif font-bold leading-[1.2]"
+              style={{ fontSize: "clamp(1.05rem,1.6vw,2rem)" }}
+            >
+              <BrandTitle title={b.brandTitle} />
+            </span>
+
+            {b.brandSubtitle && b.logoVariant !== "prosight" ? (
               <span
-                key={b.key}
-                className="h-[6px] rounded-full transition-colors duration-500"
-                style={{ background: b.key === activeKey ? b.progressColor : "#d9d9d9" }}
-              />
-            ))}
-          </div>
-
-          <div className="mx-auto max-w-[1400px] grid grid-cols-5 items-start gap-[26px] max-[640px]:hidden px-2">
-            {showcaseBrands.map((b) => (
-              <button
-                key={b.key}
-                type="button"
-                onClick={() => setActiveKey(b.key)}
-                className="cursor-pointer border-0 bg-transparent p-0 text-center transition-transform duration-200 hover:-translate-y-[2px]"
-                style={{ color: "#ffffff" }}
+                className="mt-[4px] block font-serif text-[0.82rem] font-bold leading-[1.1] uppercase tracking-wide opacity-100"
               >
-                <span
-                  className="block font-serif font-bold leading-[1.2]"
-                  style={{ fontSize: "clamp(1.05rem,1.6vw,2rem)" }}
-                >
-                  <BrandTitle title={b.brandTitle} />
-                </span>
+                {b.brandSubtitle}
+              </span>
+            ) : null}
 
-                {b.brandSubtitle && b.logoVariant !== "prosight" ? (
-                  <span
-                    className="mt-[4px] block font-serif text-[0.82rem] font-bold leading-[1.1] uppercase tracking-wide opacity-100"
-                  >
-                    {b.brandSubtitle}
-                  </span>
-                ) : null}
+            <span
+              className="mt-[6px] block font-serif text-[0.92rem] leading-[1.3] font-medium"
+              style={{
+                color: "#ffffff"
+              }}
+            >
+              {b.brandDescription}
+            </span>
+          </button>
+        ))}
+      </div>
 
-                <span
-                  className="mt-[6px] block font-serif text-[0.92rem] leading-[1.3] font-medium"
-                  style={{
-                    color: "#ffffff"
-                  }}
-                >
-                  {b.brandDescription}
-                </span>
-              </button>
-            ))}
+      {/* ══ BRAND TABS (mobile ≤640px) ═══════════════════════════════════════ */}
+      <div className="mx-auto max-w-[1400px] hidden grid-cols-2 gap-[18px] pt-[18px] max-[640px]:grid px-2">
+        {showcaseBrands.map((b) => (
+          <div key={b.key} className="grid gap-3">
+            <span
+              className="h-[5px] w-[35%] justify-self-center rounded-full transition-colors duration-500"
+              style={{ background: b.key === activeKey ? b.progressColor : "rgba(255,255,255,0.45)" }}
+              aria-hidden="true"
+            />
+            <button
+              type="button"
+              onClick={() => setActiveKey(b.key)}
+              className="cursor-pointer border-0 bg-transparent p-0 text-center"
+              style={{ color: "#ffffff" }}
+            >
+              <span className="block font-serif text-[0.92rem] font-bold leading-[1.05]">
+                <BrandTitle title={b.brandTitle} />
+              </span>
+              <span
+                className="mt-[6px] block font-serif text-[0.7rem] leading-[1.25]"
+                style={{ color: "rgba(243,246,248,0.82)" }}
+              >
+                {b.brandDescription}
+              </span>
+            </button>
           </div>
-
-          <div className="mx-auto max-w-[1400px] hidden grid-cols-2 gap-[18px] pt-[18px] max-[640px]:grid px-2">
-            {showcaseBrands.map((b) => (
-              <div key={b.key} className="grid gap-3">
-                <span
-                  className="h-[5px] w-[35%] justify-self-center rounded-full transition-colors duration-500"
-                  style={{ background: b.key === activeKey ? b.progressColor : "rgba(255,255,255,0.45)" }}
-                  aria-hidden="true"
-                />
-                <button
-                  type="button"
-                  onClick={() => setActiveKey(b.key)}
-                  className="cursor-pointer border-0 bg-transparent p-0 text-center"
-                  style={{ color: "#ffffff" }}
-                >
-                  <span className="block font-serif text-[0.92rem] font-bold leading-[1.05]">
-                    <BrandTitle title={b.brandTitle} />
-                  </span>
-                  <span
-                    className="mt-[6px] block font-serif text-[0.7rem] leading-[1.25]"
-                    style={{ color: "rgba(243,246,248,0.82)" }}
-                  >
-                    {b.brandDescription}
-                  </span>
-                </button>
-              </div>
-            ))}
-          </div>
-        </>
-      )}
+        ))}
+      </div>
     </section>
   );
 }

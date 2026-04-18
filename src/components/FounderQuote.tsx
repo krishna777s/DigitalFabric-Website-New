@@ -213,22 +213,22 @@ export default function FounderSection() {
                   <li
                     key={card.key}
                     className={`
-                      flex-1 flex flex-col items-center justify-center text-center
-                      min-h-[110px] md:min-h-[120px] px-4 py-5 md:py-6
-                      bg-white rounded-[16px]
-                      transform transition-transform hover:scale-105 duration-300
-                      mx-auto w-[min(100%,320px)] sm:w-auto
-                      ${inView ? 'card-animate-' + (i + 1) : 'card-hidden'}
-                    `}
+                        flex-1 flex flex-col items-center justify-center text-center
+                        min-h-[110px] md:min-h-[120px] px-2 py-5 md:py-6
+                        bg-white rounded-[16px]
+                        transform transition-transform hover:scale-105 duration-300
+                        mx-auto w-[min(100%,320px)] sm:w-auto
+                        ${inView ? 'card-animate-' + (i + 1) : 'card-hidden'}
+                      `}
                   >
                     <strong
-                      className="font-serif font-bold text-[clamp(1.125rem,1.8vw,1.5rem)] tracking-tight mb-1"
+                      className="font-serif font-bold text-[clamp(1.1rem,1.7vw,1.4rem)] tracking-tight mb-1"
                       style={{ color: titleColor }}
                     >
                       {card.label}
                     </strong>
-                    <span className="block text-[clamp(0.95rem,1.1vw,1.1rem)] font-serif font-normal text-black leading-snug w-full px-2">
-                       {card.description}
+                    <span className="block text-[clamp(0.85rem,1.05vw,1.05rem)] font-serif font-normal text-black leading-snug whitespace-nowrap px-1">
+                      {card.description}
                     </span>
                   </li>
                 )
