@@ -159,6 +159,17 @@ export default function VideoSection() {
   const [isMuted, setIsMuted] = useState(true);
   const [showControls, setShowControls] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  
+  useEffect(() => {
+    if (isExpanded) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isExpanded]);
 
   useEffect(() => {
     // Reset video state when active brand changes
@@ -260,18 +271,22 @@ export default function VideoSection() {
 
       {/* ══ FEATURE: left panel + right media ═══════════════════════════════ */}
       <div
-        className="mx-auto max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:grid transition-all duration-700 ease-in-out bg-black/10"
+        className={`transition-all duration-700 ease-in-out ${
+          isExpanded 
+            ? "fixed inset-0 z-[9999] w-screen h-screen m-0 rounded-none bg-black flex items-center justify-center" 
+            : "mx-auto max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:grid bg-black/10"
+        }`}
         style={{
           gridTemplateColumns: isExpanded
-            ? "0fr 1fr"
+            ? "1fr"
             : "1fr 1fr",
-          minHeight: "clamp(400px,40vw,550px)",
+          minHeight: isExpanded ? "100vh" : "clamp(400px,40vw,550px)",
         }}
       >
 
         {/* LEFT — info panel */}
         <div
-          className={`flex flex-col items-center justify-center text-center transition-all duration-700 ease-in-out overflow-hidden ${isExpanded ? 'opacity-0 pointer-events-none px-0' : 'opacity-100'}`}
+          className={`flex flex-col items-center justify-center text-center transition-all duration-700 ease-in-out overflow-hidden ${isExpanded ? 'hidden opacity-0 pointer-events-none px-0' : 'opacity-100'}`}
           style={{
             background: active.panelBg,
             color: active.panelText,
@@ -375,7 +390,9 @@ export default function VideoSection() {
           onMouseLeave={() => setShowControls(false)}
           style={{
             backgroundImage: active.videoSrc ? undefined : `url(${active.media})`,
-            minHeight: "clamp(400px,40vw,550px)",
+            minHeight: isExpanded ? "100vh" : "clamp(400px,40vw,550px)",
+            width: isExpanded ? "100vw" : "auto",
+            height: isExpanded ? "100vh" : "auto",
           }}
         >
           {active.videoSrc ? (
@@ -383,6 +400,7 @@ export default function VideoSection() {
               ref={videoRef}
               key={active.videoSrc}
               className="absolute inset-0 h-full w-full object-cover"
+              style={{ maxWidth: '100vw', maxHeight: '100vh' }}
               src={active.videoSrc}
               autoPlay
               muted={isMuted}
