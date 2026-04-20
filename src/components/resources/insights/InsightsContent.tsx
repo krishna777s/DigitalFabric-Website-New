@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import caseStudyImg from "@/assets/insight case study.png";
 import marketInsightImg from "@/assets/featured market insights.jpg";
 import ashwinImg from "@/assets/ISG Ashwin Gaidhani.jpg";
+import profileBg from "@/assets/image bg for profiles.jpg";
 
 const insights = [
   {
@@ -66,7 +67,10 @@ const InsightsContent = () => {
             </div>
 
             {/* Overlapping Profile Circle */}
-            <div className="absolute top-[220px] left-8 -translate-y-1/2 w-16 h-16 rounded-full border-4 border-[#080d1a] overflow-hidden bg-[#080d1a] z-10 shadow-lg">
+            <div 
+              className="absolute top-[220px] left-8 -translate-y-1/2 w-16 h-16 rounded-full border-4 border-[#080d1a] overflow-hidden z-10 shadow-lg bg-cover bg-center"
+              style={{ backgroundImage: `url(${profileBg})` }}
+            >
               <img src={ashwinImg} alt="Author profile" className="w-full h-full object-cover" />
             </div>
 

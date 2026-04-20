@@ -2,6 +2,7 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import ashwinImg from "@/assets/ISG Ashwin Gaidhani.jpg";
 import gaurangImg from "@/assets/ISG Gaurang Pagdi.jpg";
 import tapatiImg from "@/assets/ISG Tapati.Bandopadhyay_US.jpg";
+import profileBg from "@/assets/image bg for profiles.jpg";
 
 type Analyst = "Tapati Bandhopadhyay" | "Ashwin Gaidhani" | "Gaurang Pagdi";
 
@@ -150,11 +151,16 @@ const ISGStudiesContent = () => {
                     <div className="flex flex-col gap-3">
                       {row.analysts.map(analyst => (
                         <div key={analyst} className="flex items-center gap-4">
-                          <img 
-                            src={analystPortraits[analyst]} 
-                            alt={analyst} 
-                            className="w-10 h-10 rounded-full object-cover shadow-sm bg-gray-200"
-                          />
+                          <div 
+                            className="w-10 h-10 rounded-full overflow-hidden shadow-sm flex items-center justify-center bg-cover bg-center"
+                            style={{ backgroundImage: `url(${profileBg})` }}
+                          >
+                            <img 
+                              src={analystPortraits[analyst]} 
+                              alt={analyst} 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
                           <span className="font-sans text-[#030919] text-[0.95rem]">{analyst}</span>
                         </div>
                       ))}
