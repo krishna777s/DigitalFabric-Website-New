@@ -10,7 +10,7 @@ import ConsultingVideo from "@/assets/DIGITALFABRIC CONSULTING.mp4";
 import ImagenieVideo from "@/assets/Imagenie_video.mp4";
 import ProsightVideo from "@/assets/Prosight_video.mp4";
 import DF_Video from "@/assets/DF video.mp4";
-import ResearchVideo from "@/assets/ResearchFabric video.mp4";
+import ResearchVideo from "@/assets/Researchfabric video.mp4";
 
 import DigitalFabricLogo from "@/assets/Digital_Fabric_logo-removebg.png";
 import ImagenieLogo from "@/assets/Imageine logo.png";
