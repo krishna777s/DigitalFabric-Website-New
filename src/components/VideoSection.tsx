@@ -12,7 +12,7 @@ import ProsightVideo from "@/assets/Prosight_video.mp4";
 import DF_Video from "@/assets/DF video.mp4";
 import ResearchVideo from "@/assets/Researchfabric video.mp4";
 
-import DigitalFabricLogo from "@/assets/Digital Fabric logo.jpg";
+import DigitalFabricLogo from "@/assets/Digital_Fabric_logo-removebg.png";
 import ImagenieLogo from "@/assets/Imageine logo.png";
 import ProsightLogo from "@/assets/Prosight Logo.png";
 import DigitalFabricConsultingLogo from "@/assets/Digital Fabric Consulting logo.png";
@@ -159,17 +159,6 @@ export default function VideoSection() {
   const [isMuted, setIsMuted] = useState(true);
   const [showControls, setShowControls] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
-  
-  useEffect(() => {
-    if (isExpanded) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isExpanded]);
 
   useEffect(() => {
     // Reset video state when active brand changes
@@ -271,22 +260,18 @@ export default function VideoSection() {
 
       {/* ══ FEATURE: left panel + right media ═══════════════════════════════ */}
       <div
-        className={`transition-all duration-700 ease-in-out ${
-          isExpanded 
-            ? "fixed inset-0 z-[9999] w-screen h-screen m-0 rounded-none bg-black flex items-center justify-center" 
-            : "mx-auto max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:grid bg-black/10"
-        }`}
+        className="mx-auto max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:grid transition-all duration-700 ease-in-out bg-black/10"
         style={{
           gridTemplateColumns: isExpanded
-            ? "1fr"
+            ? "0fr 1fr"
             : "1fr 1fr",
-          minHeight: isExpanded ? "100vh" : "clamp(400px,40vw,550px)",
+          minHeight: "clamp(400px,40vw,550px)",
         }}
       >
 
         {/* LEFT — info panel */}
         <div
-          className={`flex flex-col items-center justify-center text-center transition-all duration-700 ease-in-out overflow-hidden ${isExpanded ? 'hidden opacity-0 pointer-events-none px-0' : 'opacity-100'}`}
+          className={`flex flex-col items-center justify-center text-center transition-all duration-700 ease-in-out overflow-hidden ${isExpanded ? 'opacity-0 pointer-events-none px-0' : 'opacity-100'}`}
           style={{
             background: active.panelBg,
             color: active.panelText,
@@ -296,10 +281,10 @@ export default function VideoSection() {
           }}
         >
           {/* Logo area */}
-          <div className="mb-7 flex min-h-[128px] w-full flex-col items-center justify-center">
-            <a 
-              href={active.websiteUrl} 
-              target="_blank" 
+          <div className="mb-7 flex min-h-[128px] w-full flex-col items-center justify-center bg-transparent">
+            <a
+              href={active.websiteUrl}
+              target="_blank"
               rel="noopener noreferrer"
               className="block hover:opacity-80 transition-all duration-300 transform hover:scale-[1.02]"
               aria-label={`Visit ${active.brandTitle} website`}
@@ -358,9 +343,9 @@ export default function VideoSection() {
 
           {/* Learn More Action */}
           <div className="mt-auto pt-8 w-full flex flex-col items-center">
-            <div 
-              className="w-16 h-[1px] mb-6" 
-              style={{ backgroundColor: `${active.panelText}44` }} 
+            <div
+              className="w-16 h-[1px] mb-6"
+              style={{ backgroundColor: `${active.panelText}44` }}
             />
             <a
               href={active.websiteUrl}
@@ -370,8 +355,8 @@ export default function VideoSection() {
               style={{ color: active.panelText }}
             >
               <span className="font-serif font-bold text-[0.95rem] tracking-[0.05em] uppercase">Learn More</span>
-              <svg 
-                viewBox="0 0 24 24" 
+              <svg
+                viewBox="0 0 24 24"
                 className="w-4 h-4 fill-current transform transition-transform duration-300 group-hover/btn:translate-x-1.5"
                 style={{ fill: active.panelText }}
               >
@@ -390,9 +375,7 @@ export default function VideoSection() {
           onMouseLeave={() => setShowControls(false)}
           style={{
             backgroundImage: active.videoSrc ? undefined : `url(${active.media})`,
-            minHeight: isExpanded ? "100vh" : "clamp(400px,40vw,550px)",
-            width: isExpanded ? "100vw" : "auto",
-            height: isExpanded ? "100vh" : "auto",
+            minHeight: "clamp(400px,40vw,550px)",
           }}
         >
           {active.videoSrc ? (
@@ -400,7 +383,6 @@ export default function VideoSection() {
               ref={videoRef}
               key={active.videoSrc}
               className="absolute inset-0 h-full w-full object-cover"
-              style={{ maxWidth: '100vw', maxHeight: '100vh' }}
               src={active.videoSrc}
               autoPlay
               muted={isMuted}
