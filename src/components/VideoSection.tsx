@@ -36,11 +36,11 @@ const showcaseBrands = [
     logoVariant: "framework",
     logoImage: DigitalFabricLogo,
     logoAlt: "DigitalFabric logo",
-    logoWidth: 280,
+    logoWidth: 200,
     heading: "Enabling scalable digital evolution",
     description:
       "A unified framework guiding organizations toward building agile, technology-driven, and future-ready enterprises.",
-    websiteUrl: "https://digitalfabric.in",
+    websiteUrl: "https://www.digitalfabric.in/",
   },
   {
     key: "creative",
@@ -59,7 +59,7 @@ const showcaseBrands = [
     heading: "Designing ideas into impactful experiences",
     description:
       "A creative platform focused on ideation, visual storytelling, and brand articulation to bring concepts to life with clarity and impact.",
-    websiteUrl: "https://imagenie.in",
+    websiteUrl: "https://www.imagenie.in/",
   },
   {
     key: "prosight",
@@ -97,7 +97,7 @@ const showcaseBrands = [
     heading: "Driving strategy to execution",
     description:
       "A consulting practice delivering enterprise advisory, governance, and end-to-end digital transformation solutions with measurable business outcomes.",
-    websiteUrl: "https://digitalfabric.in",
+    websiteUrl: "https://www.digitalfabric.in/",
   },
   {
     key: "research",
@@ -225,6 +225,12 @@ export default function VideoSection() {
     }
   };
 
+  const handleInstantRedirect = (e: React.MouseEvent, url: string) => {
+    e.stopPropagation();
+    // Using window.open directly can be faster as it skips some browser link-pre-check logic
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section
       aria-label="DigitalFabric group showcase"
@@ -285,7 +291,8 @@ export default function VideoSection() {
               href={active.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block hover:opacity-80 transition-all duration-300 transform hover:scale-[1.02] w-full flex items-center justify-center"
+              onClick={(e) => handleInstantRedirect(e, active.websiteUrl)}
+              className="block hover:opacity-80 transition-none transform hover:scale-[1.01] w-full flex items-center justify-center cursor-pointer"
               aria-label={`Visit ${active.brandTitle} website`}
             >
               <img
@@ -355,7 +362,8 @@ export default function VideoSection() {
               href={active.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 group/btn transition-all duration-300 hover:opacity-80"
+              onClick={(e) => handleInstantRedirect(e, active.websiteUrl)}
+              className="inline-flex items-center justify-center gap-2 group/btn transition-none hover:opacity-80 cursor-pointer"
               style={{ color: active.panelText }}
             >
               <span className="font-serif font-bold text-[0.95rem] tracking-[0.05em] uppercase">Learn More</span>
