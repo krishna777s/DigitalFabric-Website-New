@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, type CSSProperties } from "react";
+import { createPortal } from "react-dom";
 
 // ─── ASSETS ──────────────────────────────────────────────────────────────────
 import DigitalFabricShow from "@/assets/digital Fabric.jpeg";
@@ -35,7 +36,7 @@ const showcaseBrands = [
     logoVariant: "framework",
     logoImage: DigitalFabricLogo,
     logoAlt: "DigitalFabric logo",
-    logoWidth: 260,
+    logoWidth: 280,
     heading: "Enabling scalable digital evolution",
     description:
       "A unified framework guiding organizations toward building agile, technology-driven, and future-ready enterprises.",
@@ -119,6 +120,8 @@ const showcaseBrands = [
   },
 ];
 
+const MOBILE_VIDEO_H = "320px";
+
 // ─── Trademark symbols ────────────────────────────────────────────────────────
 
 const Sup = ({ m }: { m: string }) => (
@@ -128,7 +131,6 @@ const Sub = ({ m }: { m: string }) => (
   <span className="align-super text-[0.55em] font-bold ml-[2px]">{m}</span>
 );
 
-// Helpers specifically for the 5 bottom slides
 const SlideSup = ({ m }: { m: string }) => (
   <span className="inline-block translate-y-[-0.08em] text-[0.95em] font-black ml-0">{m}</span>
 );
@@ -161,7 +163,6 @@ export default function VideoSection() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
-    // Reset video state when active brand changes
     if (active.videoSrc) {
       setShowControls(true);
       const timer = setTimeout(() => setShowControls(false), 2500);
@@ -227,7 +228,7 @@ export default function VideoSection() {
   return (
     <section
       aria-label="DigitalFabric group showcase"
-      className="mx-auto w-full text-white pt-32 px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px]"
+      className="mx-auto w-full text-white pt-24 sm:pt-32 px-[12px] sm:px-[36px] md:px-[60px] lg:px-[60px]"
       style={{
         background: "linear-gradient(135deg,#0b3f60 0%,#12698e 45%,#4ec9f3 100%)",
         paddingBottom: "24px",
@@ -236,8 +237,6 @@ export default function VideoSection() {
 
       {/* ══ HEADER ══════════════════════════════════════════════════════════ */}
       <div className="mb-[clamp(24px,3vw,42px)] mx-auto w-full max-w-[1200px]">
-
-        {/* Copy block */}
         <div className="w-full">
           <h2
             className="m-0 mb-6 font-serif leading-[1.02] text-center tracking-[-0.03em] text-[1.8rem] md:text-[clamp(2.5rem,3.5vw,4.5rem)]"
@@ -255,49 +254,51 @@ export default function VideoSection() {
             to achieve pragmatic, innovation-led growth in an increasingly dynamic digital landscape.
           </p>
         </div>
-
       </div>
 
       {/* ══ FEATURE: left panel + right media ═══════════════════════════════ */}
+      {/* On mobile (<lg): stacks vertically — info panel on top, video below
+          On desktop (lg+): side-by-side 50/50 grid with fixed height */}
       <div
         className="mx-auto max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:grid transition-all duration-700 ease-in-out bg-black/10"
         style={{
-          gridTemplateColumns: isExpanded
-            ? "0fr 1fr"
-            : "1fr 1fr",
-          minHeight: "clamp(400px,40vw,550px)",
+          gridTemplateColumns: "1fr 1fr",
         }}
       >
 
         {/* LEFT — info panel */}
+        {/* Mobile: auto height to fit content. Desktop: fixed PANEL_HEIGHT. */}
         <div
-          className={`flex flex-col items-center justify-center text-center transition-all duration-700 ease-in-out overflow-hidden ${isExpanded ? 'opacity-0 pointer-events-none px-0' : 'opacity-100'}`}
+          className="flex flex-col items-center justify-between text-center transition-all duration-700 ease-in-out overflow-hidden opacity-100 lg:min-h-0 lg:aspect-square"
           style={{
             background: active.panelBg,
             color: active.panelText,
-            padding: isExpanded ? "0" : "60px clamp(20px,1.9vw,26px) clamp(24px,2.2vw,30px)",
-            minHeight: isExpanded ? "0" : "clamp(400px,40vw,550px)",
-            width: isExpanded ? "0" : "auto",
+            // Mobile: comfortable padding. Desktop: breathing room.
+            padding: "clamp(24px,3.5vw,60px) clamp(16px,1.9vw,26px) clamp(24px,3vw,40px)",
+            width: "auto",
+            overflowY: 'auto'
           }}
         >
-          {/* Logo area */}
-          <div className="mb-7 flex min-h-[128px] w-full flex-col items-center justify-center bg-transparent">
+          {/* Logo area — fixed height container so all brands align identically */}
+          <div className="w-full flex flex-col items-center justify-center bg-transparent" style={{ minHeight: "clamp(80px,12vw,140px)" }}>
             <a
               href={active.websiteUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="block hover:opacity-80 transition-all duration-300 transform hover:scale-[1.02]"
+              className="block hover:opacity-80 transition-all duration-300 transform hover:scale-[1.02] w-full flex items-center justify-center"
               aria-label={`Visit ${active.brandTitle} website`}
             >
               <img
                 src={active.logoImage ?? BrandLogo}
                 alt={active.logoAlt}
-                className="mx-auto block h-auto max-w-full"
-                style={{ width: `min(${active.logoWidth}px, 100%)` }}
+                className="mx-auto block object-contain"
+                style={{
+                  width: `min(${active.logoWidth}px, 95%)`,
+                }}
               />
             </a>
 
-            {/* Prosight subtitle pill */}
+            {/* Prosight subtitle pill — shown below the logo */}
             {active.logoVariant === "prosight" && active.brandSubtitle ? (
               <span
                 className="mt-[10px] inline-block rounded-full px-[14px] py-[4px] text-[0.72rem] font-bold leading-none tracking-wider"
@@ -305,6 +306,10 @@ export default function VideoSection() {
                   background: "rgba(255,255,255,0.92)",
                   color: "#3f5d8d",
                   letterSpacing: "0.04em",
+                  whiteSpace: "normal",
+                  textAlign: "center",
+                  maxWidth: "100%",
+                  overflow: "visible",
                 }}
               >
                 {active.brandSubtitle}
@@ -314,9 +319,9 @@ export default function VideoSection() {
 
           {/* Heading */}
           <h3
-            className="mx-auto mt-6 md:mt-10 mb-[18px] w-full text-center font-serif leading-[1.2] tracking-[-0.02em] text-[1.25rem] md:text-[clamp(1.4rem,2vw,2.4rem)]"
+            className={`mx-auto mb-0 w-full text-center font-serif leading-[1.2] tracking-[-0.02em] ${active.key === 'framework' ? 'text-[1.4rem] md:text-[clamp(1.6rem,2.5vw,2.8rem)]' : 'text-[1.25rem] md:text-[clamp(1.4rem,2vw,2.4rem)]'}`}
             style={{
-              maxWidth: 360,
+              maxWidth: active.key === 'framework' ? 420 : 360,
               color: active.panelText,
               wordBreak: "break-word",
               overflowWrap: "break-word",
@@ -328,12 +333,11 @@ export default function VideoSection() {
 
           {/* Description */}
           <p
-            className="mx-auto mt-[18px] max-w-[420px] text-center font-serif leading-[1.6]"
+            className={`mx-auto max-w-[420px] text-center font-serif leading-[1.6] ${active.key === 'framework' ? 'text-[1.1rem] md:text-[clamp(1.1rem,1.4vw,1.5rem)]' : 'text-[1rem] md:text-[clamp(1rem,1.2vw,1.3rem)]'}`}
             style={{
-              fontSize: "clamp(1rem,1.2vw,1.3rem)",
               color: active.panelText,
               display: "-webkit-box",
-              WebkitLineClamp: 3,
+              WebkitLineClamp: 4,
               WebkitBoxOrient: "vertical",
               overflow: "hidden",
             } as CSSProperties}
@@ -342,7 +346,7 @@ export default function VideoSection() {
           </p>
 
           {/* Learn More Action */}
-          <div className="mt-auto pt-8 w-full flex flex-col items-center">
+          <div className="w-full flex flex-col items-center">
             <div
               className="w-16 h-[1px] mb-6"
               style={{ backgroundColor: `${active.panelText}44` }}
@@ -367,27 +371,56 @@ export default function VideoSection() {
         </div>
 
         {/* RIGHT — media / video */}
+        {/* Mobile: fixed 320px so video is always visible.
+            Desktop (lg+): matches PANEL_HEIGHT for 50/50 layout. */}
         <div
           key={active.key}
           aria-label={`${active.brandTitle} featured media`}
-          className="relative overflow-hidden bg-cover bg-center group/video bg-black/20"
+          className="relative overflow-hidden bg-black group/video lg:aspect-square"
           onMouseEnter={() => setShowControls(true)}
+          onMouseMove={() => setShowControls(true)}
           onMouseLeave={() => setShowControls(false)}
           style={{
-            backgroundImage: active.videoSrc ? undefined : `url(${active.media})`,
-            minHeight: "clamp(400px,40vw,550px)",
+            backgroundColor: "#000",
+            minHeight: MOBILE_VIDEO_H,
           }}
         >
+          {/* Blurred Background Layer to fill letterbox areas elegantly */}
+          {active.videoSrc ? (
+            <div className="absolute inset-0 z-0 pointer-events-none">
+              <video
+                key={`bg-${active.videoSrc}`}
+                className="absolute inset-0 h-full w-full object-cover blur-[80px] opacity-50 scale-[1.2]"
+                src={active.videoSrc}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              <div className="absolute inset-0 bg-black/30" />
+            </div>
+          ) : (
+            <div
+              className="absolute inset-0 h-full w-full bg-cover bg-center blur-[80px] opacity-50 scale-[1.2] pointer-events-none"
+              style={{ backgroundImage: `url(${active.media})` }}
+            >
+              <div className="absolute inset-0 bg-black/30" />
+            </div>
+          )}
+
+          {/* Foreground Video */}
           {active.videoSrc ? (
             <video
               ref={videoRef}
               key={active.videoSrc}
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-contain z-10 drop-shadow-[0_0_40px_rgba(0,0,0,0.6)] border-none outline-none"
               src={active.videoSrc}
               autoPlay
               muted={isMuted}
               loop
               playsInline
+              disablePictureInPicture
+              controlsList="nodownload nofullscreen noremoteplayback"
               onTimeUpdate={handleTimeUpdate}
               onLoadedMetadata={handleLoadedMetadata}
             />
@@ -396,7 +429,7 @@ export default function VideoSection() {
           {/* Scrim */}
           <div
             aria-hidden="true"
-            className="absolute inset-0 transition-opacity duration-300"
+            className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
             style={{
               background:
                 "linear-gradient(180deg,rgba(5,18,29,0.02),rgba(5,18,29,0.22))",
@@ -407,35 +440,35 @@ export default function VideoSection() {
           {/* CUSTOM CONTROLS OVERLAY */}
           {active.videoSrc && (
             <div
-              className={`absolute inset-0 flex flex-col justify-between p-6 transition-opacity duration-300 ${showControls ? "opacity-100" : "opacity-0"}`}
-              style={{ background: "rgba(0,0,0,0.2)" }}
+              className={`absolute inset-0 flex flex-col justify-between p-4 sm:p-6 transition-opacity duration-300 z-30 group-hover/video:opacity-100 ${showControls ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+              style={{ background: "rgba(0,0,0,0.45)" }}
             >
-              <div /> {/* Spacer */}
+              <div />
 
-              {/* CENTER CONTROLS */}
-              <div className="flex items-center justify-center gap-12">
+              {/* CENTER CONTROLS — smaller on mobile */}
+              <div className="flex items-center justify-center gap-6 sm:gap-12">
                 <button
                   onClick={() => skip(-10)}
                   className="text-white/80 hover:text-white transition-all transform hover:scale-110"
                   aria-label="Rewind 10 seconds"
                 >
-                  <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-8 sm:h-8 fill-current">
                     <path d="M12.5 5.2a.5.5 0 0 0-.8 0l-6 5.5a.5.5 0 0 0 0 .7l6 5.5a.5.5 0 0 0 .8-.4v-4.3l5.2 4.7a.5.5 0 0 0 .8-.4V6.7a.5.5 0 0 0-.8-.4l-5.2 4.7V5.2z" />
                   </svg>
                 </button>
 
                 <button
                   onClick={togglePlay}
-                  className="w-20 h-20 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white hover:bg-white/30 transition-all transform hover:scale-105"
+                  className="w-14 h-14 sm:w-20 sm:h-20 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md border-0 text-white hover:bg-white/30 transition-all transform hover:scale-105"
                   aria-label={isPlaying ? "Pause" : "Play"}
                 >
                   {isPlaying ? (
-                    <svg viewBox="0 0 24 24" className="w-10 h-10 fill-current">
+                    <svg viewBox="0 0 24 24" className="w-7 h-7 sm:w-10 sm:h-10 fill-current">
                       <rect x="6" y="4" width="4" height="16" />
                       <rect x="14" y="4" width="4" height="16" />
                     </svg>
                   ) : (
-                    <svg viewBox="0 0 24 24" className="w-10 h-10 fill-current translate-x-1">
+                    <svg viewBox="0 0 24 24" className="w-7 h-7 sm:w-10 sm:h-10 fill-current translate-x-1">
                       <path d="M8 5v14l11-7z" />
                     </svg>
                   )}
@@ -446,15 +479,15 @@ export default function VideoSection() {
                   className="text-white/80 hover:text-white transition-all transform hover:scale-110"
                   aria-label="Forward 10 seconds"
                 >
-                  <svg viewBox="0 0 24 24" className="w-8 h-8 fill-current">
+                  <svg viewBox="0 0 24 24" className="w-6 h-6 sm:w-8 sm:h-8 fill-current">
                     <path d="M11.5 5.2a.5.5 0 0 1 .8 0l6 5.5a.5.5 0 0 1 0 .7l-6 5.5a.5.5 0 0 1-.8-.4v-4.3l-5.2 4.7a.5.5 0 0 1-.8-.4V6.7a.5.5 0 0 1 .8-.4l5.2 4.7V5.2z" />
                   </svg>
                 </button>
               </div>
 
               {/* BOTTOM CONTROLS */}
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-4 text-xs font-medium tracking-tight text-white/90">
+              <div className="flex flex-col gap-2 sm:gap-4">
+                <div className="flex items-center gap-2 sm:gap-4 text-xs font-medium tracking-tight text-white/90">
                   <span>{formatTime(currentTime)}</span>
                   <div className="relative flex-1 h-1.5 group/progress">
                     <input
@@ -477,7 +510,7 @@ export default function VideoSection() {
                   </div>
                   <span>{formatTime(duration)}</span>
 
-                  <div className="flex items-center gap-3 ml-4">
+                  <div className="flex items-center gap-3 ml-2 sm:ml-4">
                     <button
                       onClick={toggleMute}
                       className="hover:text-white transition-colors"
@@ -496,19 +529,13 @@ export default function VideoSection() {
                     </button>
 
                     <button
-                      onClick={() => setIsExpanded(!isExpanded)}
+                      onClick={() => setIsExpanded(true)}
                       className="hover:text-white transition-colors"
-                      aria-label={isExpanded ? "Collapse video" : "Expand video"}
+                      aria-label="Expand video fullscreen"
                     >
-                      {isExpanded ? (
-                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-                          <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z" />
-                        </svg>
-                      ) : (
-                        <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
-                          <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
-                        </svg>
-                      )}
+                      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -559,9 +586,7 @@ export default function VideoSection() {
 
             <span
               className="mt-[6px] block font-serif text-[0.92rem] leading-[1.3] font-medium"
-              style={{
-                color: "#ffffff"
-              }}
+              style={{ color: "#ffffff" }}
             >
               {b.brandDescription}
             </span>
@@ -597,6 +622,111 @@ export default function VideoSection() {
           </div>
         ))}
       </div>
+      {/* ══ FULLSCREEN VIDEO PORTAL ══════════════════════════════════════════
+          Renders outside the section entirely (via portal to document.body)
+          so it is never clipped by the sticky header or section overflow.
+          Press Escape or click the ✕ / collapse button to close.
+      ════════════════════════════════════════════════════════════════════════ */}
+      {isExpanded && active.videoSrc && createPortal(
+        <div
+          className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
+          style={{ top: 0, left: 0, width: "100vw", height: "100vh" }}
+          onKeyDown={(e) => { if (e.key === "Escape") setIsExpanded(false); }}
+          tabIndex={-1}
+          ref={(el) => el?.focus()}
+        >
+          {/* The video — fills entire viewport */}
+          <video
+            className="w-full h-full object-contain"
+            src={active.videoSrc}
+            autoPlay
+            muted={isMuted}
+            loop
+            playsInline
+            onTimeUpdate={handleTimeUpdate}
+            onLoadedMetadata={handleLoadedMetadata}
+            ref={(el) => {
+              // Sync time position from the inline player
+              if (el) {
+                el.currentTime = currentTime;
+                if (isPlaying) el.play().catch(() => { });
+              }
+            }}
+          />
+
+          {/* Top-right close button */}
+          <button
+            onClick={() => setIsExpanded(false)}
+            className="absolute top-5 right-5 w-11 h-11 flex items-center justify-center rounded-full bg-white/15 backdrop-blur-sm border-0 text-white hover:bg-white/30 transition-all"
+            aria-label="Close fullscreen"
+          >
+            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+              <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z" />
+            </svg>
+          </button>
+
+          {/* Bottom controls bar */}
+          <div className="absolute bottom-0 left-0 right-0 px-8 py-5 flex items-center gap-4 text-xs font-medium text-white/90"
+            style={{ background: "linear-gradient(to top, rgba(0,0,0,0.7), transparent)" }}
+          >
+            {/* Play/Pause */}
+            <button
+              onClick={togglePlay}
+              className="w-9 h-9 flex items-center justify-center rounded-full bg-white/20 border-0 hover:bg-white/30 transition-all"
+              aria-label={isPlaying ? "Pause" : "Play"}
+            >
+              {isPlaying ? (
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                  <rect x="6" y="4" width="4" height="16" />
+                  <rect x="14" y="4" width="4" height="16" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current translate-x-0.5">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              )}
+            </button>
+
+            {/* Mute */}
+            <button onClick={toggleMute} className="hover:text-white transition-colors" aria-label={isMuted ? "Unmute" : "Mute"}>
+              {isMuted ? (
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                  <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z" />
+                  <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" strokeWidth="2" />
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                </svg>
+              )}
+            </button>
+
+            {/* Time + Seek bar */}
+            <span className="tabular-nums">{formatTime(currentTime)}</span>
+            <div className="relative flex-1 h-1.5 group/fs">
+              <input
+                type="range"
+                min="0"
+                max={duration}
+                value={currentTime}
+                onChange={handleSeek}
+                className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+              />
+              <div className="absolute inset-0 bg-white/20 rounded-full" />
+              <div
+                className="absolute inset-y-0 left-0 bg-white rounded-full"
+                style={{ width: `${duration ? (currentTime / duration) * 100 : 0}%` }}
+              />
+              <div
+                className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow scale-0 group-hover/fs:scale-100 transition-transform"
+                style={{ left: `${duration ? (currentTime / duration) * 100 : 0}%` }}
+              />
+            </div>
+            <span className="tabular-nums">{formatTime(duration)}</span>
+          </div>
+        </div>,
+        document.body
+      )}
     </section>
   );
 }
