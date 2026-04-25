@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+﻿import { Link, useLocation } from "react-router-dom";
 import { resourceColumns } from "./resourcesMenuData";
 
 type ResourcesMenuProps = {
@@ -8,9 +8,24 @@ type ResourcesMenuProps = {
 const renderLabel = (text: string) => {
   if (text.includes("(TM)")) {
     const [main, ...rest] = text.split("(TM)");
+    const suffix = rest.join("");
+    const isAiswitchFramework = main.trim() === "AISWITCH" && suffix === " Framework";
+    const loweredTm = /^(MINDSETMATTERS|AISWITCH)/.test(main.trim()) && !isAiswitchFramework;
     return (
       <>
-        {main}<sup className="text-[1.2em] align-top relative top-[0.6em] ml-0.4 font-medium">™</sup>{rest.join("") || ""}
+        {main}
+        <sup
+          className={`ml-0.5 font-medium ${
+            isAiswitchFramework
+              ? "resources-tm-mark-framework"
+              : loweredTm
+                ? "resources-tm-mark-lower"
+                : "resources-tm-mark"
+          }`}
+        >
+          TM
+        </sup>
+        {suffix || ""}
       </>
     );
   }
@@ -28,6 +43,58 @@ export default function ResourcesMenu({ onNavigate }: ResourcesMenuProps) {
   };
   return (
     <div className="absolute top-[calc(100%+18px)] right-[clamp(28px,4vw,78px)] w-[min(1238px,calc(100vw-96px))] border border-black/10 bg-white shadow-[0_24px_48px_rgba(0,0,0,0.12)] backdrop-blur-[18px] z-50 overflow-hidden">
+      <style>{`
+        .resources-tm-mark {
+          display: inline-block;
+          vertical-align: text-top;
+          font-size: 0.72em;
+          line-height: 1;
+          position: relative;
+          top: 0.02em;
+        }
+
+        .resources-tm-mark-lower {
+          display: inline-block;
+          vertical-align: text-top;
+          font-size: 0.72em;
+          line-height: 1;
+          position: relative;
+          top: 0.28em;
+        }
+
+        .resources-tm-mark-framework {
+          display: inline-block;
+          vertical-align: text-top;
+          font-size: 0.72em;
+          line-height: 1;
+          position: relative;
+          top: 0.14em;
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 853px) {
+          .resources-tm-mark {
+            font-size: 0.66em;
+            top: 0;
+          }
+
+          .resources-tm-mark-lower {
+            font-size: 0.66em;
+            top: 0.22em;
+          }
+
+          .resources-tm-mark-framework {
+            font-size: 0.66em;
+            top: 0.08em;
+          }
+        }
+
+        @media only screen and (min-width: 1024px) and (max-width: 1024px) {
+          .resources-tm-mark-framework {
+            top: 0.22em;
+          }
+        }
+      `}</style>
+
       {/* Accent Line */}
       <div className="h-1 bg-[#0B527B]" aria-hidden="true" />
 
@@ -75,3 +142,5 @@ export default function ResourcesMenu({ onNavigate }: ResourcesMenuProps) {
     </div>
   );
 }
+
+

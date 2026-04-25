@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 
-// ─── ASSETS ──────────────────────────────────────────────────────────────────
+// â”€â”€â”€ ASSETS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 import DigitalFabricShow from "@/assets/digital Fabric.jpeg";
 import ImagenieShow from "@/assets/Imageine.jpg";
 import ProsightShow from "@/assets/Prosightshow.jpg";
@@ -20,7 +20,6 @@ import DigitalFabricConsultingLogo from "@/assets/Digital Fabric Consulting logo
 import ResearchFabricLogo from "@/assets/ResearchFabric logo 3.png";
 import BrandLogo from "@/assets/logo.png";
 
-// ─── DATA ────────────────────────────────────────────────────────────────────
 
 const showcaseBrands = [
   {
@@ -122,7 +121,7 @@ const showcaseBrands = [
 
 const MOBILE_VIDEO_H = "320px";
 
-// ─── Trademark symbols ────────────────────────────────────────────────────────
+// â”€â”€â”€ Trademark symbols â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const Sup = ({ m }: { m: string }) => (
   <span className="inline-block translate-y-[-0.08em] text-[0.92em] font-black ml-0">{m}</span>
@@ -134,21 +133,31 @@ const Sub = ({ m }: { m: string }) => (
 const SlideSup = ({ m }: { m: string }) => (
   <span className="inline-block translate-y-[-0.08em] text-[0.95em] font-black ml-0">{m}</span>
 );
+const BrandSup = ({ m }: { m: string }) => (
+  <span className="inline-block translate-y-[0.07em] text-[0.88em] font-black ml-0">{m}</span>
+);
 const SlideSub = ({ m }: { m: string }) => (
   <span className="inline-block translate-y-[0.3em] text-[0.9em] font-black ml-[2px]">{m}</span>
 );
 
 function BrandTitle({ title }: { title: string }) {
   const n = title.toUpperCase().trim();
-  if (n === "DIGITALFABRIC") return <>{title}<SlideSup m="®" /></>;
-  if (n === "IMAGENIE") return <>{title}<SlideSup m="™" /></>;
-  if (n === "PROSIGHT") return <>{title}<SlideSub m="™" /></>;
-  if (n === "DIGITALFABRIC CONSULTING") return <>DIGITALFABRIC<SlideSup m="®" /> CONSULTING</>;
-  if (n === "RESEARCHFABRIC") return <>{title}<SlideSup m="™" /></>;
+  if (n === "DIGITALFABRIC") return <>{title}<BrandSup m={"®"} /></>;
+  if (n === "IMAGENIE") return <>{title}<span className="video-section-imagenie-tm inline-block translate-y-[-0.08em] text-[0.88em] font-black ml-0">™</span></>;
+  if (n === "PROSIGHT") return <>{title}<SlideSub m={"™"} /></>;
+  if (n === "DIGITALFABRIC CONSULTING") {
+    return (
+      <>
+        <span className="block">
+          DIGITALFABRIC<SlideSup m={"®"} />
+        </span>
+        <span className="block">CONSULTING</span>
+      </>
+    );
+  }
+  if (n === "RESEARCHFABRIC") return <>{title}<BrandSup m={"™"} /></>;
   return <>{title}</>;
 }
-
-// ─── Component ────────────────────────────────────────────────────────────────
 
 export default function VideoSection() {
   const [activeKey, setActiveKey] = useState(showcaseBrands[0].key);
@@ -176,7 +185,7 @@ export default function VideoSection() {
       }
       return () => clearTimeout(timer);
     }
-  }, [activeKey, active.videoSrc]);
+  }, [activeKey, active.videoSrc, isPlaying]);
 
   const togglePlay = () => {
     if (!videoRef.current) return;
@@ -241,29 +250,29 @@ export default function VideoSection() {
       }}
     >
 
-      {/* ══ HEADER ══════════════════════════════════════════════════════════ */}
+      {/* â•â• HEADER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <div className="mb-[clamp(24px,3vw,42px)] mx-auto w-full max-w-[1200px]">
         <div className="w-full">
           <h2
             className="m-0 mb-6 font-serif leading-[1.02] text-center tracking-[-0.03em] text-[1.8rem] md:text-[clamp(2.5rem,3.5vw,4.5rem)]"
           >
             DIGITALFABRIC
-            <Sup m="®" />
+            <Sup m={"®"} />
             {" "}GROUP OF COMPANIES
           </h2>
           <p
             className="m-0 max-w-[120ch] leading-[1.6] text-center hidden md:block"
             style={{ color: "#ffffff", fontSize: "1.5rem" }}
           >
-            DIGITALFABRIC<Sup m="®" /> Group comprises of independent entities that drive new-generation digital business transformation,
+            DIGITALFABRIC<Sup m={"®"} /> Group comprises of independent entities that drive new-generation digital business transformation,
             AI consulting, and design firm. We integrate strategy, technology, and design to enable B2B and B2C businesses
             to achieve pragmatic, innovation-led growth in an increasingly dynamic digital landscape.
           </p>
         </div>
       </div>
 
-      {/* ══ FEATURE: left panel + right media ═══════════════════════════════ */}
-      {/* On mobile (<lg): stacks vertically — info panel on top, video below
+      {/* â•â• FEATURE: left panel + right media â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* On mobile (<lg): stacks vertically â€” info panel on top, video below
           On desktop (lg+): side-by-side 50/50 grid with fixed height */}
       <div
         className="mx-auto max-w-[1400px] rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:grid transition-all duration-700 ease-in-out bg-black/10"
@@ -272,7 +281,7 @@ export default function VideoSection() {
         }}
       >
 
-        {/* LEFT — info panel */}
+        {/* LEFT â€” info panel */}
         {/* Mobile: auto height to fit content. Desktop: fixed PANEL_HEIGHT. */}
         <div
           className="flex flex-col items-center justify-between text-center transition-all duration-700 ease-in-out overflow-hidden opacity-100 lg:min-h-0 lg:aspect-square"
@@ -285,7 +294,7 @@ export default function VideoSection() {
             overflowY: 'auto'
           }}
         >
-          {/* Logo area — fixed height container so all brands align identically */}
+          {/* Logo area â€” fixed height container so all brands align identically */}
           <div className="w-full flex flex-col items-center justify-center bg-transparent" style={{ minHeight: "clamp(80px,12vw,140px)" }}>
             <a
               href={active.websiteUrl}
@@ -305,7 +314,7 @@ export default function VideoSection() {
               />
             </a>
 
-            {/* Prosight subtitle pill — shown below the logo */}
+            {/* Prosight subtitle pill â€” shown below the logo */}
             {active.logoVariant === "prosight" && active.brandSubtitle ? (
               <span
                 className="mt-[10px] inline-block rounded-full px-[14px] py-[4px] text-[0.72rem] font-bold leading-none tracking-wider"
@@ -378,7 +387,7 @@ export default function VideoSection() {
           </div>
         </div>
 
-        {/* RIGHT — media / video */}
+        {/* RIGHT â€” media / video */}
         {/* Mobile: fixed 320px so video is always visible.
             Desktop (lg+): matches PANEL_HEIGHT for 50/50 layout. */}
         <div
@@ -453,7 +462,7 @@ export default function VideoSection() {
             >
               <div />
 
-              {/* CENTER CONTROLS — smaller on mobile */}
+              {/* CENTER CONTROLS â€” smaller on mobile */}
               <div className="flex items-center justify-center gap-6 sm:gap-12">
                 <button
                   onClick={() => skip(-10)}
@@ -553,7 +562,7 @@ export default function VideoSection() {
         </div>
       </div>
 
-      {/* ══ PROGRESS LINES (desktop) ═════════════════════════════════════════ */}
+      {/* â•â• PROGRESS LINES (desktop) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       <div
         aria-hidden="true"
         className="mx-auto max-w-[1400px] mt-10 mb-6 grid grid-cols-5 gap-7 max-[640px]:hidden px-2"
@@ -567,8 +576,8 @@ export default function VideoSection() {
         ))}
       </div>
 
-      {/* ══ BRAND TABS (desktop) ═════════════════════════════════════════════ */}
-      <div className="mx-auto max-w-[1400px] grid grid-cols-5 items-start gap-[26px] max-[640px]:hidden px-2">
+      {/* â•â• BRAND TABS (desktop) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      <div className="video-section-desktop-tabs mx-auto max-w-[1400px] grid grid-cols-5 items-start gap-[26px] max-[640px]:hidden px-2">
         {showcaseBrands.map((b) => (
           <button
             key={b.key}
@@ -578,10 +587,27 @@ export default function VideoSection() {
             style={{ color: "#ffffff" }}
           >
             <span
-              className="block font-serif font-bold leading-[1.2]"
+              className="video-section-brand-title block font-serif font-bold leading-[1.2]"
               style={{ fontSize: "clamp(1.05rem,1.6vw,2rem)" }}
             >
-              <BrandTitle title={b.brandTitle} />
+              {b.key === "framework" ? (
+                <span className="inline-flex items-start whitespace-nowrap">
+                  DIGITALFABRIC<BrandSup m={"®"} />
+                </span>
+              ) : b.key === "consulting" ? (
+                <>
+                  <span className="video-section-consulting-top block">
+                    DIGITALFABRIC<span className="video-section-consulting-r">®</span>
+                  </span>
+                  <span className="video-section-consulting-bottom block">CONSULTING</span>
+                </>
+              ) : b.key === "research" ? (
+                <span className="inline-flex items-start whitespace-nowrap">
+                  RESEARCHFABRIC<BrandSup m={"™"} />
+                </span>
+              ) : (
+                <BrandTitle title={b.brandTitle} />
+              )}
             </span>
 
             {b.brandSubtitle && b.logoVariant !== "prosight" ? (
@@ -602,7 +628,51 @@ export default function VideoSection() {
         ))}
       </div>
 
-      {/* ══ BRAND TABS (mobile ≤640px) ═══════════════════════════════════════ */}
+      {/* â•â• BRAND TABS (mobile â‰¤640px) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      <style>{`
+        @media only screen and (min-width: 768px) and (max-width: 853px) {
+          .video-section-brand-title {
+            display: inline-flex;
+            align-items: flex-start;
+            justify-content: center;
+            white-space: nowrap;
+            line-height: 1;
+            font-size: calc(1.03rem - 1px) !important;
+          }
+          .video-section-desktop-tabs > button:nth-child(2) .video-section-imagenie-tm {
+            transform: translateY(0.06em) !important;
+          }
+          .video-section-desktop-tabs > button:nth-child(4) .video-section-brand-title {
+            white-space: normal;
+            display: inline-block;
+            max-width: 122px;
+            margin: 0 auto;
+            line-height: 1.05;
+            text-align: center;
+            font-size: calc(1.03rem - 1px) !important;
+          }
+          .video-section-desktop-tabs > button:nth-child(4) .video-section-consulting-top {
+            display: inline-flex;
+            align-items: flex-start;
+            white-space: nowrap;
+            line-height: 1;
+            font-size: 0.94em;
+          }
+          .video-section-desktop-tabs > button:nth-child(4) .video-section-consulting-r {
+            display: inline-block;
+            font-size: 0.66em;
+            line-height: 1;
+            vertical-align: text-top;
+            position: relative;
+            top: 0.03em;
+            margin-left: 1px;
+          }
+          .video-section-desktop-tabs > button:nth-child(4) .video-section-consulting-bottom {
+            line-height: 1.05;
+            font-size: 0.94em;
+          }
+        }
+      `}</style>
       <div className="mx-auto max-w-[1400px] hidden grid-cols-2 gap-[18px] pt-[18px] max-[640px]:grid px-2">
         {showcaseBrands.map((b) => (
           <div key={b.key} className="grid gap-3">
@@ -630,11 +700,11 @@ export default function VideoSection() {
           </div>
         ))}
       </div>
-      {/* ══ FULLSCREEN VIDEO PORTAL ══════════════════════════════════════════
+      {/* â•â• FULLSCREEN VIDEO PORTAL â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
           Renders outside the section entirely (via portal to document.body)
           so it is never clipped by the sticky header or section overflow.
-          Press Escape or click the ✕ / collapse button to close.
-      ════════════════════════════════════════════════════════════════════════ */}
+          Press Escape or click the âœ• / collapse button to close.
+      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
       {isExpanded && active.videoSrc && createPortal(
         <div
           className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"
@@ -643,7 +713,7 @@ export default function VideoSection() {
           tabIndex={-1}
           ref={(el) => el?.focus()}
         >
-          {/* The video — fills entire viewport */}
+          {/* The video â€” fills entire viewport */}
           <video
             className="w-full h-full object-contain"
             src={active.videoSrc}

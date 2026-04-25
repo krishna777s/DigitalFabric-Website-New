@@ -67,7 +67,7 @@ const InsightsContent = () => {
             </div>
 
             {/* Overlapping Profile Circle */}
-            <div 
+            <div
               className="absolute top-[220px] left-8 -translate-y-1/2 w-16 h-16 rounded-full border-4 border-[#080d1a] overflow-hidden z-10 shadow-lg bg-cover bg-center"
               style={{ backgroundImage: `url(${profileBg})` }}
             >
