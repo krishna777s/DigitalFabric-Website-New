@@ -16,18 +16,18 @@ export const resourceColumns: ResourceMenuColumn[] = [
       { label: "TI Framework", featured: true, to: "/resources/ti-framework" },
       { label: "Featured Insights", to: "/insights" },
       { label: "ISG Studies and Brochures", to: "/isg-studies-and-brochures" },
-      { label: "MINDSETMATTERS(TM)", to: "/resources/mindset-matters" },
+      { label: "MINDSETMATTERS™", to: "/resources/mindset-matters" },
     ],
   },
   {
     title: "AI Resources",
     items: [
       {
-        label: "AISWITCH(TM) Framework",
+        label: "AISWITCH™ Framework",
         featured: true,
         to: "/resources/aiswitch-framework",
       },
-      { label: "AISWITCH(TM) Storyboards", to: "/resources/aiswitch-storyboards" },
+      { label: "AISWITCH™ Storyboards", to: "/resources/aiswitch-storyboards" },
       { label: "White Papers" },
     ],
   },

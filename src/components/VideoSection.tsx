@@ -24,7 +24,7 @@ import BrandLogo from "@/assets/logo.png";
 const showcaseBrands = [
   {
     key: "framework",
-    brandTitle: "DIGITALFABRIC",
+    brandTitle: "DIGITALFABRIC®",
     brandSubtitle: "THE TI FRAMEWORK",
     brandDescription: "Enterprise Transformation Framework",
     panelBg: "#090D35",
@@ -43,7 +43,7 @@ const showcaseBrands = [
   },
   {
     key: "creative",
-    brandTitle: "IMAGENIE",
+    brandTitle: "IMAGENIE™",
     brandSubtitle: "DESIGNING DESIRES",
     brandDescription: "Creative Design Agency",
     panelBg: "#A96700",
@@ -62,7 +62,7 @@ const showcaseBrands = [
   },
   {
     key: "prosight",
-    brandTitle: "Prosight",
+    brandTitle: "PROSIGHT™",
     brandSubtitle: "AI Engineering Capabilities Study",
     brandDescription: "AI Capability Insights",
     panelBg: "#4ec9f3",
@@ -81,7 +81,7 @@ const showcaseBrands = [
   },
   {
     key: "consulting",
-    brandTitle: "DIGITALFABRIC CONSULTING",
+    brandTitle: "DIGITALFABRIC® CONSULTING",
     brandSubtitle: "",
     brandDescription: "Strategic Transformation Consulting",
     panelBg: "#dbdada",
@@ -100,7 +100,7 @@ const showcaseBrands = [
   },
   {
     key: "research",
-    brandTitle: "RESEARCHFABRIC",
+    brandTitle: "RESEARCHFABRIC™",
     brandSubtitle: "",
     brandDescription: "Micro-Market Reports",
     panelBg: "#d9d9d9",
@@ -120,44 +120,6 @@ const showcaseBrands = [
 ];
 
 const MOBILE_VIDEO_H = "320px";
-
-// â”€â”€â”€ Trademark symbols â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-
-const Sup = ({ m }: { m: string }) => (
-  <span className="inline-block translate-y-[-0.08em] text-[0.92em] font-black ml-0">{m}</span>
-);
-const Sub = ({ m }: { m: string }) => (
-  <span className="align-super text-[0.55em] font-bold ml-[2px]">{m}</span>
-);
-
-const SlideSup = ({ m }: { m: string }) => (
-  <span className="inline-block translate-y-[-0.08em] text-[0.95em] font-black ml-0">{m}</span>
-);
-const BrandSup = ({ m }: { m: string }) => (
-  <span className="inline-block translate-y-[0.07em] text-[0.88em] font-black ml-0">{m}</span>
-);
-const SlideSub = ({ m }: { m: string }) => (
-  <span className="inline-block translate-y-[0.3em] text-[0.9em] font-black ml-[2px]">{m}</span>
-);
-
-function BrandTitle({ title }: { title: string }) {
-  const n = title.toUpperCase().trim();
-  if (n === "DIGITALFABRIC") return <>{title}<BrandSup m={"®"} /></>;
-  if (n === "IMAGENIE") return <>{title}<span className="video-section-imagenie-tm inline-block translate-y-[-0.08em] text-[0.88em] font-black ml-0">™</span></>;
-  if (n === "PROSIGHT") return <>{title}<SlideSub m={"™"} /></>;
-  if (n === "DIGITALFABRIC CONSULTING") {
-    return (
-      <>
-        <span className="block">
-          DIGITALFABRIC<SlideSup m={"®"} />
-        </span>
-        <span className="block">CONSULTING</span>
-      </>
-    );
-  }
-  if (n === "RESEARCHFABRIC") return <>{title}<BrandSup m={"™"} /></>;
-  return <>{title}</>;
-}
 
 export default function VideoSection() {
   const [activeKey, setActiveKey] = useState(showcaseBrands[0].key);
@@ -250,28 +212,26 @@ export default function VideoSection() {
       }}
     >
 
-      {/* â•â• HEADER â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* â• â•  HEADER â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â•  */}
       <div className="mb-[clamp(24px,3vw,42px)] mx-auto w-full max-w-[1200px]">
         <div className="w-full">
           <h2
             className="m-0 mb-6 font-serif leading-[1.02] text-center tracking-[-0.03em] text-[1.8rem] md:text-[clamp(2.5rem,3.5vw,4.5rem)]"
           >
-            DIGITALFABRIC
-            <Sup m={"®"} />
-            {" "}GROUP OF COMPANIES
+            DIGITALFABRIC® GROUP OF COMPANIES
           </h2>
           <p
             className="m-0 max-w-[120ch] leading-[1.6] text-center hidden md:block"
             style={{ color: "#ffffff", fontSize: "1.5rem" }}
           >
-            DIGITALFABRIC<Sup m={"®"} /> Group comprises of independent entities that drive new-generation digital business transformation,
+            DIGITALFABRIC® Group comprises of independent entities that drive new-generation digital business transformation,
             AI consulting, and design firm. We integrate strategy, technology, and design to enable B2B and B2C businesses
             to achieve pragmatic, innovation-led growth in an increasingly dynamic digital landscape.
           </p>
         </div>
       </div>
 
-      {/* â•â• FEATURE: left panel + right media â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* â• â•  FEATURE: left panel + right media â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â•  */}
       {/* On mobile (<lg): stacks vertically â€” info panel on top, video below
           On desktop (lg+): side-by-side 50/50 grid with fixed height */}
       <div
@@ -562,7 +522,7 @@ export default function VideoSection() {
         </div>
       </div>
 
-      {/* â•â• PROGRESS LINES (desktop) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* â• â•  PROGRESS LINES (desktop) â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â•  */}
       <div
         aria-hidden="true"
         className="mx-auto max-w-[1400px] mt-10 mb-6 grid grid-cols-5 gap-7 max-[640px]:hidden px-2"
@@ -576,7 +536,7 @@ export default function VideoSection() {
         ))}
       </div>
 
-      {/* â•â• BRAND TABS (desktop) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* â• â•  BRAND TABS (desktop) â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â•  */}
       <div className="video-section-desktop-tabs mx-auto max-w-[1400px] grid grid-cols-5 items-start gap-[26px] max-[640px]:hidden px-2">
         {showcaseBrands.map((b) => (
           <button
@@ -590,24 +550,7 @@ export default function VideoSection() {
               className="video-section-brand-title block font-serif font-bold leading-[1.2]"
               style={{ fontSize: "clamp(1.05rem,1.6vw,2rem)" }}
             >
-              {b.key === "framework" ? (
-                <span className="inline-flex items-start whitespace-nowrap">
-                  DIGITALFABRIC<BrandSup m={"®"} />
-                </span>
-              ) : b.key === "consulting" ? (
-                <>
-                  <span className="video-section-consulting-top block">
-                    DIGITALFABRIC<span className="video-section-consulting-r">®</span>
-                  </span>
-                  <span className="video-section-consulting-bottom block">CONSULTING</span>
-                </>
-              ) : b.key === "research" ? (
-                <span className="inline-flex items-start whitespace-nowrap">
-                  RESEARCHFABRIC<BrandSup m={"™"} />
-                </span>
-              ) : (
-                <BrandTitle title={b.brandTitle} />
-              )}
+              {b.brandTitle}
             </span>
 
             {b.brandSubtitle && b.logoVariant !== "prosight" ? (
@@ -628,7 +571,7 @@ export default function VideoSection() {
         ))}
       </div>
 
-      {/* â•â• BRAND TABS (mobile â‰¤640px) â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* â• â•  BRAND TABS (mobile â‰¤640px) â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â•  */}
       <style>{`
         @media only screen and (min-width: 768px) and (max-width: 853px) {
           .video-section-brand-title {
@@ -688,7 +631,7 @@ export default function VideoSection() {
               style={{ color: "#ffffff" }}
             >
               <span className="block font-serif text-[0.92rem] font-bold leading-[1.05]">
-                <BrandTitle title={b.brandTitle} />
+                {b.brandTitle}
               </span>
               <span
                 className="mt-[6px] block font-serif text-[0.7rem] leading-[1.25]"
@@ -700,11 +643,11 @@ export default function VideoSection() {
           </div>
         ))}
       </div>
-      {/* â•â• FULLSCREEN VIDEO PORTAL â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+      {/* â• â•  FULLSCREEN VIDEO PORTAL â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â•  
           Renders outside the section entirely (via portal to document.body)
           so it is never clipped by the sticky header or section overflow.
           Press Escape or click the âœ• / collapse button to close.
-      â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â•  */}
       {isExpanded && active.videoSrc && createPortal(
         <div
           className="fixed inset-0 z-[9999] bg-black flex items-center justify-center"

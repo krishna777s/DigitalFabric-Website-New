@@ -15,40 +15,13 @@ const mobileResourceLinks = [
   { label: "TI Framework", path: "/resources/ti-framework" },
   { label: "Featured Insights", path: "/insights" },
   { label: "ISG Studies and Brochures", path: "/isg-studies-and-brochures" },
-  { label: "MINDSETMATTERS(TM)", path: "/resources/mindset-matters" },
-  { label: "AISWITCH(TM) Framework", path: "/resources/aiswitch-framework" },
-  { label: "AISWITCH(TM) Storyboards", path: "/resources/aiswitch-storyboards" },
+  { label: "MINDSETMATTERS™", path: "/resources/mindset-matters" },
+  { label: "AISWITCH™ Framework", path: "/resources/aiswitch-framework" },
+  { label: "AISWITCH™ Storyboards", path: "/resources/aiswitch-storyboards" },
   { label: "White Papers", path: "#" },
   { label: "Copygamie Framework", path: "/copygamie-framework-free-use" },
   { label: "Success Stories", path: "/marketing-success-stories" },
 ];
-
-const renderLabel = (text: string) => {
-  if (text.includes("(TM)")) {
-    const [main, ...rest] = text.split("(TM)");
-    const suffix = rest.join("");
-    const isAiswitchFramework = main.trim() === "AISWITCH" && suffix === " Framework";
-    const loweredTm = /^(MINDSETMATTERS|AISWITCH)/.test(main.trim()) && !isAiswitchFramework;
-    return (
-      <>
-        {main}
-        <sup
-          className={`ml-0.5 font-medium ${
-            isAiswitchFramework
-              ? "navbar-tm-mark-framework"
-              : loweredTm
-                ? "navbar-tm-mark-lower"
-                : "navbar-tm-mark"
-          }`}
-        >
-          TM
-        </sup>
-        {suffix || ""}
-      </>
-    );
-  }
-  return text;
-};
 
 const Navbar = () => {
   const [resourcesOpen, setResourcesOpen] = useState(false);
@@ -85,66 +58,14 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50">
-      <style>{`
-        .navbar-tm-mark {
-          display: inline-block;
-          vertical-align: text-top;
-          font-size: 0.72em;
-          line-height: 1;
-          position: relative;
-          top: 0.02em;
-        }
-
-        .navbar-tm-mark-lower {
-          display: inline-block;
-          vertical-align: text-top;
-          font-size: 0.72em;
-          line-height: 1;
-          position: relative;
-          top: 0.28em;
-        }
-
-        .navbar-tm-mark-framework {
-          display: inline-block;
-          vertical-align: text-top;
-          font-size: 0.72em;
-          line-height: 1;
-          position: relative;
-          top: 0.14em;
-        }
-
-        @media only screen and (min-width: 768px) and (max-width: 853px) {
-          .navbar-tm-mark {
-            font-size: 0.66em;
-            top: 0;
-          }
-
-          .navbar-tm-mark-lower {
-            font-size: 0.66em;
-            top: 0.22em;
-          }
-
-          .navbar-tm-mark-framework {
-            font-size: 0.66em;
-            top: 0.08em;
-          }
-        }
-
-        @media only screen and (min-width: 1024px) and (max-width: 1024px) {
-          .navbar-tm-mark-framework {
-            top: 0.22em;
-          }
-        }
-      `}</style>
-
-      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• HEADER BAR â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* ────────────────────────────── HEADER BAR ────────────────────────────── */}
       <header className="bg-white text-black h-[68px] sm:h-[78px] md:h-[88px] flex items-center justify-between px-4 sm:px-8 md:px-10 lg:px-12 border-b border-black/10 shadow-sm transition-all duration-300">
 
 
         {/* LEFT: Logo + Desktop Nav */}
         <div className="flex items-center gap-5 min-w-0 overflow-hidden">
 
-          {/* Logo â€” smaller on mobile, original size on desktop */}
+          {/* Logo — smaller on mobile, original size on desktop */}
           <Link to="/" onClick={() => handleNavClick("/")} className="flex items-center ml-[14px] flex-shrink-0 transition-transform hover:scale-[1.02]">
             <img
               src={logo}
@@ -153,7 +74,7 @@ const Navbar = () => {
             />
           </Link>
 
-          {/* Desktop navigation links â€” hidden on mobile */}
+          {/* Desktop navigation links — hidden on mobile */}
           <nav className="hidden md:flex items-center pl-4">
             <ul className="flex items-center">
               {navItems.map((item) => {
@@ -199,7 +120,7 @@ const Navbar = () => {
             Subscribe
           </a>
 
-          {/* Hamburger button â€” only on mobile */}
+          {/* Hamburger button — only on mobile */}
           <button
             className="md:hidden flex items-center justify-center w-10 h-10 text-black rounded-lg hover:bg-black/5 transition"
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -219,7 +140,7 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• MOBILE SLIDE-IN MENU â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */}
+      {/* ────────────────────────────── MOBILE SLIDE-IN MENU ────────────────────────────── */}
       {/* Backdrop */}
       {mobileOpen && (
         <div
@@ -258,7 +179,7 @@ const Navbar = () => {
                             className="text-[0.9rem] text-black/70 font-medium hover:text-black transition"
                             onClick={closeMobile}
                           >
-                            {renderLabel(sub.label)}
+                            {sub.label}
                           </Link>
                         ))}
                       </div>
