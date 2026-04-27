@@ -1,0 +1,244 @@
+import { useEffect, useRef, useState } from 'react'
+import AshwinImg from '@/assets/founder page image updated final.jpg'
+
+// ---------------------------------------------------------------------------
+// Types
+// ---------------------------------------------------------------------------
+interface CardItem {
+  key: string
+  label: string
+  description: string
+}
+
+// ---------------------------------------------------------------------------
+// Data
+// ---------------------------------------------------------------------------
+const cards: CardItem[] = [
+  {
+    key: 'mindset',
+    label: 'Mindset',
+    description: 'As digital as you can think',
+  },
+  {
+    key: 'skillset',
+    label: 'Skillset',
+    description: 'As digital as you can be',
+  },
+  {
+    key: 'toolset',
+    label: 'Toolset',
+    description: 'As digital as you can act',
+  },
+]
+
+// ---------------------------------------------------------------------------
+// Keyframe injection (Tailwind does not ship custom keyframes by default)
+// ---------------------------------------------------------------------------
+const KEYFRAMES = `
+
+@keyframes headingEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.985);
+    filter: blur(12px);
+  }
+  60% { opacity: 1; }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.heading-hidden {
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  filter: blur(10px);
+  will-change: transform, opacity, filter;
+}
+
+.heading-animate {
+  animation: headingEntrance 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.card-hidden {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0) scale(0.985);
+  filter: blur(12px);
+  will-change: transform, opacity, filter;
+}
+
+.card-animate-1 { animation: cardReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.18s forwards; }
+.card-animate-2 { animation: cardReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.34s forwards; }
+.card-animate-3 { animation: cardReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.50s forwards; }
+
+@media (prefers-reduced-motion: reduce) {
+  .heading-hidden, .card-hidden { opacity: 1; transform: none; filter: none; animation: none !important; }
+}
+`
+
+// ---------------------------------------------------------------------------
+// Component
+// ---------------------------------------------------------------------------
+export default function FounderSection() {
+  const sectionRef = useRef<HTMLElement>(null)
+  const [inView, setInView] = useState(false)
+
+  // Inject keyframes and external font once
+  useEffect(() => {
+    // 1. Force load the Google Font via standard link tag for absolute reliability
+    if (!document.getElementById('abhaya-libre-font-link')) {
+      const link = document.createElement('link')
+      link.id = 'abhaya-libre-font-link'
+      link.href = 'https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap'
+      link.rel = 'stylesheet'
+      document.head.appendChild(link)
+    }
+
+    // 2. Inject keyframes
+    const id = 'founder-section-styles'
+    if (!document.getElementById(id)) {
+      const style = document.createElement('style')
+      style.id = id
+      style.textContent = KEYFRAMES
+      document.head.appendChild(style)
+    }
+  }, [])
+
+  // IntersectionObserver – trigger animations
+  useEffect(() => {
+    const el = sectionRef.current
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) setInView(true)
+      },
+      { threshold: 0.28, rootMargin: '0px 0px -12% 0px' }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  return (
+    <section
+      ref={sectionRef}
+      // Compact section to fit inside a single screen scroll perfectly.
+      className="relative w-full overflow-x-hidden bg-black border-t border-[#333] lg:h-[60vh] lg:min-h-[420px] lg:max-h-[680px] min-h-[550px]"
+      style={{ fontFamily: "'Abhaya Libre', serif" }}
+      aria-label="About DigitalFabric leadership"
+    >
+
+      {/* Container to restrict maximum width to standard Figma bounds if desired, or let it span full width safely */}
+      <div className="w-full h-full flex flex-col lg:flex-row px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px] relative">        {/* 
+          ------------------------------------------------------------------ 
+          LEFT COLUMN: Portrait (Transparent background to allow lines to pass behind) -> 42% WIDTH
+          ------------------------------------------------------------------ 
+        */}
+        <div className="relative w-full lg:w-[42%] h-[450px] lg:h-full bg-transparent flex flex-col justify-end items-center z-20">
+
+          {/* Image strictly contained */}
+          {/* Image strictly contained - aligned to bottom since it has its own built-in banner */}
+          <img
+            className={`
+              absolute bottom-0 w-[72%]  h-auto max-h-full object-contain object-bottom
+              transition-all duration-1000 delay-300 pointer-events-auto
+              ${inView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}
+            `}
+            src={AshwinImg}
+            alt="Ashwin Gaidhani"
+          />
+        </div>
+
+        {/* 
+          ------------------------------------------------------------------ 
+          RIGHT COLUMN: Text, Cards, and exactly 3 vertical Stripes -> 58%
+          ------------------------------------------------------------------ 
+        */}
+        <div className="relative w-full lg:w-[58%] h-full bg-transparent flex flex-col justify-center px-[20px] sm:px-[36px] md:px-[60px] lg:px-[60px] py-12 lg:py-0 z-10">
+
+          {/* 
+            Vertical Stripes Background:
+            To reduce gap, change gap-[10%] to gap-[5%] or gap-0.
+            To move it left behind the image, keep your -ml styling (e.g. -ml-52).
+          */}
+          <div className="absolute inset-0 z-0 -ml-52 hidden lg:flex w-full h-full pointer-events-none justify-start px-0 gap-[4%]">
+            <div className="w-[28%] h-full bg-[#1c2e38]"></div>
+            <div className="w-[28%] h-full bg-[#1c2e38]"></div>
+            <div className="w-[28%] h-full bg-[#1c2e38]"></div>
+          </div>
+
+          {/* Content Wrapper */}
+          <div className="relative z-10 w-full max-w-[950px] mx-auto">
+
+            {/* Main Quote */}
+            <h2
+              className={`
+                m-0 mb-8 md:mb-10
+                text-[clamp(1.2rem,2.2vw,1.9rem)]
+                font-serif font-bold leading-[1.12] tracking-tight
+                text-white
+                transition-[transform,opacity,filter]
+                duration-[450ms]
+                ${inView ? 'heading-animate' : 'heading-hidden'}
+              `}
+            >
+              Don&apos;t take the path of transformation.<br />
+              Take transformation along every path.<br />
+              For that you&apos;ll need to combine three elements:
+            </h2>
+
+            {/* Cards Flex Container */}
+            <ul className="list-none p-0 m-0 flex flex-col sm:flex-row gap-4 w-full">
+              {cards.map((card, i) => {
+                let titleColor = '#0B3F60';
+                if (card.key === 'skillset') titleColor = '#4EC9F3';
+                if (card.key === 'toolset') titleColor = '#B79A74';
+
+                return (
+                  <li
+                    key={card.key}
+                    className={`
+                        flex-1 flex flex-col items-center justify-center text-center
+                        min-h-[110px] md:min-h-[120px] px-2 py-5 md:py-6
+                        bg-white rounded-[16px]
+                        transform transition-transform hover:scale-105 duration-300
+                        mx-auto w-[min(100%,320px)] sm:w-auto
+                        ${inView ? 'card-animate-' + (i + 1) : 'card-hidden'}
+                      `}
+                  >
+                    <strong
+                      className="font-serif font-bold text-[clamp(1.1rem,1.7vw,1.4rem)] tracking-tight mb-1"
+                      style={{ color: titleColor }}
+                    >
+                      {card.label}
+                    </strong>
+                    <span className="block text-[clamp(0.85rem,1.05vw,1.05rem)] font-serif font-normal text-black leading-snug whitespace-nowrap px-1">
+                      {card.description}
+                    </span>
+                  </li>
+                )
+              })}
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,115 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+import logo from '@/assets/DF group logo-Blue.png'
+
+
+function Footer() {
+  return (
+    <footer className="site-footer relative z-[2] mt-0 bg-[#FFFFFF] text-black">
+      <div
+        className="footer-main mx-auto w-full max-w-[1780px] 
+          grid grid-cols-[minmax(360px,1.15fr)_minmax(220px,0.62fr)_minmax(420px,1fr)] 
+          gap-16 items-start px-4 sm:px-10 md:px-14 lg:px-16 pt-6 pb-[120px]
+          max-[1400px]:grid-cols-[minmax(280px,1fr)_minmax(200px,0.62fr)_minmax(320px,0.92fr)]
+          max-[1400px]:pb-[88px] max-[1400px]:gap-10
+          max-[1100px]:pb-10
+          max-[1024px]:grid-cols-2 max-[1024px]:gap-7 max-[1024px]:pb-[60px]
+          max-[640px]:grid-cols-1 max-[640px]:pt-10 max-[640px]:pb-11 max-[640px]:gap-10"
+      >
+        <div
+          className="footer-brand pt-[120px]
+            [@media(max-width:1400px)]:pt-20
+            [@media(max-width:1100px)]:pt-0
+            [@media(max-width:1024px)]:col-span-full [@media(max-width:1024px)]:pt-0"
+        >
+          <img
+            src={logo}
+            alt="DigitalFabric"
+            className="footer-brand-logo block w-full max-w-[360px] h-auto mb-[18px]
+              [@media(max-width:1400px)]:max-w-[340px]
+              [@media(max-width:1024px)]:max-w-[280px] [@media(max-width:1024px)]:mb-3
+              [@media(max-width:640px)]:max-w-[200px]"
+          />
+
+          <div className="footer-brand-text font-serif text-[clamp(2.4rem,4vw,3.8rem)] leading-[0.86] -tracking-[0.035em] [text-shadow:0_1px_0_rgba(255,255,255,0.18)]
+            [@media(max-width:1024px)]:text-[clamp(2rem,4vw,3.2rem)]
+            [@media(max-width:640px)]:text-[1.8rem] [@media(max-width:640px)]:leading-[0.92]"
+            aria-label="DigitalFabric Group"
+          >
+          </div>
+        </div>
+
+        <div className="footer-contact pt-[120px] [@media(max-width:1400px)]:pt-20 [@media(max-width:1100px)]:pt-0 flex flex-col items-start">
+          <h2 className="font-serif text-[clamp(2.35rem,2.7vw,3.25rem)] font-normal leading-none mb-7 text-black
+            [@media(max-width:1024px)]:text-[clamp(1.8rem,3vw,2.4rem)] [@media(max-width:1024px)]:mb-[18px]
+            [@media(max-width:640px)]:text-[1.6rem] [@media(max-width:640px)]:mb-3.5"
+          >
+            Get in touch
+          </h2>
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center bg-[#0B527B] text-white font-serif text-[1.2rem] px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:bg-[#084263] border-none cursor-pointer no-underline
+            [@media(max-width:1024px)]:text-[1.1rem] [@media(max-width:1024px)]:px-6 [@media(max-width:1024px)]:py-3
+            [@media(max-width:640px)]:text-[1rem] [@media(max-width:640px)]:px-5 [@media(max-width:640px)]:py-2.5"
+          >
+            Contact Us
+            <span aria-hidden="true" className="ml-3 text-[1.2em]">→</span>
+          </Link>
+        </div>
+
+        <div className="footer-subscribe pt-[120px] [@media(max-width:1400px)]:pt-20 [@media(max-width:1100px)]:pt-0">
+          <h2 className="font-serif text-[clamp(2.35rem,2.7vw,3.25rem)] font-normal leading-none mb-7 text-black
+            [@media(max-width:1024px)]:text-[clamp(1.8rem,3vw,2.4rem)] [@media(max-width:1024px)]:mb-[18px]
+            [@media(max-width:640px)]:text-[1.6rem] [@media(max-width:640px)]:mb-3.5"
+          >
+            Subscribe
+          </h2>
+          <form className="footer-subscribe-form grid grid-cols-[minmax(0,1fr)_84px] mt-2.5 rounded-3xl overflow-hidden
+            [@media(max-width:1024px)]:grid-cols-[minmax(0,1fr)_72px]
+            [@media(max-width:640px)]:grid-cols-[minmax(0,1fr)_60px] [@media(max-width:640px)]:rounded-[18px]"
+          >
+            <label className="footer-subscribe-label block">
+              <span className="sr-only">Email Address</span>
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full h-16 border-0 outline-none px-[30px] bg-[#f0efef] text-[#4e4a4a] font-sans text-[0.95rem] placeholder:text-[#4e4a4a] placeholder:opacity-100
+                  [@media(max-width:1024px)]:h-[58px] [@media(max-width:1024px)]:px-5
+                  [@media(max-width:640px)]:h-[52px] [@media(max-width:640px)]:px-4 [@media(max-width:640px)]:text-[0.9rem]"
+              />
+            </label>
+            <button
+              type="submit"
+              aria-label="Submit email"
+              className="border-0 bg-[#0B527B] text-white grid place-items-center text-[1.8rem] cursor-pointer
+                [@media(max-width:1024px)]:text-[1.5rem]
+                [@media(max-width:640px)]:text-[1.3rem]"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+          <Link to="/contact" className="footer-message-link inline-block mt-4 text-black no-underline font-serif text-[0.95rem] opacity-90 [@media(max-width:640px)]:text-[0.9rem] [@media(max-width:640px)]:mt-3 hover:underline">
+            *Send Message
+          </Link>
+        </div>
+      </div>
+
+      <div
+        className="footer-meta mx-auto w-full max-w-[1780px] px-4 sm:px-8 md:px-10 lg:px-12 py-[44px] pb-[54px] border-t border-black/10 flex justify-between gap-6
+          max-[1400px]:max-w-[calc(100%-48px)] max-[1400px]:py-8 max-[1400px]:pb-10
+          max-[1100px]:py-7 max-[1100px]:pb-9
+          max-[1024px]:max-w-[calc(100%-32px)] max-[1024px]:py-6 max-[1024px]:pb-8 max-[1024px]:flex-col max-[1024px]:items-start max-[1024px]:gap-2.5
+          max-[640px]:max-w-[calc(100%-24px)] max-[640px]:py-[18px] max-[640px]:pb-[26px] max-[640px]:gap-2"
+      >
+        <p className="m-0 text-black font-serif text-[0.94rem] leading-[1.3] [@media(max-width:640px)]:text-[0.9rem]">
+          © 2022 DIGITALFABRIC<span className="inline-block translate-y-[-0.38em] text-[0.55em] font-black ml-[4px]">®</span>, All Rights Reserved
+        </p>
+        <p className="m-0 text-black font-serif text-[0.94rem] leading-[1.3] [@media(max-width:640px)]:text-[0.9rem]">
+          Hyderabad, Telangana, India
+        </p>
+      </div>
+    </footer>
+  )
+}
+
+export default Footer

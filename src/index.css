@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 200 72% 21%;
+    --foreground: 0 0% 100%;
+
+    --card: 200 72% 18%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 200 72% 15%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 193 90% 33%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 187 74% 33%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 200 50% 30%;
+    --muted-foreground: 168 35% 66%;
+
+    --accent: 32 30% 59%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 40% 35%;
+    --input: 200 40% 35%;
+    --ring: 193 90% 33%;
+
+    --radius: 0.75rem;
+
+    /* Custom brand colors */
+    --df-dark-blue: 200 72% 21%;
+    --df-blue: 193 90% 33%;
+    --df-teal: 187 74% 33%;
+    --df-light-blue: 196 88% 62%;
+    --df-grey: 162 37% 66%;
+    --df-gold: 32 30% 59%;
+    --df-navy: 200 72% 15%;
+
+    --sidebar-background: 200 72% 15%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 193 90% 33%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 200 72% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 200 40% 35%;
+    --sidebar-ring: 193 90% 33%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Abhaya Libre', serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Abhaya Libre', serif;
+  }
+}
+
+@layer components {
+  .section-wrapper {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  .gradient-overlay {
+    background: linear-gradient(to top, hsl(var(--df-dark-blue) / 0.9), transparent);
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .card-hover {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .card-hover:hover {
+    transform: scale(1.05);
+    z-index: 10;
+  }
+
+  .card-group:hover .card-hover:not(:hover) {
+    transform: scale(0.95);
+    opacity: 0.85;
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .nav-solid {
+    background: hsl(var(--df-navy));
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Framework Component Keyframes for Tailwind */
+@keyframes aiswitchHeroTitleIn {
+  from { opacity: 0; transform: translateY(56px) scale(0.96); filter: blur(10px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+@keyframes tiHeroTitleIn {
+  from { opacity: 0; transform: translateY(-72px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes tiHeroDescriptionIn {
+  from { opacity: 0; transform: translateY(72px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes tiOverviewCopyIn {
+  from { opacity: 0; transform: translateX(-72px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes tiOverviewDiagramIn {
+  from { opacity: 0; transform: translateX(72px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes tiStingaryImageIn {
+  from { opacity: 0; transform: translateY(84px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@layer utilities {
+  .animate-aiswitch-title {
+    animation: aiswitchHeroTitleIn 1.05s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-ti-title {
+    animation: tiHeroTitleIn 0.95s ease-out forwards;
+  }
+  .animate-ti-desc {
+    animation: tiHeroDescriptionIn 0.95s ease-out 0.12s forwards;
+  }
+  .animate-ti-overview-copy {
+    animation: tiOverviewCopyIn 0.95s ease-out forwards;
+  }
+  .animate-ti-overview-diagram {
+    animation: tiOverviewDiagramIn 0.95s ease-out 0.12s forwards;
+  }
+  .animate-ti-stingary {
+    animation: tiStingaryImageIn 0.95s ease-out forwards;
+  }
+}
+
+@layer components {
+  /* TIFrameworkBlueprint precise transitions */
+  .ti-blueprint-intro-base {
+    opacity: 0;
+    transform: translateY(34px);
+    filter: blur(10px);
+    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1), transform 700ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .ti-blueprint-intro-base.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+
+  .ti-blueprint-card-base {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+    filter: blur(10px);
+    transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1), transform 620ms cubic-bezier(0.22, 1, 0.36, 1), filter 620ms cubic-bezier(0.22, 1, 0.36, 1), border-color 280ms ease, background-color 280ms ease;
+  }
+  .ti-blueprint-card-base.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  .ti-blueprint-feature-base {
+    opacity: 0;
+    transform: translateY(42px) scale(0.985);
+    filter: blur(12px);
+    transition: opacity 820ms cubic-bezier(0.22, 1, 0.36, 1), transform 820ms cubic-bezier(0.22, 1, 0.36, 1), filter 820ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 420ms ease;
+  }
+  .ti-blueprint-feature-base.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+
+  .ti-blueprint-feature-icon-base,
+  .ti-blueprint-feature-title-base,
+  .ti-blueprint-feature-desc-base,
+  .ti-blueprint-feature-list-base {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 560ms cubic-bezier(0.22, 1, 0.36, 1), transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .ti-blueprint-feature-base.is-visible .ti-blueprint-feature-icon-base,
+  .ti-blueprint-feature-base.is-visible .ti-blueprint-feature-title-base,
+  .ti-blueprint-feature-base.is-visible .ti-blueprint-feature-desc-base,
+  .ti-blueprint-feature-base.is-visible .ti-blueprint-feature-list-base {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .ti-blueprint-feature-base.is-visible .ti-blueprint-feature-icon-base { transition-delay: 110ms; }
+  .ti-blueprint-feature-base.is-visible .ti-blueprint-feature-title-base { transition-delay: 180ms; }
+  .ti-blueprint-feature-base.is-visible .ti-blueprint-feature-desc-base { transition-delay: 240ms; }
+  .ti-blueprint-feature-base.is-visible .ti-blueprint-feature-list-base { transition-delay: 300ms; }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .ti-blueprint-intro-base, .ti-blueprint-card-base, .ti-blueprint-feature-base,
+    .ti-blueprint-feature-icon-base, .ti-blueprint-feature-title-base,
+    .ti-blueprint-feature-desc-base, .ti-blueprint-feature-list-base {
+      opacity: 1 !important; transform: none !important; filter: none !important; transition: none !important;
+    }
+    .animate-aiswitch-title, .animate-ti-title, .animate-ti-desc, .animate-ti-overview-copy, .animate-ti-overview-diagram, .animate-ti-stingary {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
+  }
+}
+
+/* Global Typography Optimizations */
+p, h1, h2, h3, h4, h5, h6 {
+  text-wrap: pretty;
+}
+h1, h2, h3 {
+  text-wrap: balance;
+}
+p {
+  font-size: clamp(1rem, 1.35vw, 1.5rem);
+  line-height: 1.6;
+}
