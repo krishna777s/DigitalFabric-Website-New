@@ -54,12 +54,12 @@ const insightsData = [
   },
   {
     image: img7,
-    title: "Salesforce Battlecard Competitive Intelligence & Regional Playbook for Enterprise Sales Teams",
+    title: "Salesforce Battlecard\nCompetitive Intelligence & Regional Playbook for Enterprise Sales Teams",
     link: pdf7,
   },
   {
     image: img8,
-    title: "ServiceNow Battlecard Competitive Intelligence & Regional Playbook for Enterprise Sales Teams",
+    title: "ServiceNow Battlecard\nCompetitive Intelligence & Regional Playbook for Enterprise Sales Teams",
     link: pdf8,
   },
 ];
@@ -86,7 +86,7 @@ const Insights = () => {
           </div>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {insightsData.map((item) => (
+            {insightsData.map((item, index) => (
               <article
                 key={item.title}
                 className="
@@ -119,7 +119,18 @@ const Insights = () => {
                     text-[#111111] group-hover:text-white 
                     transition-colors duration-300 break-words"
                   >
-                    {item.title}
+                    {index >= 6 ? (
+                      <>
+                        <span className="block">
+                          {item.title.split("\n")[0]}
+                        </span>
+                        <span className="mt-1 block text-[17px] md:text-[18px] lg:text-[19px] leading-[1.35]">
+                          {item.title.split("\n")[1]}
+                        </span>
+                      </>
+                    ) : (
+                      item.title
+                    )}
                   </h3>
                 </a>
               </article>
