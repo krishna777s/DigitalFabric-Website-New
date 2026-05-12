@@ -55,13 +55,14 @@ export default function HowWeHelp() {
             <article
               key={card.key}
               className="help-card group relative w-full h-full p-0 bg-transparent text-[#f7f5f0] flex flex-col border border-transparent 
-                transition-all duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+                transition-all
                 hover:bg-white hover:text-[#111111] hover:border-white hover:border-[6px] 
                 hover:shadow-[inset_0_0_0_12px_white]"
+              style={{ transitionDuration: "320ms", transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
             >
               <div
                 className="help-card-image w-full aspect-[1.8/1] min-h-[170px] bg-center bg-cover 
-                  transition-all duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+                  transition-all
                   [@media(max-width:1560px)]:min-h-[160px]
                   [@media(max-width:1280px)]:min-h-[145px]
                   [@media(max-width:980px)]:min-h-[200px]"
@@ -69,8 +70,9 @@ export default function HowWeHelp() {
                 aria-hidden="true"
               />
 
-              <div className="help-card-body flex-1 flex flex-col pt-2.5 px-3.5 pb-4 transition-all duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)] 
+              <div className="help-card-body flex-1 flex flex-col pt-2.5 px-3.5 pb-4 transition-all 
                 group-hover:bg-white group-hover:pt-[10px]"
+                style={{ transitionDuration: "320ms", transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
               >
                 <div className="help-card-title-row flex items-start justify-between gap-3 px-0">
                   <h3 className="help-card-title m-0 font-serif text-[clamp(1.1rem,1.7vw,1.45rem)] font-normal leading-[1.05] -tracking-[0.03em] whitespace-pre-line
@@ -78,17 +80,19 @@ export default function HowWeHelp() {
                   >
                     {card.title}
                   </h3>
-                  <span className="help-card-arrow flex-shrink-0 font-serif text-[2rem] leading-[0.82] mt-[0.05em] transition-transform duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+                  <span className="help-card-arrow flex-shrink-0 font-serif text-[2rem] leading-[0.82] mt-[0.05em] transition-transform
                     [@media(max-width:1280px)]:text-[1.8rem]
                     [@media(max-width:640px)]:text-[1.9rem]"
+                    style={{ transitionDuration: "320ms", transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
                     aria-hidden="true"
                   >
                     &#8250;
                   </span>
                 </div>
                 <p className="help-card-description max-w-full mt-2 m-0 font-serif text-[0.95rem] leading-[1.4] text-[rgba(243,247,250,0.94)]
-                  transition-colors duration-[320ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+                  transition-colors
                   group-hover:text-black"
+                  style={{ transitionDuration: "320ms", transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
                 >
                   {card.description}
                 </p>

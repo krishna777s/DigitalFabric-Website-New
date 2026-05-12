@@ -30,7 +30,8 @@ const AISWITCHFrameworkOverview = () => {
       <div className="w-full grid grid-cols-[0.85fr_1.15fr] max-[900px]:grid-cols-1 gap-12 items-center justify-start">
         <div
           data-inview={isInView}
-          className="opacity-0 -translate-x-24 transition-all duration-[1000ms] ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-x-0 text-left"
+          className="opacity-0 -translate-x-24 transition-all ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-x-0 text-left"
+          style={{ transitionDuration: "1000ms" }}
         >
           <p className="font-sans text-[clamp(1.1rem,1.35vw,1.3rem)] leading-[1.32] text-[#151c36] font-normal m-0 max-[640px]:text-base max-[640px]:leading-[1.42]">
             The <strong className="font-extrabold text-[#10172e]">DIGITALFABRIC<sup className="text-[0.6em] relative top-[-0.35em] ml-[2px]">®</sup> AISWITCH<sup className="text-[0.6em] relative top-[-0.35em] ml-[2px]">™</sup> Framework</strong> is a comprehensive, strategic approach to managing AI integration across key areas of business operations. The framework emphasizes six essential management pillars:
@@ -47,7 +48,8 @@ const AISWITCHFrameworkOverview = () => {
 
         <div
           data-inview={isInView}
-          className="relative w-full opacity-0 translate-x-12 transition-all duration-[1000ms] ease-out delay-[200ms] data-[inview=true]:opacity-100 data-[inview=true]:translate-x-0 hover:scale-[1.15] transition-transform duration-500 cursor-zoom-in flex justify-end"
+          className="relative w-full opacity-0 translate-x-12 transition-all ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-x-0 hover:scale-[1.15] transition-transform duration-500 cursor-zoom-in flex justify-end"
+          style={{ transitionDuration: "1000ms", transitionDelay: "200ms" }}
         >
           <img
             src={aiswitchFrameworkDiagram}

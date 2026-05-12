@@ -53,7 +53,8 @@ const MarketingSuccessStoriesContent = () => {
             return (
               <div 
                 key={index} 
-                className="animate-in-view flex border-l-4 border-transparent flex-col justify-center px-4 max-[1000px]:col-span-2 max-[640px]:col-span-1 opacity-0 translate-x-12 transition-all duration-[900ms] ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-x-0"
+                className="animate-in-view flex border-l-4 border-transparent flex-col justify-center px-4 max-[1000px]:col-span-2 max-[640px]:col-span-1 opacity-0 translate-x-12 transition-all data-[inview=true]:opacity-100 data-[inview=true]:translate-x-0"
+                style={{ transitionDuration: "900ms", transitionTimingFunction: "ease-out" }}
               >
                 <div className="flex flex-col gap-8 max-w-[380px]">
                   <h3 className="m-0 font-serif font-bold text-[#030a1a] text-[clamp(1.6rem,2.2vw,2rem)] leading-[1.2]">

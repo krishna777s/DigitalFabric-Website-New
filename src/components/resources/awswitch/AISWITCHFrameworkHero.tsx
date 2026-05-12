@@ -45,10 +45,11 @@ const AISWITCHFrameworkHero = () => {
 
       <div className="relative z-10 w-full pt-0 pb-[124px] px-[18px] sm:px-[32px] md:px-[56px] lg:px-[56px]">
         <h1
-          className={`m-0 max-w-[20ch] font-serif font-bold leading-none -tracking-[0.05em] text-white [text-shadow:0_14px_34px_rgba(0,0,0,0.12)] will-change-[transform,opacity,filter] transition-all duration-[1050ms] ease-[cubic-bezier(0.22,1,0.36,1)] 
+          className={`m-0 max-w-[20ch] font-serif font-bold leading-none -tracking-[0.05em] text-white [text-shadow:0_14px_34px_rgba(0,0,0,0.12)] will-change-[transform,opacity,filter] transition-all 
             ${isInView ? "opacity-100 translate-y-0 scale-100 blur-0" : "opacity-0 translate-y-14 scale-[0.96] blur-[10px]"}
             text-[clamp(1.75rem,4.5vw,3.125rem)] max-[1100px]:text-[clamp(1.75rem,5.5vw,2.8rem)] max-[640px]:text-[2.2rem] max-[640px]:max-w-[12ch] max-[640px]:leading-[1.02]
           `}
+          style={{ transitionDuration: "1050ms", transitionTimingFunction: "cubic-bezier(0.22, 1, 0.36, 1)" }}
         >
           The DIGITALFABRIC<sup className="text-[0.9em] ml-1 align-top relative top-[0.5em] font-medium">®</sup>
           <br />

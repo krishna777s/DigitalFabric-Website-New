@@ -126,7 +126,11 @@ const MindsetMattersContent = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#0b101c] w-full px-[58px] py-24 max-[1100px]:px-[34px] max-[1100px]:py-20 max-[640px]:px-[18px] max-[640px]:py-16 opacity-0 translate-y-12 transition-all duration-[900ms] ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0">
+    <section
+      ref={sectionRef}
+      className="bg-[#0b101c] w-full px-[58px] py-24 max-[1100px]:px-[34px] max-[1100px]:py-20 max-[640px]:px-[18px] max-[640px]:py-16 opacity-0 translate-y-12 transition-all ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0"
+      style={{ transitionDuration: "900ms" }}
+    >
       <div className="max-w-[1400px] mx-auto grid grid-cols-[300px_1fr] max-[900px]:grid-cols-1 gap-12 max-[900px]:gap-8 items-start">
         
         {/* Left Sidebar */}

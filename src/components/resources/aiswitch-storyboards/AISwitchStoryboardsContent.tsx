@@ -52,8 +52,8 @@ const AISwitchStoryboardsContent = () => {
         {storyboards.map((board, index) => (
           <article 
             key={index} 
-            className="storyboard-card flex flex-col bg-[#070b16] rounded-[2px] shadow-lg hover:-translate-y-2 transition-all duration-300 opacity-0 translate-y-12 transition-all duration-[800ms] ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0 relative border border-[#ffffff0a]"
-            style={{ transitionDelay: `${(index % 4) * 100}ms` }}
+            className="storyboard-card flex flex-col bg-[#070b16] rounded-[2px] shadow-lg hover:-translate-y-2 transition-all opacity-0 translate-y-12 data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0 relative border border-[#ffffff0a]"
+            style={{ transitionDuration: "800ms", transitionTimingFunction: "ease-out", transitionDelay: `${(index % 4) * 100}ms` }}
           >
             {/* Top Image Portion */}
             <div className="relative w-full h-[180px] overflow-hidden bg-[#030612]">

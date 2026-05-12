@@ -51,8 +51,8 @@ const InsightsContent = () => {
         {insights.map((insight, index) => (
           <article
             key={index}
-            className="insight-card group relative flex flex-col bg-[#080d1a] shadow-xl hover:-translate-y-2 transition-all duration-300 opacity-0 translate-y-12 transition-all duration-[800ms] ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0"
-            style={{ transitionDelay: `${index * 150}ms` }}
+            className="insight-card group relative flex flex-col bg-[#080d1a] shadow-xl hover:-translate-y-2 transition-all opacity-0 translate-y-12 data-[inview=true]:opacity-100 data-[inview=true]:translate-y-0"
+            style={{ transitionDuration: "800ms", transitionTimingFunction: "ease-out", transitionDelay: `${index * 150}ms` }}
           >
             {/* Top Image Portion */}
             <div className="relative w-full h-[220px] overflow-hidden bg-[#030612]">
@@ -91,8 +91,8 @@ const InsightsContent = () => {
 
         {/* Third Column: Static Text Block */}
         <div
-          className="insight-card opacity-0 translate-x-12 transition-all duration-[800ms] ease-out data-[inview=true]:opacity-100 data-[inview=true]:translate-x-0"
-          style={{ transitionDelay: `300ms` }}
+          className="insight-card opacity-0 translate-x-12 transition-all data-[inview=true]:opacity-100 data-[inview=true]:translate-x-0"
+          style={{ transitionDuration: "800ms", transitionTimingFunction: "ease-out", transitionDelay: `300ms` }}
         >
           <div className="p-8 max-[900px]:p-4 h-full flex flex-col items-start justify-center text-left">
             <h2 className="m-0 font-serif font-bold text-[#081229] leading-[1.2] text-[clamp(1.7rem,2.7vw,2.7rem)] max-[640px]:text-[1.9rem]">

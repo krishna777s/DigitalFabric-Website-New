@@ -193,9 +193,9 @@ export default function FounderSection() {
                 font-serif font-bold leading-[1.12] tracking-tight
                 text-white
                 transition-[transform,opacity,filter]
-                duration-[450ms]
                 ${inView ? 'heading-animate' : 'heading-hidden'}
               `}
+              style={{ transitionDuration: '450ms' }}
             >
               Don&apos;t take the path of transformation.<br />
               Take transformation along every path.<br />

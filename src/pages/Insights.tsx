@@ -4,6 +4,9 @@ import img2 from "@/assets/Insights2.jpeg";
 import img3 from "@/assets/Insights3.jpeg";
 import img4 from "@/assets/Insights4.jpeg";
 import img5 from "@/assets/Insights5.jpeg";
+import img6 from "@/assets/1.jpg";
+import img7 from "@/assets/2.jpg";
+import img8 from "@/assets/3.jpg";
 
 // PDF Imports
 import pdf1 from "@/assets/pdfs/Micro-Market Market Research Report for a D2C Fashion Brand _Geo_India.pdf";
@@ -11,6 +14,9 @@ import pdf2 from "@/assets/pdfs/Micro-Market Research Reports.pdf";
 import pdf3 from "@/assets/pdfs/Strategic Investment Analysis_LTChart.pdf";
 import pdf4 from "@/assets/pdfs/Strategic Investment Analysis_Payment_chart.pdf";
 import pdf5 from "@/assets/pdfs/Strategic Investment Analysis_T&L Tech Sector in India.pdf";
+import pdf6 from "@/assets/pdfs/EOA_Prosight.pdf";
+import pdf7 from "@/assets/pdfs/Salesforce_Battlecard_V1.pdf";
+import pdf8 from "@/assets/pdfs/ServiceNow_Battlecard_.pdf";
 
 const insightsData = [
   {
@@ -40,6 +46,21 @@ const insightsData = [
     title:
       "Strategic Investment Analysis for T&L Tech Startup Ecosystem & Policy Landscape in India",
     link: pdf5,
+  },
+  {
+    image: img6,
+    title: "Experience Oriented Architecture (EOA):Making Experience Core Metric for Agentic SystemsTemplate",
+    link: pdf6,
+  },
+  {
+    image: img7,
+    title: "Salesforce Battlecard Competitive Intelligence & Regional Playbook for Enterprise Sales Teams",
+    link: pdf7,
+  },
+  {
+    image: img8,
+    title: "ServiceNow Battlecard Competitive Intelligence & Regional Playbook for Enterprise Sales Teams",
+    link: pdf8,
   },
 ];
 

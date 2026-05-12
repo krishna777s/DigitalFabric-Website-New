@@ -181,10 +181,12 @@ const PointCard: React.FC<PointCardProps> = ({ icon, title, body }) => (
       point-card
       flex flex-col sm:grid
       rounded-[24px] cursor-default relative isolate
-      transition-all duration-[300ms] ease-out
+      transition-all
       hover:scale-[1.01] hover:shadow-2xl
     "
     style={{
+      transitionDuration: "300ms",
+      transitionTimingFunction: "ease-out",
       gridTemplateColumns: "clamp(60px, 8vw, 80px) 1fr",
       gap: "clamp(16px, 3vw, 24px)",
       padding: "clamp(20px, 4vw, 32px)",
