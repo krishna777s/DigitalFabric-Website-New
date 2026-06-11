@@ -52,10 +52,15 @@ const FeaturedCards = () => {
                 Building future-ready enterprises through sustainability, resiliency, and agility.
               </p>
 
-              <button className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95">
+              <a
+                href="https://digitalfabric.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95 hover:no-underline"
+              >
                 Explore More
                 <Arrow />
-              </button>
+              </a>
 
             </div>
           </div>
@@ -82,10 +87,15 @@ const FeaturedCards = () => {
                 Bridging technology and business to accelerate enterprise transformation
               </p>
 
-              <button className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95">
+              <a
+                href="https://researchfabric.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95 hover:no-underline"
+              >
                 Explore More
                 <Arrow />
-              </button>
+              </a>
 
             </div>
           </div>
@@ -112,10 +122,14 @@ const FeaturedCards = () => {
                 Enterprise 3.0 is a pivotal phase in digital transformation, integrating AI, IoT, and cloud computing to reshape businesses.
               </p>
 
-              <button className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95">
+              <a
+                href="#"
+                onClick={(e) => e.preventDefault()}
+                className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95 hover:no-underline"
+              >
                 Explore More
                 <Arrow />
-              </button>
+              </a>
 
             </div>
           </div>

@@ -80,11 +80,11 @@ const Hero = () => {
           >
             <img
               src={heroImage}
-              className="absolute inset-0 h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.09] group-hover:brightness-[1.02] group-hover:contrast-[1.04] group-hover:saturate-[1.08]"
+              className="absolute inset-0 h-full w-full object-cover brightness-105 transition duration-700 ease-out group-hover:scale-[1.09] group-hover:brightness-[1.10] group-hover:contrast-[1.04] group-hover:saturate-[1.08]"
             />
 
             {/* DARK MASK FOR LEGIBILITY */}
-            <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors duration-700" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent transition-opacity duration-700 group-hover:opacity-80" />
 
             <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 lg:max-w-[90%] bg-white/10 backdrop-blur-xl border border-white/20 p-4 md:p-6 py-8 md:py-10 shadow-2xl">
 
@@ -96,10 +96,15 @@ const Hero = () => {
                 Strategically guiding enterprises through transformation with a future-ready consulting framework
               </p>
 
-              <button className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95">
+              <a
+                href="https://digitalfabric.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95 hover:no-underline"
+              >
                 Explore More
                 <StandardArrow />
-              </button>
+              </a>
             </div>
           </div>
 
@@ -165,10 +170,12 @@ const Hero = () => {
                 img: marketingImg,
                 title: "Enterprise Marketing",
                 desc: "Driving enterprise growth through strategy, creativity, and digital impact.",
+                url: "https://imagenie.in/",
               }, {
                 img: aismImg,
                 title: "Prosight AISM",
                 desc: "Enabling responsible, scalable AI adoption for enterprises",
+                url: "https://prosight-aism.com/",
               }].map((item, i) => (
 
                 <div
@@ -193,10 +200,15 @@ const Hero = () => {
                       {item.desc}
                     </p>
 
-                    <button className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95">
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center gap-2.5 w-fit bg-white text-[#0b3f60] px-4 py-2 rounded-full text-[11px] font-bold tracking-wide transition-all hover:shadow-lg active:scale-95 hover:no-underline"
+                    >
                       Explore More
                       <StandardArrow />
-                    </button>
+                    </a>
 
                   </div>
                 </div>
